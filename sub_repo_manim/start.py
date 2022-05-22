@@ -72,11 +72,11 @@ class IntroText(Scene):
         
         self.wait(2)
         self.play(FadeIn(text1))
-
+        self.wait(0.5)
         self.play(FadeIn(text2))
-        self.wait(1)
+        self.wait(2)
         self.play(FadeOut(text1),FadeOut(text2))
-        
+        self.wait(2)
         
 class ContentleftPicright(Scene):
     def construct(self):
@@ -88,9 +88,9 @@ class ContentleftPicright(Scene):
         
         self.play(FadeIn(text1.shift(2*LEFT)),FadeIn(pic1.shift(3.5*RIGHT)))
         
+        self.wait(4)
+        self.play(FadeOut(text1),pic1.animate.shift(3.5*LEFT))
         self.wait(2)
-        self.play(FadeOut(text1),pic1.animate.shift(3.5*LEFT).scale(2))
-        self.play(FadeOut(pic1))
 class PlainContent(Scene):
     def construct(self):
         text1=Text("Log4shell vulnerability was found",
@@ -102,19 +102,18 @@ class PlainContent(Scene):
         text3=Text("However, this vulnerability has exited since 2013",
                    font='consolas',font_size=40,
                    t2c={'2013':RED})
-        text4=Text("This vulnerability uses an exploit in the\nnetwork logger framework called log4j\nthis exploit allows remote code execution",
-                   font='Consolas',font_size=35,
-                   t2c={'log4j':PURPLE})
         gr=VGroup(text1,text2).arrange(DOWN,buff=0.1)
-        VGroup(gr,text3,text4).arrange(DOWN,buff=1)
+        VGroup(gr,text3).arrange(DOWN,buff=1)
         
         self.wait(1)
-        self.play(FadeIn(gr),FadeIn(text3),FadeIn(text4))
+        self.play(FadeIn(gr),FadeIn(text3))
         self.wait(5)
-        self.play(FadeOut(gr),FadeOut(text4))
-        self.play(text3.animate.shift(ORIGIN))
-        self.wait(1)
+        self.play(FadeOut(gr))
+        self.play(text3.animate.shift(0.75*UP))
+        self.wait(3)
         self.play(FadeOut(text3))
+        self.wait(1)
+        self.wait(1)
 class PlainContentwithBullets(Scene):
     def construct(self):
         text1=Text("Log4shell vulnerability exists in widely \nused and critical systems such as:",
@@ -138,7 +137,7 @@ class PlainContentwithBullets(Scene):
         self.play(FadeIn(text1))
         # self.add(gr1.shift(2.5*LEFT+0*UP+0.5*DOWN))
         self.wait(2)
-        self.play(AnimationGroup(*animationbullets,lag_ratio=0.7))
+        self.play(AnimationGroup(*animationbullets,lag_ratio=0.5))
         self.wait(3)
         self.play(FadeOut(text1),FadeOut(gr1))
 
