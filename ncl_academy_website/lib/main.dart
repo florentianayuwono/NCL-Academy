@@ -89,6 +89,84 @@ class _MyHomePageState extends State<MyHomePage> {
         primary: Theme.of(context).colorScheme.onPrimary,
         padding: const EdgeInsets.all(20));
 
+    final beginnerCard = Container(
+        constraints:
+            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 250),
+        padding: const EdgeInsets.all(15),
+        decoration: const BoxDecoration(
+            color: Colors.green,
+            borderRadius: BorderRadius.all(Radius.circular(10))),
+        width: MediaQuery.of(context).size.width * 0.3,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('Beginner', style: Theme.of(context).textTheme.headline6),
+            ClipOval(
+              child: SizedBox.fromSize(
+                size: const Size.fromRadius(40),
+                child: Image.network('images/pawn.jpg', fit: BoxFit.cover),
+              ),
+            ),
+            const Text(
+              'Suited for: Primary/Secondary students and senior citizens',
+            ),
+            const Text('Click to begin!')
+          ],
+        ));
+
+    final intermediateCard = Container(
+        constraints:
+            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 250),
+        padding: const EdgeInsets.all(15),
+        decoration: const BoxDecoration(
+            color: Colors.green,
+            borderRadius: BorderRadius.all(Radius.circular(10))),
+        width: MediaQuery.of(context).size.width * 0.3,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('Intermediate', style: Theme.of(context).textTheme.headline6),
+            ClipOval(
+              child: SizedBox.fromSize(
+                size: const Size.fromRadius(40),
+                child: Image.network('images/bishop.jpg', fit: BoxFit.cover),
+              ),
+            ),
+            const Text(
+              'Suited for: People with 2-3 years of experience with cybersecurity',
+            ),
+            const Text('Click to begin!')
+          ],
+        ));
+
+    final advancedCard = Container(
+        constraints:
+            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 250),
+        padding: const EdgeInsets.all(15),
+        decoration: const BoxDecoration(
+            color: Colors.green,
+            borderRadius: BorderRadius.all(Radius.circular(10))),
+        width: MediaQuery.of(context).size.width * 0.3,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('Advanced', style: Theme.of(context).textTheme.headline6),
+            ClipOval(
+              child: SizedBox.fromSize(
+                size: const Size.fromRadius(40),
+                child: Image.network('images/knight.jpg', fit: BoxFit.cover),
+              ),
+            ),
+            const Text(
+              'Suited for: Professionals and industry cybersecurity experts',
+            ),
+            const Text('Click to begin!')
+          ],
+        ));
+
     final firstColText = Container(
       width: MediaQuery.of(context).size.width * 0.5,
       padding: const EdgeInsets.all(80),
@@ -118,19 +196,40 @@ class _MyHomePageState extends State<MyHomePage> {
           ]),
     );
 
+    final thirdColText = Container(
+      width: MediaQuery.of(context).size.width * 0.5,
+      padding: const EdgeInsets.all(80),
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('What We Provide',
+                style: Theme.of(context).textTheme.headline4),
+            const Padding(padding: EdgeInsets.all(50)),
+            const Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
+          ]),
+    );
+
     final firstColumn = Container(
-      padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
+      padding: const EdgeInsets.fromLTRB(20, 100, 80, 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           firstColText,
           Padding(
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-            child: Image.network(
-              'images/cyberthreat.jpg',
-              fit: BoxFit.contain,
-              height: 650.0,
-              width: 650.0,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20)),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.3,
+                child:
+                    Image.network('images/cyberthreat.jpg', fit: BoxFit.cover),
+              ),
             ),
           ),
         ],
@@ -138,23 +237,77 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     final secondColumn = Container(
-      padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
+      padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-            child: Image.network(
-              'images/whyncl.jpg',
-              fit: BoxFit.contain,
-              height: 650.0,
-              width: 650.0,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20)),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.3,
+                child: Image.network('images/whyncl.jpg', fit: BoxFit.cover),
+              ),
             ),
           ),
           secondColText,
         ],
       ),
     );
+
+    final thirdColumn = Container(
+      padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          thirdColText,
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20)),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.3,
+                child: Image.network('images/provide.jpg', fit: BoxFit.cover),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+
+    final fourthColumn = Container(
+      width: MediaQuery.of(context).size.width * 0.5,
+      padding: const EdgeInsets.all(80),
+      child: Center(
+          child: Text('Pick a skill level and start learning today!',
+              style: Theme.of(context).textTheme.headline4)),
+    );
+
+    final fifthColumn = Container(
+      padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[beginnerCard, intermediateCard, advancedCard],
+      ),
+    );
+
+    final footer = Container(
+      padding: const EdgeInsets.all(8.0),
+      height: 70,
+      color: const Color.fromARGB(255, 7, 31, 4),
+      alignment: Alignment.center,
+      child: const Text("Footer"),
+    );
+
     const appBarColour = Color.fromARGB(255, 7, 31, 4);
 
     return Scaffold(
@@ -210,13 +363,10 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               firstColumn,
               secondColumn,
-              const Text(
-                'You have pushed the button this many times:',
-              ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              ),
+              thirdColumn,
+              fourthColumn,
+              fifthColumn,
+              footer
             ],
           ),
         ),
