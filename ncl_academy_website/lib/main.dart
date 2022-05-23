@@ -322,7 +322,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // route to homepage
           },
           icon: Image.asset(
-            'images/ncl_logo.jpg',
+            'images/NCL_LOGO.png',
           ),
         ),
         actions: <Widget>[
