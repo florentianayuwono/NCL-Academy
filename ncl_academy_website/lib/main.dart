@@ -62,6 +62,10 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+const difficultyCardColour = Color.fromARGB(255, 23, 23, 23);
+const difficultyCardTextColour = Color.fromARGB(255, 221, 136, 255);
+const difficultyCardHeaderColour = Color.fromARGB(255, 251, 158, 51);
+
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -91,17 +95,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final beginnerCard = Container(
         constraints:
-            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 250),
+            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 280),
         padding: const EdgeInsets.all(15),
         decoration: const BoxDecoration(
-            color: Colors.green,
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+          color: difficultyCardColour,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(255, 30, 213, 233),
+              spreadRadius: 4,
+              blurRadius: 10,
+            ),
+          ],
+        ),
         width: MediaQuery.of(context).size.width * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Beginner', style: Theme.of(context).textTheme.headline6),
+            const Text('Beginner',
+                style:
+                    TextStyle(fontSize: 24, color: difficultyCardHeaderColour)),
             ClipOval(
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(40),
@@ -109,25 +123,36 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const Text(
-              'Suited for: Primary/Secondary students and senior citizens',
-            ),
-            const Text('Click to begin!')
+                'Suited for: Primary/Secondary students and senior citizens',
+                style: TextStyle(color: difficultyCardTextColour)),
+            const Text('Click to begin!',
+                style: TextStyle(color: difficultyCardTextColour))
           ],
         ));
 
     final intermediateCard = Container(
         constraints:
-            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 250),
+            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 280),
         padding: const EdgeInsets.all(15),
         decoration: const BoxDecoration(
-            color: Colors.green,
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+          color: difficultyCardColour,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(255, 30, 213, 233),
+              spreadRadius: 4,
+              blurRadius: 10,
+            ),
+          ],
+        ),
         width: MediaQuery.of(context).size.width * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Intermediate', style: Theme.of(context).textTheme.headline6),
+            const Text('Intermediate',
+                style:
+                    TextStyle(fontSize: 24, color: difficultyCardHeaderColour)),
             ClipOval(
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(40),
@@ -135,25 +160,36 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const Text(
-              'Suited for: People with 2-3 years of experience with cybersecurity',
-            ),
-            const Text('Click to begin!')
+                'Suited for: People with 2-3 years of experience with cybersecurity',
+                style: TextStyle(color: difficultyCardTextColour)),
+            const Text('Click to begin!',
+                style: TextStyle(color: difficultyCardTextColour))
           ],
         ));
 
     final advancedCard = Container(
         constraints:
-            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 250),
+            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 280),
         padding: const EdgeInsets.all(15),
         decoration: const BoxDecoration(
-            color: Colors.green,
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+          color: difficultyCardColour,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromARGB(255, 30, 213, 233),
+              spreadRadius: 4,
+              blurRadius: 10,
+            ),
+          ],
+        ),
         width: MediaQuery.of(context).size.width * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Advanced', style: Theme.of(context).textTheme.headline6),
+            const Text('Advanced',
+                style:
+                    TextStyle(fontSize: 24, color: difficultyCardHeaderColour)),
             ClipOval(
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(40),
@@ -161,9 +197,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const Text(
-              'Suited for: Professionals and industry cybersecurity experts',
-            ),
-            const Text('Click to begin!')
+                'Suited for: Professionals and industry cybersecurity experts',
+                style: TextStyle(color: difficultyCardTextColour)),
+            const Text('Click to begin!',
+                style: TextStyle(color: difficultyCardTextColour))
           ],
         ));
 
@@ -192,7 +229,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Text('Why NCLhub?', style: Theme.of(context).textTheme.headline4),
             const Padding(padding: EdgeInsets.all(50)),
             const Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            )
           ]),
     );
 
@@ -285,12 +323,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     final fourthColumn = Container(
-      width: MediaQuery.of(context).size.width * 0.5,
-      padding: const EdgeInsets.all(80),
-      child: Center(
+        width: MediaQuery.of(context).size.width * 0.5,
+        padding: const EdgeInsets.all(80),
+        child: const Center(
           child: Text('Pick a skill level and start learning today!',
-              style: Theme.of(context).textTheme.headline4)),
-    );
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+        ));
 
     final fifthColumn = Container(
       padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
