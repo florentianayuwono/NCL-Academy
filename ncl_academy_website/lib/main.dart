@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +66,9 @@ class MyHomePage extends StatefulWidget {
 const difficultyCardColour = Color.fromARGB(255, 23, 23, 23);
 const difficultyCardTextColour = Color.fromARGB(255, 221, 136, 255);
 const difficultyCardHeaderColour = Color.fromARGB(255, 251, 158, 51);
+
+const headerFont = TextStyle(fontFamily: "Azonix", fontSize: 40);
+const bodyFont = TextStyle(fontFamily: "Catamaran", fontSize: 20);
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -210,12 +214,15 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Tackle the Latest Cyberthreat',
-                style: Theme.of(context).textTheme.headline4),
-            const Padding(padding: EdgeInsets.all(50)),
-            const Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
+          children: const [
+            Text(
+              'Tackle the Latest Cyberthreat',
+              style: headerFont,
+            ),
+            Padding(padding: EdgeInsets.all(50)),
+            Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                style: bodyFont),
           ]),
     );
 
@@ -225,12 +232,15 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Why NCLhub?', style: Theme.of(context).textTheme.headline4),
-            const Padding(padding: EdgeInsets.all(50)),
-            const Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            )
+          children: const [
+            Text(
+              'Why NCL Academy',
+              style: headerFont,
+            ),
+            Padding(padding: EdgeInsets.all(50)),
+            Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                style: bodyFont)
           ]),
     );
 
@@ -240,12 +250,15 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('What We Provide',
-                style: Theme.of(context).textTheme.headline4),
-            const Padding(padding: EdgeInsets.all(50)),
-            const Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
+          children: const [
+            Text(
+              'What We Provide',
+              style: headerFont,
+            ),
+            Padding(padding: EdgeInsets.all(50)),
+            Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                style: bodyFont),
           ]),
     );
 
