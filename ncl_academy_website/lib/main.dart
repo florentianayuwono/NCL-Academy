@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,26 +8,72 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  Widget titleSection = Container(
+    padding: const EdgeInsets.all(32),
+    child: Row(
+      children: [
+        Expanded(
+          /*1*/
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              /*2*/
+              Container(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: const Text(
+                  'Spring4Shell',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Text(
+                'Beginner Level',
+                style: TextStyle(
+                  color: Colors.grey[500],
+                ),
+              ),
+            ],
+          ),
+        ),
+        /*3*/
+        Icon(
+          Icons.star,
+          color: Colors.red[500],
+        ),
+        const Text('5 min read'),
+      ],
+    ),
+  );
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final wordPair = WordPair.random();
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+      title: 'NCL Academy',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('NCL Academy'),
+        ),
+        body: Column(
+          children: [
+            titleSection,
+            textSection,
+          ],
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
+
+  Widget textSection = const Padding(
+    padding: EdgeInsets.all(32),
+    child: Text(
+      'This is a brief overview of what Spring4Shell is. '
+      'Pretend this is a quite long paragraph. ',
+      softWrap: true,
+    ),
+  );
 }
 
 class MyHomePage extends StatefulWidget {
@@ -110,6 +157,39 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class RandomWords extends StatefulWidget {
+  const RandomWords({Key? key}) : super(key: key);
+
+  @override
+  State<RandomWords> createState() => _RandomWordsState();
+}
+
+class _RandomWordsState extends State<RandomWords> {
+  final _suggestions = <WordPair>[];
+  final _biggerFont = const TextStyle(fontSize: 18);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      padding: const EdgeInsets.all(16.0),
+      itemBuilder: /*1*/ (context, i) {
+        if (i.isOdd) return const Divider(); /*2*/
+
+        final index = i ~/ 2; /*3*/
+        if (index >= _suggestions.length) {
+          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+        }
+        return ListTile(
+          title: Text(
+            _suggestions[index].asPascalCase,
+            style: _biggerFont,
+          ),
+        );
+      },
     );
   }
 }
