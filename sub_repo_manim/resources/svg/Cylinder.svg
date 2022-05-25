@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="81.400887mm"
+   height="128.80292mm"
+   viewBox="0 0 81.400887 128.80292"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="Cylinder.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:zoom="1.0305625"
+     inkscape:cx="235.79356"
+     inkscape:cy="169.81018"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-62.777476,-36.452189)">
+    <path
+       id="path846-8"
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#020000;stroke-width:7.12955;stroke-linecap:round;stroke-linejoin:round"
+       transform="scale(0.26458333)"
+       d="m 240.83398,198.98047 v 360.90625 h 0.33985 a 150.18694,58.330396 0 0 0 -0.23633,2.80469 150.18694,58.330396 0 0 0 150.1875,58.33007 150.18694,58.330396 0 0 0 150.1875,-58.33007 150.18694,58.330396 0 0 0 -0.23633,-2.80469 h 0.28516 V 198.98047 h -0.14649 a 150.24992,58.329676 0 0 1 0.13868,0.68555 150.24992,58.329676 0 0 1 -150.25,58.33007 150.24992,58.329676 0 0 1 -150.25,-58.33007 150.24992,58.329676 0 0 1 0.13867,-0.68555 z m 300.51766,0.68604 A 150.24992,58.329676 0 0 1 391.1017,257.99618 150.24992,58.329676 0 0 1 240.8518,199.66651 150.24992,58.329676 0 0 1 391.1017,141.33683 150.24992,58.329676 0 0 1 541.35164,199.66651 Z" />
+  </g>
+</svg>
