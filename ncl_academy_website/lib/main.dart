@@ -2,9 +2,25 @@ import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'screens/page1.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(GetMaterialApp(
+    // To implement: handle unknown route by navigating to unknown route page
+    //unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoutePage()),
+
+    initialRoute: '/',
+    getPages: [
+      GetPage(name: '/', page: () => const MyApp()),
+      GetPage(name: '/first', page: () => const WelcomeScreen()),
+      // GetPage(
+      //   name: '/third',
+      //   page: () => Third(),
+      //   transition: Transition.zoom
+      // ),
+    ],
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -31,19 +47,6 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const MyHomePage(),
       },
-    );
-  }
-}
-
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
-      ),
     );
   }
 }
@@ -81,10 +84,10 @@ class SecondTrianglePainter extends CustomPainter {
       ..strokeWidth = 3;
 
     Path path0 = Path();
-    path0.moveTo(size.width * 0.1206833, size.height * 0.5195667);
-    path0.lineTo(size.width * 0.6588167, size.height * 0.8468333);
-    path0.lineTo(size.width * 0.8702167, size.height * 0.0813667);
-    path0.lineTo(size.width * 0.1206833, size.height * 0.5195667);
+    path0.moveTo(size.width * 0.1863000, size.height * 0.6240667);
+    path0.lineTo(size.width * 0.7244333, size.height * 0.9513333);
+    path0.lineTo(size.width * 0.9358333, size.height * 0.1858667);
+    path0.lineTo(size.width * 0.1863000, size.height * 0.6240667);
     path0.close();
 
     canvas.drawPath(path0, paint0);
@@ -203,6 +206,7 @@ const headerStyle = TextStyle(
   ],
 );
 const bodyFont = TextStyle(fontFamily: "Catamaran", fontSize: 20);
+const provideFont = TextStyle(fontFamily: "Catamaran", fontSize: 16);
 
 const cardTitleStyle = TextStyle(
     fontFamily: "Montserrat",
@@ -360,7 +364,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Padding(padding: EdgeInsets.all(20)),
             Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                'Explore cyberthreats and learn to defend yourself against them with NCLHub',
                 style: bodyFont),
           ]),
     );
@@ -370,34 +374,98 @@ class _MyHomePageState extends State<MyHomePage> {
       padding: const EdgeInsets.all(80),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: const [
             Text(
-              'Why NCL Academy',
+              'Why NCLHub?',
               style: headerStyle,
             ),
-            Padding(padding: EdgeInsets.all(20)),
+            Padding(padding: EdgeInsets.all(10)),
             Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                style: bodyFont)
+                'Personalised learning to your preferred pace, skill level, and topic interests',
+                style: bodyFont,
+                textAlign: TextAlign.right),
+            Padding(padding: EdgeInsets.all(10)),
+            Text(
+              'Latest cyberthreat info from leading experts in Singapore',
+              style: bodyFont,
+              textAlign: TextAlign.right,
+            ),
+            Padding(padding: EdgeInsets.all(10)),
+            Text(
+              'Hands-on simulations specific to each vulnerability',
+              style: bodyFont,
+              textAlign: TextAlign.right,
+            )
           ]),
     );
 
+    final provideFirstCard = Container(
+        constraints:
+            const BoxConstraints(minWidth: 150, maxWidth: 150, minHeight: 200),
+        padding: const EdgeInsets.all(15),
+        width: MediaQuery.of(context).size.width * 0.3,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              'images/homepage_icons/video.svg',
+            ),
+            const Padding(padding: EdgeInsets.only(top: 20)),
+            const Text('Comprehensive step-by-step videos', style: provideFont)
+          ],
+        ));
+    final provideSecondCard = Container(
+        constraints:
+            const BoxConstraints(minWidth: 150, maxWidth: 150, minHeight: 200),
+        padding: const EdgeInsets.all(15),
+        width: MediaQuery.of(context).size.width * 0.3,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset('images/homepage_icons/video.svg'),
+            const Padding(padding: EdgeInsets.only(top: 20)),
+            const Text('Information on the latest cyberthreats from experts',
+                style: provideFont)
+          ],
+        ));
+    final provideThirdCard = Container(
+        constraints:
+            const BoxConstraints(minWidth: 150, maxWidth: 150, minHeight: 200),
+        padding: const EdgeInsets.all(15),
+        width: MediaQuery.of(context).size.width * 0.3,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset('images/homepage_icons/video.svg'),
+            const Padding(padding: EdgeInsets.only(top: 20)),
+            const Text('Controlled testbeds to simulate attacks in real-time',
+                style: provideFont)
+          ],
+        ));
     final thirdColText = Container(
       width: MediaQuery.of(context).size.width * 0.5,
       padding: const EdgeInsets.all(80),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text(
               'What We Provide',
               style: headerStyle,
             ),
-            Padding(padding: EdgeInsets.all(20)),
-            Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                style: bodyFont),
+            const Padding(padding: EdgeInsets.all(20)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                provideFirstCard,
+                provideSecondCard,
+                provideThirdCard
+              ],
+            ),
           ]),
     );
 
@@ -429,6 +497,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
     );
 
+    // Code for main blocks on homepage
     final firstColumn = Container(
       padding: const EdgeInsets.fromLTRB(20, 100, 80, 50),
       color: const Color.fromARGB(255, 33, 109, 110),
@@ -554,6 +623,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: IconButton(
           iconSize: 70.0,
           onPressed: () {
+            Get.toNamed("/");
             // route to homepage
           },
           icon: Image.asset(
@@ -570,7 +640,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               TextButton(
                 style: style,
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed("/first");
+                },
                 child: const Text('Help'),
               ),
               const SizedBox(
