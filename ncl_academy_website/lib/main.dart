@@ -47,6 +47,24 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
+class ShapesPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint();
+    // set the color property of the paint
+    paint.color = Colors.deepOrange;
+
+    // center of the canvas is (x,y) => (width/2, height/2)
+    var center = Offset(size.width / 2, size.height / 2);
+
+    // draw the circle on centre of canvas having radius 75.0
+    canvas.drawCircle(center, 75.0, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
+}
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage();
 
@@ -63,12 +81,49 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-const difficultyCardColour = Color.fromARGB(255, 23, 23, 23);
+const difficultyCardColour = Color.fromARGB(255, 45, 45, 45);
 const difficultyCardTextColour = Color.fromARGB(255, 221, 136, 255);
-const difficultyCardHeaderColour = Color.fromARGB(255, 251, 158, 51);
+const difficultyCardHeaderColour = Color.fromARGB(255, 138, 227, 255);
 
-const headerFont = TextStyle(fontFamily: "Azonix", fontSize: 40);
+const firstHeaderStyle = TextStyle(
+  fontFamily: "Azonix",
+  fontSize: 40,
+  color: Color.fromARGB(255, 156, 236, 81),
+  shadows: <Shadow>[
+    Shadow(
+      offset: Offset(4.0, 2.0),
+      blurRadius: 3.0,
+      color: Color.fromARGB(255, 42, 42, 42),
+    ),
+  ],
+);
+const headerStyle = TextStyle(
+  fontFamily: "Azonix",
+  fontSize: 40,
+  color: Color.fromARGB(255, 245, 200, 82),
+  shadows: <Shadow>[
+    Shadow(
+      offset: Offset(4.0, 2.0),
+      blurRadius: 5.0,
+      color: Color.fromARGB(255, 117, 117, 117),
+    ),
+  ],
+);
 const bodyFont = TextStyle(fontFamily: "Catamaran", fontSize: 20);
+
+const cardTitleStyle = TextStyle(
+    fontFamily: "Montserrat",
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: difficultyCardHeaderColour);
+
+const cardBodyStyle = TextStyle(
+    fontFamily: "Catamaran", fontSize: 16, color: difficultyCardTextColour);
+const cardLinkStyle = TextStyle(
+    fontFamily: "Catamaran-SemiBold",
+    fontSize: 16,
+    decoration: TextDecoration.underline,
+    color: difficultyCardTextColour);
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -99,17 +154,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final beginnerCard = Container(
         constraints:
-            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 280),
+            const BoxConstraints(minWidth: 150, maxWidth: 220, minHeight: 280),
         padding: const EdgeInsets.all(15),
         decoration: const BoxDecoration(
           color: difficultyCardColour,
           borderRadius: BorderRadius.all(Radius.circular(10)),
           boxShadow: [
             BoxShadow(
-              color: Color.fromARGB(255, 30, 213, 233),
-              spreadRadius: 4,
-              blurRadius: 10,
-            ),
+                color: Color.fromARGB(255, 133, 132, 132),
+                spreadRadius: 1,
+                blurRadius: 3,
+                offset: Offset(6, 6)),
           ],
         ),
         width: MediaQuery.of(context).size.width * 0.3,
@@ -117,9 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('Beginner',
-                style:
-                    TextStyle(fontSize: 24, color: difficultyCardHeaderColour)),
+            const Text('Beginner', style: cardTitleStyle),
             ClipOval(
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(40),
@@ -128,25 +181,24 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const Text(
                 'Suited for: Primary/Secondary students and senior citizens',
-                style: TextStyle(color: difficultyCardTextColour)),
-            const Text('Click to begin!',
-                style: TextStyle(color: difficultyCardTextColour))
+                style: cardBodyStyle),
+            const Text('Click to begin!', style: cardLinkStyle)
           ],
         ));
 
     final intermediateCard = Container(
         constraints:
-            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 280),
+            const BoxConstraints(minWidth: 150, maxWidth: 220, minHeight: 280),
         padding: const EdgeInsets.all(15),
         decoration: const BoxDecoration(
           color: difficultyCardColour,
           borderRadius: BorderRadius.all(Radius.circular(10)),
           boxShadow: [
             BoxShadow(
-              color: Color.fromARGB(255, 30, 213, 233),
-              spreadRadius: 4,
-              blurRadius: 10,
-            ),
+                color: Color.fromARGB(255, 133, 132, 132),
+                spreadRadius: 1,
+                blurRadius: 3,
+                offset: Offset(6, 6)),
           ],
         ),
         width: MediaQuery.of(context).size.width * 0.3,
@@ -154,9 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('Intermediate',
-                style:
-                    TextStyle(fontSize: 24, color: difficultyCardHeaderColour)),
+            const Text('Intermediate', style: cardTitleStyle),
             ClipOval(
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(40),
@@ -165,25 +215,24 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const Text(
                 'Suited for: People with 2-3 years of experience with cybersecurity',
-                style: TextStyle(color: difficultyCardTextColour)),
-            const Text('Click to begin!',
-                style: TextStyle(color: difficultyCardTextColour))
+                style: cardBodyStyle),
+            const Text('Click to begin!', style: cardLinkStyle)
           ],
         ));
 
     final advancedCard = Container(
         constraints:
-            const BoxConstraints(minWidth: 100, maxWidth: 200, minHeight: 280),
+            const BoxConstraints(minWidth: 150, maxWidth: 220, minHeight: 280),
         padding: const EdgeInsets.all(15),
         decoration: const BoxDecoration(
           color: difficultyCardColour,
           borderRadius: BorderRadius.all(Radius.circular(10)),
           boxShadow: [
             BoxShadow(
-              color: Color.fromARGB(255, 30, 213, 233),
-              spreadRadius: 4,
-              blurRadius: 10,
-            ),
+                color: Color.fromARGB(255, 133, 132, 132),
+                spreadRadius: 1,
+                blurRadius: 3,
+                offset: Offset(6, 6)),
           ],
         ),
         width: MediaQuery.of(context).size.width * 0.3,
@@ -191,9 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('Advanced',
-                style:
-                    TextStyle(fontSize: 24, color: difficultyCardHeaderColour)),
+            const Text('Advanced', style: cardTitleStyle),
             ClipOval(
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(40),
@@ -202,9 +249,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const Text(
                 'Suited for: Professionals and industry cybersecurity experts',
-                style: TextStyle(color: difficultyCardTextColour)),
-            const Text('Click to begin!',
-                style: TextStyle(color: difficultyCardTextColour))
+                style: cardBodyStyle),
+            const Text('Click to begin!', style: cardLinkStyle)
           ],
         ));
 
@@ -217,7 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             Text(
               'Tackle the Latest Cyberthreat',
-              style: headerFont,
+              style: firstHeaderStyle,
             ),
             Padding(padding: EdgeInsets.all(50)),
             Text(
@@ -235,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             Text(
               'Why NCL Academy',
-              style: headerFont,
+              style: headerStyle,
             ),
             Padding(padding: EdgeInsets.all(50)),
             Text(
@@ -253,7 +299,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             Text(
               'What We Provide',
-              style: headerFont,
+              style: headerStyle,
             ),
             Padding(padding: EdgeInsets.all(50)),
             Text(
@@ -264,6 +310,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final firstColumn = Container(
       padding: const EdgeInsets.fromLTRB(20, 100, 80, 50),
+      color: const Color.fromARGB(255, 33, 109, 110),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -340,7 +387,7 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(80),
         child: const Center(
           child: Text('Pick a skill level and start learning today!',
-              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+              style: headerStyle),
         ));
 
     final fifthColumn = Container(
@@ -356,7 +403,7 @@ class _MyHomePageState extends State<MyHomePage> {
       height: 70,
       color: const Color.fromARGB(255, 7, 31, 4),
       alignment: Alignment.center,
-      child: const Text("Footer"),
+      child: const Text("Sitemap"),
     );
 
     const appBarColour = Color.fromARGB(255, 7, 31, 4);
@@ -365,6 +412,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
+        toolbarHeight: 80.0,
         backgroundColor: appBarColour,
         titleSpacing: 100.0,
         title: IconButton(
