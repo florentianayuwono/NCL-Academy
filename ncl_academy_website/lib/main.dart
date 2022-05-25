@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,22 +48,114 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
-class ShapesPainter extends CustomPainter {
+class FirstTrianglePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint();
-    // set the color property of the paint
-    paint.color = Colors.deepOrange;
+    Paint paint0 = Paint()
+      ..color = const Color.fromARGB(255, 49, 162, 164)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 3;
 
-    // center of the canvas is (x,y) => (width/2, height/2)
-    var center = Offset(size.width / 2, size.height / 2);
+    Path path0 = Path();
+    path0.moveTo(size.width * 0.1834667, size.height * 0.8906333);
+    path0.lineTo(size.width * 0.5713000, size.height * 0.1097667);
+    path0.lineTo(size.width * 0.8712500, size.height * 0.5857000);
+    path0.lineTo(size.width * 0.1834667, size.height * 0.8906333);
+    path0.close();
 
-    // draw the circle on centre of canvas having radius 75.0
-    canvas.drawCircle(center, 75.0, paint);
+    canvas.drawPath(path0, paint0);
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
+class SecondTrianglePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint0 = Paint()
+      ..color = const Color.fromARGB(255, 33, 109, 110)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 3;
+
+    Path path0 = Path();
+    path0.moveTo(size.width * 0.1206833, size.height * 0.5195667);
+    path0.lineTo(size.width * 0.6588167, size.height * 0.8468333);
+    path0.lineTo(size.width * 0.8702167, size.height * 0.0813667);
+    path0.lineTo(size.width * 0.1206833, size.height * 0.5195667);
+    path0.close();
+
+    canvas.drawPath(path0, paint0);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
+class ThirdTrianglePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint0 = Paint()
+      ..color = const Color.fromARGB(255, 33, 109, 110)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 3;
+
+    Path path0 = Path();
+    path0.moveTo(size.width * 0.1834667, size.height * 0.8906333);
+    path0.lineTo(size.width * 0.4303667, size.height * 0.1344667);
+    path0.lineTo(size.width * 0.8807500, size.height * 0.4962000);
+    path0.lineTo(size.width * 0.1834667, size.height * 0.8906333);
+    path0.close();
+
+    canvas.drawPath(path0, paint0);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
+class FourthTrianglePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint0 = Paint()
+      ..color = const Color.fromARGB(255, 33, 109, 110)
+      ..style = PaintingStyle.fill
+      ..strokeWidth = 1;
+
+    Path path0 = Path();
+    path0.moveTo(size.width * 0.6146167, size.height * 0.1094667);
+    path0.lineTo(size.width * 0.3579333, size.height * 0.7189667);
+    path0.lineTo(size.width * 0.6811250, size.height * 0.8627667);
+    path0.lineTo(size.width * 0.6146167, size.height * 0.1094667);
+    path0.close();
+
+    canvas.drawPath(path0, paint0);
+
+    Paint paint1 = Paint()
+      ..color = const Color.fromARGB(255, 33, 150, 243)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 3;
+
+    Path path1 = Path();
+    path1.moveTo(size.width * 0.5607333, size.height * 0.0648667);
+    path1.lineTo(size.width * 0.2890667, size.height * 0.7298667);
+    path1.lineTo(size.width * 0.6208750, size.height * 0.8744333);
+    path1.lineTo(size.width * 0.5607333, size.height * 0.0648667);
+    path1.close();
+
+    canvas.drawPath(path1, paint1);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
 }
 
 class MyHomePage extends StatefulWidget {
@@ -85,7 +178,7 @@ const difficultyCardColour = Color.fromARGB(255, 45, 45, 45);
 const difficultyCardTextColour = Color.fromARGB(255, 221, 136, 255);
 const difficultyCardHeaderColour = Color.fromARGB(255, 138, 227, 255);
 
-const firstHeaderStyle = TextStyle(
+const fourthHeaderStyle = TextStyle(
   fontFamily: "Azonix",
   fontSize: 40,
   color: Color.fromARGB(255, 156, 236, 81),
@@ -93,7 +186,7 @@ const firstHeaderStyle = TextStyle(
     Shadow(
       offset: Offset(4.0, 2.0),
       blurRadius: 3.0,
-      color: Color.fromARGB(255, 42, 42, 42),
+      color: Color.fromARGB(255, 188, 188, 188),
     ),
   ],
 );
@@ -105,7 +198,7 @@ const headerStyle = TextStyle(
     Shadow(
       offset: Offset(4.0, 2.0),
       blurRadius: 5.0,
-      color: Color.fromARGB(255, 117, 117, 117),
+      color: Color.fromARGB(255, 82, 82, 82),
     ),
   ],
 );
@@ -263,9 +356,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             Text(
               'Tackle the Latest Cyberthreat',
-              style: firstHeaderStyle,
+              style: headerStyle,
             ),
-            Padding(padding: EdgeInsets.all(50)),
+            Padding(padding: EdgeInsets.all(20)),
             Text(
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 style: bodyFont),
@@ -283,7 +376,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Why NCL Academy',
               style: headerStyle,
             ),
-            Padding(padding: EdgeInsets.all(50)),
+            Padding(padding: EdgeInsets.all(20)),
             Text(
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 style: bodyFont)
@@ -301,11 +394,39 @@ class _MyHomePageState extends State<MyHomePage> {
               'What We Provide',
               style: headerStyle,
             ),
-            Padding(padding: EdgeInsets.all(50)),
+            Padding(padding: EdgeInsets.all(20)),
             Text(
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 style: bodyFont),
           ]),
+    );
+
+    final firstColLeft = Stack(
+      children: <Widget>[
+        CustomPaint(
+          size: const Size(600, 300),
+          painter: FirstTrianglePainter(),
+        ),
+        firstColText,
+      ],
+    );
+    final secondColLeft = Stack(
+      children: <Widget>[
+        CustomPaint(
+          size: const Size(600, 300),
+          painter: SecondTrianglePainter(),
+        ),
+        secondColText,
+      ],
+    );
+    final thirdColLeft = Stack(
+      children: <Widget>[
+        CustomPaint(
+          size: const Size(600, 300),
+          painter: ThirdTrianglePainter(),
+        ),
+        thirdColText,
+      ],
     );
 
     final firstColumn = Container(
@@ -314,7 +435,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          firstColText,
+          firstColLeft,
           Padding(
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
             child: ClipRRect(
@@ -353,7 +474,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-          secondColText,
+          secondColLeft,
         ],
       ),
     );
@@ -363,7 +484,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          thirdColText,
+          thirdColLeft,
           Padding(
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
             child: ClipRRect(
@@ -382,13 +503,28 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
-    final fourthColumn = Container(
-        width: MediaQuery.of(context).size.width * 0.5,
-        padding: const EdgeInsets.all(80),
-        child: const Center(
-          child: Text('Pick a skill level and start learning today!',
-              style: headerStyle),
-        ));
+    final fourthColumn = Stack(children: <Widget>[
+      Align(
+        alignment: Alignment.center,
+        child: CustomPaint(
+          size: const Size(1200, 300),
+          painter: FourthTrianglePainter(),
+        ),
+      ),
+      Align(
+        alignment: Alignment.center,
+        child: Container(
+            width: MediaQuery.of(context).size.width * 0.5,
+            padding: const EdgeInsets.fromLTRB(80, 80, 80, 80),
+            child: const Center(
+              child: Text(
+                'Pick a skill level and start learning today!',
+                style: fourthHeaderStyle,
+                textAlign: TextAlign.center,
+              ),
+            )),
+      )
+    ]);
 
     final fifthColumn = Container(
       padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
