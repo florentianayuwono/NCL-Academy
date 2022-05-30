@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-
+        scaffoldBackgroundColor: const Color.fromARGB(255, 229, 229, 229),
         primarySwatch: Colors.blue,
       ),
       routes: {
@@ -178,7 +178,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 const difficultyCardColour = Color.fromARGB(255, 45, 45, 45);
-const difficultyCardTextColour = Color.fromARGB(255, 221, 136, 255);
+const difficultyCardTextColour = Color.fromARGB(255, 210, 233, 227);
 const difficultyCardHeaderColour = Color.fromARGB(255, 138, 227, 255);
 
 const fourthHeaderStyle = TextStyle(
@@ -205,8 +205,87 @@ const headerStyle = TextStyle(
     ),
   ],
 );
-const bodyFont = TextStyle(fontFamily: "Catamaran", fontSize: 20);
+const bodyFont =
+    TextStyle(fontFamily: "Catamaran", fontSize: 20, color: Colors.white);
 const provideFont = TextStyle(fontFamily: "Catamaran", fontSize: 16);
+
+final outlineText1 = Stack(
+  children: <Widget>[
+    // Stroked text as border.
+    Text(
+      'Personalised learning to your preferred pace, skill level, and topic interests',
+      style: TextStyle(
+        fontSize: 18,
+        foreground: Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3
+          ..color = const Color.fromARGB(255, 1, 85, 87),
+      ),
+      textAlign: TextAlign.right,
+    ),
+    // Solid text as fill.
+    const Text(
+      'Personalised learning to your preferred pace, skill level, and topic interests',
+      style: TextStyle(
+        fontSize: 18,
+        color: Color.fromARGB(255, 210, 233, 227),
+      ),
+      textAlign: TextAlign.right,
+    ),
+  ],
+);
+
+final outlineText2 = Stack(
+  children: <Widget>[
+    // Stroked text as border.
+    Text(
+      'Latest cyberthreat info from leading experts in Singapore',
+      style: TextStyle(
+        fontSize: 18,
+        foreground: Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3
+          ..color = const Color.fromARGB(255, 1, 85, 87),
+      ),
+      textAlign: TextAlign.right,
+    ),
+    // Solid text as fill.
+    const Text(
+      'Latest cyberthreat info from leading experts in Singapore',
+      style: TextStyle(
+        fontSize: 18,
+        color: Color.fromARGB(255, 210, 233, 227),
+      ),
+      textAlign: TextAlign.right,
+    ),
+  ],
+);
+
+final outlineText3 = Stack(
+  children: <Widget>[
+    // Stroked text as border.
+    Text(
+      'Hands-on simulations specific to each vulnerability',
+      style: TextStyle(
+        fontSize: 18,
+        foreground: Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3
+          ..color = const Color.fromARGB(255, 1, 85, 87),
+      ),
+      textAlign: TextAlign.right,
+    ),
+    // Solid text as fill.
+    const Text(
+      'Hands-on simulations specific to each vulnerability',
+      style: TextStyle(
+        fontSize: 18,
+        color: Color.fromARGB(255, 210, 233, 227),
+      ),
+      textAlign: TextAlign.right,
+    ),
+  ],
+);
 
 const cardTitleStyle = TextStyle(
     fontFamily: "Montserrat",
@@ -375,34 +454,22 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.end,
-          children: const [
-            Text(
+          children: [
+            const Text(
               'Why NCLHub?',
               style: headerStyle,
             ),
-            Padding(padding: EdgeInsets.all(10)),
-            Text(
-                'Personalised learning to your preferred pace, skill level, and topic interests',
-                style: bodyFont,
-                textAlign: TextAlign.right),
-            Padding(padding: EdgeInsets.all(10)),
-            Text(
-              'Latest cyberthreat info from leading experts in Singapore',
-              style: bodyFont,
-              textAlign: TextAlign.right,
-            ),
-            Padding(padding: EdgeInsets.all(10)),
-            Text(
-              'Hands-on simulations specific to each vulnerability',
-              style: bodyFont,
-              textAlign: TextAlign.right,
-            )
+            const Padding(padding: EdgeInsets.all(10)),
+            outlineText1,
+            const Padding(padding: EdgeInsets.all(10)),
+            outlineText2,
+            const Padding(padding: EdgeInsets.all(10)),
+            outlineText3
           ]),
     );
 
     final provideFirstCard = Container(
-        constraints:
-            const BoxConstraints(minWidth: 150, maxWidth: 150, minHeight: 200),
+        constraints: const BoxConstraints(maxWidth: 140, minHeight: 200),
         padding: const EdgeInsets.all(15),
         width: MediaQuery.of(context).size.width * 0.3,
         child: Column(
@@ -411,46 +478,127 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             SvgPicture.asset(
               'images/homepage_icons/video.svg',
+              height: 40,
+              width: 40,
+              fit: BoxFit.fitWidth,
             ),
             const Padding(padding: EdgeInsets.only(top: 20)),
-            const Text('Comprehensive step-by-step videos', style: provideFont)
+            Stack(
+              children: <Widget>[
+                // Stroked text as border.
+                Text(
+                  'Comprehensive step-by-step videos',
+                  style: TextStyle(
+                    fontSize: 14,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 3
+                      ..color = const Color.fromARGB(255, 1, 85, 87),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                // Solid text as fill.
+                const Text(
+                  'Comprehensive step-by-step videos',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Color.fromARGB(255, 210, 233, 227),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            )
           ],
         ));
     final provideSecondCard = Container(
-        constraints:
-            const BoxConstraints(minWidth: 150, maxWidth: 150, minHeight: 200),
+        constraints: const BoxConstraints(maxWidth: 140, minHeight: 200),
         padding: const EdgeInsets.all(15),
         width: MediaQuery.of(context).size.width * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset('images/homepage_icons/video.svg'),
+            SvgPicture.asset(
+              'images/homepage_icons/school.svg',
+              height: 40,
+              width: 40,
+              fit: BoxFit.fitWidth,
+            ),
             const Padding(padding: EdgeInsets.only(top: 20)),
-            const Text('Information on the latest cyberthreats from experts',
-                style: provideFont)
+            Stack(
+              children: <Widget>[
+                // Stroked text as border.
+                Text(
+                  'Information on the latest cyberthreats from experts',
+                  style: TextStyle(
+                    fontSize: 14,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 3
+                      ..color = const Color.fromARGB(255, 1, 85, 87),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                // Solid text as fill.
+                const Text(
+                  'Information on the latest cyberthreats from experts',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Color.fromARGB(255, 210, 233, 227),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            )
           ],
         ));
     final provideThirdCard = Container(
-        constraints:
-            const BoxConstraints(minWidth: 150, maxWidth: 150, minHeight: 200),
+        constraints: const BoxConstraints(maxWidth: 140, minHeight: 200),
         padding: const EdgeInsets.all(15),
         width: MediaQuery.of(context).size.width * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset('images/homepage_icons/video.svg'),
+            SvgPicture.asset(
+              'images/homepage_icons/virus.svg',
+              height: 40,
+              width: 40,
+              fit: BoxFit.fitWidth,
+            ),
             const Padding(padding: EdgeInsets.only(top: 20)),
-            const Text('Controlled testbeds to simulate attacks in real-time',
-                style: provideFont)
+            Stack(
+              children: <Widget>[
+                // Stroked text as border.
+                Text(
+                  'Controlled testbeds to simulate attacks in real-time',
+                  style: TextStyle(
+                    fontSize: 14,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 3
+                      ..color = const Color.fromARGB(255, 1, 85, 87),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                // Solid text as fill.
+                const Text(
+                  'Controlled testbeds to simulate attacks in real-time',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Color.fromARGB(255, 210, 233, 227),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            )
           ],
         ));
     final thirdColText = Container(
       width: MediaQuery.of(context).size.width * 0.5,
-      padding: const EdgeInsets.all(80),
+      padding: const EdgeInsets.all(50),
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
@@ -549,7 +697,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     final thirdColumn = Container(
-      padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
+      padding: const EdgeInsets.fromLTRB(00, 30, 20, 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -584,7 +732,7 @@ class _MyHomePageState extends State<MyHomePage> {
         alignment: Alignment.center,
         child: Container(
             width: MediaQuery.of(context).size.width * 0.5,
-            padding: const EdgeInsets.fromLTRB(80, 80, 80, 80),
+            padding: const EdgeInsets.fromLTRB(80, 80, 80, 200),
             child: const Center(
               child: Text(
                 'Pick a skill level and start learning today!',
