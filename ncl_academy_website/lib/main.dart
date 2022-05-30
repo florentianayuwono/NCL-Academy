@@ -469,7 +469,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     final provideFirstCard = Container(
-        constraints: const BoxConstraints(maxWidth: 140, minHeight: 200),
+        constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
         padding: const EdgeInsets.all(15),
         width: MediaQuery.of(context).size.width * 0.3,
         child: Column(
@@ -511,7 +511,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ));
     final provideSecondCard = Container(
-        constraints: const BoxConstraints(maxWidth: 140, minHeight: 200),
+        constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
         padding: const EdgeInsets.all(15),
         width: MediaQuery.of(context).size.width * 0.3,
         child: Column(
@@ -553,7 +553,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ));
     final provideThirdCard = Container(
-        constraints: const BoxConstraints(maxWidth: 140, minHeight: 200),
+        constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
         padding: const EdgeInsets.all(15),
         width: MediaQuery.of(context).size.width * 0.3,
         child: Column(
@@ -657,10 +657,10 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
             child: ClipRRect(
               borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20)),
+                  topLeft: Radius.circular(100),
+                  topRight: Radius.circular(100),
+                  bottomRight: Radius.circular(100),
+                  bottomLeft: Radius.circular(100)),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
                 child:
@@ -681,10 +681,10 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
             child: ClipRRect(
               borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20)),
+                  topLeft: Radius.circular(100),
+                  topRight: Radius.circular(100),
+                  bottomRight: Radius.circular(100),
+                  bottomLeft: Radius.circular(100)),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
                 child: Image.network('images/whyncl.jpg', fit: BoxFit.cover),
@@ -706,10 +706,10 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
             child: ClipRRect(
               borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20)),
+                  topLeft: Radius.circular(100),
+                  topRight: Radius.circular(100),
+                  bottomRight: Radius.circular(100),
+                  bottomLeft: Radius.circular(100)),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
                 child: Image.network('images/provide.jpg', fit: BoxFit.cover),
