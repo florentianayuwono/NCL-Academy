@@ -126,15 +126,30 @@ final termsAndConditions = Column(
 
 var phoneDetails = RichText(
   text: const TextSpan(style: questionBodyStyle, children: <TextSpan>[
-    TextSpan(text: 'Phone: ', style: TextStyle(fontWeight: FontWeight.bold)),
-    TextSpan(text: '+65 6601 1056')
+    TextSpan(
+        text: 'Phone: ',
+        style: TextStyle(fontWeight: FontWeight.bold, height: 2)),
+    TextSpan(text: '+65 6601 1056', style: TextStyle(height: 2))
   ]),
 );
 
 var addressDetails = RichText(
   text: const TextSpan(style: questionBodyStyle, children: <TextSpan>[
-    TextSpan(text: 'Address: ', style: TextStyle(fontWeight: FontWeight.bold)),
-    TextSpan(text: 'Innovation 4.0, 3 Research Link, NUS, Singapore 117602')
+    TextSpan(
+        text: 'Address: ',
+        style: TextStyle(fontWeight: FontWeight.bold, height: 2)),
+    TextSpan(
+        text: 'Innovation 4.0, 3 Research Link, NUS, Singapore 117602',
+        style: TextStyle(height: 2))
+  ]),
+);
+
+var emailDetails = RichText(
+  text: const TextSpan(style: questionBodyStyle, children: <TextSpan>[
+    TextSpan(
+        text: 'Email: ',
+        style: TextStyle(fontWeight: FontWeight.bold, height: 2)),
+    TextSpan(text: 'support@ncl.sg', style: TextStyle(height: 2))
   ]),
 );
 
@@ -149,6 +164,10 @@ final contactColumn = Container(
     Align(
       alignment: Alignment.centerLeft,
       child: addressDetails,
+    ),
+    Align(
+      alignment: Alignment.centerLeft,
+      child: emailDetails,
     ),
   ]),
 );
