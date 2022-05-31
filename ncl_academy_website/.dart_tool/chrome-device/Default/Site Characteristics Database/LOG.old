@@ -1,13 +1,20 @@
-2022/05/31-11:09:56.175 2074 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.aacc0bad\flutter_tools_chrome_device.353761e1\Default\Site Characteristics Database/MANIFEST-000001
-2022/05/31-11:09:56.176 5fa4 Compacting 8@0 + 0@1 files
-2022/05/31-11:09:56.178 5fa4 Generated table #20@0: 12 keys, 801 bytes
-2022/05/31-11:09:56.178 5fa4 Compacted 8@0 + 0@1 files => 801 bytes
-2022/05/31-11:09:56.179 5fa4 compacted to: files[ 0 1 0 0 0 0 0 ]
-2022/05/31-11:09:56.180 5fa4 Delete type=2 #4
-2022/05/31-11:09:56.180 5fa4 Delete type=2 #6
-2022/05/31-11:09:56.180 5fa4 Delete type=2 #11
-2022/05/31-11:09:56.180 5fa4 Delete type=2 #13
-2022/05/31-11:09:56.180 5fa4 Delete type=2 #14
-2022/05/31-11:09:56.180 5fa4 Delete type=2 #15
-2022/05/31-11:09:56.180 5fa4 Delete type=2 #16
-2022/05/31-11:09:56.180 5fa4 Delete type=2 #17
+2022/05/31-11:40:04.042 908 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.afc4ad0\flutter_tools_chrome_device.4bd07518\Default\Site Characteristics Database/MANIFEST-000001
+2022/05/31-11:40:04.043 908 Recovering log #3
+2022/05/31-11:40:04.043 908 Level-0 table #22: started
+2022/05/31-11:40:04.044 908 Level-0 table #22: 1404 bytes OK
+2022/05/31-11:40:04.045 908 Recovering log #6
+2022/05/31-11:40:04.045 908 Level-0 table #23: started
+2022/05/31-11:40:04.046 908 Level-0 table #23: 172 bytes OK
+2022/05/31-11:40:04.046 908 Recovering log #10
+2022/05/31-11:40:04.046 908 Level-0 table #24: started
+2022/05/31-11:40:04.048 908 Level-0 table #24: 295 bytes OK
+2022/05/31-11:40:04.048 908 Recovering log #19
+2022/05/31-11:40:04.048 908 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.afc4ad0\flutter_tools_chrome_device.4bd07518\Default\Site Characteristics Database/000019.log 
+2022/05/31-11:40:04.050 908 Delete type=0 #3
+2022/05/31-11:40:04.050 908 Delete type=2 #4
+2022/05/31-11:40:04.050 908 Delete type=2 #6
+2022/05/31-11:40:04.050 908 Delete type=0 #6
+2022/05/31-11:40:04.050 908 Delete type=0 #10
+2022/05/31-11:40:04.050 908 Delete type=2 #11
+2022/05/31-11:40:04.050 908 Delete type=2 #13
+2022/05/31-11:40:04.050 908 Delete type=2 #14

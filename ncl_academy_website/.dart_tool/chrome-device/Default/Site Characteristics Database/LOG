@@ -1,20 +1,11 @@
-2022/05/31-11:40:04.042 908 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.afc4ad0\flutter_tools_chrome_device.4bd07518\Default\Site Characteristics Database/MANIFEST-000001
-2022/05/31-11:40:04.043 908 Recovering log #3
-2022/05/31-11:40:04.043 908 Level-0 table #22: started
-2022/05/31-11:40:04.044 908 Level-0 table #22: 1404 bytes OK
-2022/05/31-11:40:04.045 908 Recovering log #6
-2022/05/31-11:40:04.045 908 Level-0 table #23: started
-2022/05/31-11:40:04.046 908 Level-0 table #23: 172 bytes OK
-2022/05/31-11:40:04.046 908 Recovering log #10
-2022/05/31-11:40:04.046 908 Level-0 table #24: started
-2022/05/31-11:40:04.048 908 Level-0 table #24: 295 bytes OK
-2022/05/31-11:40:04.048 908 Recovering log #19
-2022/05/31-11:40:04.048 908 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.afc4ad0\flutter_tools_chrome_device.4bd07518\Default\Site Characteristics Database/000019.log 
-2022/05/31-11:40:04.050 908 Delete type=0 #3
-2022/05/31-11:40:04.050 908 Delete type=2 #4
-2022/05/31-11:40:04.050 908 Delete type=2 #6
-2022/05/31-11:40:04.050 908 Delete type=0 #6
-2022/05/31-11:40:04.050 908 Delete type=0 #10
-2022/05/31-11:40:04.050 908 Delete type=2 #11
-2022/05/31-11:40:04.050 908 Delete type=2 #13
-2022/05/31-11:40:04.050 908 Delete type=2 #14
+2022/05/31-11:58:37.846 43ac Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.ca60ffb4\flutter_tools_chrome_device.3cfe4ff7\Default\Site Characteristics Database/MANIFEST-000001
+2022/05/31-11:58:37.846 43ac Recovering log #19
+2022/05/31-11:58:37.846 43ac Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.ca60ffb4\flutter_tools_chrome_device.3cfe4ff7\Default\Site Characteristics Database/000019.log 
+2022/05/31-11:58:37.847 43ac Delete type=0 #3
+2022/05/31-11:58:37.847 43ac Delete type=2 #4
+2022/05/31-11:58:37.847 43ac Delete type=2 #6
+2022/05/31-11:58:37.847 43ac Delete type=0 #6
+2022/05/31-11:58:37.847 43ac Delete type=0 #10
+2022/05/31-11:58:37.847 43ac Delete type=2 #11
+2022/05/31-11:58:37.847 43ac Delete type=2 #13
+2022/05/31-11:58:37.847 43ac Delete type=2 #14
