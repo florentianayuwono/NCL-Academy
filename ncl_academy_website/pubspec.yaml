@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
   flutter_svg: ^1.1.0
+  url_strategy: ^0.2.0
 
 dev_dependencies:
   flutter_test:
@@ -67,17 +68,21 @@ flutter:
       fonts:
       - asset: google_fonts/Catamaran-Regular.ttf
       - asset: google_fonts/Catamaran-SemiBold.ttf
+        weight: 300
+      - asset: google_fonts/Catamaran-Bold.ttf
+        weight: 700
     - family: Montserrat
       fonts:
       - asset: google_fonts/Montserrat-Regular.ttf
       - asset: google_fonts/Montserrat-Bold.ttf
+        weight: 700
 
   # To add assets to your application, add an assets section, like this:
   assets:
     - google_fonts/
-    - images/NCL_LOGO.png
-    - images/cyberthreat.jpg
-    - images/homepage_icons/
+    - img/NCL_LOGO.png
+    - img/cyberthreat.jpg
+    - img/homepage_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

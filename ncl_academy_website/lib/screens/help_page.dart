@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:ncl_academy_website/main.dart';
 
 const headerColour = Color.fromARGB(255, 245, 200, 82);
 const titleStyle = TextStyle(
@@ -24,7 +25,8 @@ const headerStyle = TextStyle(
     color: headerColour);
 
 const questionTitleStyle =
-    TextStyle(fontFamily: "Catamaran-SemiBold", height: 2);
+    TextStyle(fontFamily: "Catamaran", height: 3, fontWeight: FontWeight.w700);
+
 const questionBodyStyle = TextStyle(fontFamily: "Catamaran", height: 1.5);
 
 final question1 = Column(
@@ -33,7 +35,6 @@ final question1 = Column(
       alignment: Alignment.centerLeft,
       child: Text("What is NCLHub?", style: questionTitleStyle),
     ),
-    SizedBox(height: 10),
     Align(
       alignment: Alignment.centerLeft,
       child: Text(
@@ -55,7 +56,6 @@ final question2 = Column(
       alignment: Alignment.centerLeft,
       child: Text("How do I use NCLHub?", style: questionTitleStyle),
     ),
-    SizedBox(height: 10),
     Align(
       alignment: Alignment.centerLeft,
       child: Text(
@@ -71,7 +71,6 @@ final question3 = Column(
       alignment: Alignment.centerLeft,
       child: Text("Who manages NCLHub?", style: questionTitleStyle),
     ),
-    SizedBox(height: 10),
     Align(
       alignment: Alignment.centerLeft,
       child: Text(
@@ -87,7 +86,6 @@ final question4 = Column(
       alignment: Alignment.centerLeft,
       child: Text("Why aren't the pages working?", style: questionTitleStyle),
     ),
-    SizedBox(height: 10),
     Align(
       alignment: Alignment.centerLeft,
       child: Text(
@@ -103,7 +101,6 @@ final question5 = Column(
       alignment: Alignment.centerLeft,
       child: Text("Why isn't ___ topic available?", style: questionTitleStyle),
     ),
-    SizedBox(height: 10),
     Align(
       alignment: Alignment.centerLeft,
       child: Text(
@@ -119,7 +116,6 @@ final termsAndConditions = Column(
       alignment: Alignment.centerLeft,
       child: Text("Terms and Conditions", style: questionTitleStyle),
     ),
-    SizedBox(height: 10),
     Align(
       alignment: Alignment.centerLeft,
       child: Text("The terms and conditions of NCLHub can be found here.",
@@ -128,19 +124,31 @@ final termsAndConditions = Column(
   ],
 );
 
+var phoneDetails = RichText(
+  text: const TextSpan(style: questionBodyStyle, children: <TextSpan>[
+    TextSpan(text: 'Phone: ', style: TextStyle(fontWeight: FontWeight.bold)),
+    TextSpan(text: '+65 6601 1056')
+  ]),
+);
+
+var addressDetails = RichText(
+  text: const TextSpan(style: questionBodyStyle, children: <TextSpan>[
+    TextSpan(text: 'Address: ', style: TextStyle(fontWeight: FontWeight.bold)),
+    TextSpan(text: 'Innovation 4.0, 3 Research Link, NUS, Singapore 117602')
+  ]),
+);
+
 final contactColumn = Container(
   alignment: Alignment.topLeft,
   padding: const EdgeInsets.fromLTRB(250, 20, 250, 20),
-  child: Column(children: const [
+  child: Column(children: [
     Align(
       alignment: Alignment.centerLeft,
-      child: Text("Phone: +65 6601 1056", style: questionBodyStyle),
+      child: phoneDetails,
     ),
     Align(
       alignment: Alignment.centerLeft,
-      child: Text(
-          "Address: Innovation 4.0, 3 Research Link, NUS, Singapore 117602",
-          style: questionBodyStyle),
+      child: addressDetails,
     ),
   ]),
 );
@@ -152,7 +160,8 @@ class HelpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final ButtonStyle style = TextButton.styleFrom(
         primary: Theme.of(context).colorScheme.onPrimary,
-        padding: const EdgeInsets.all(20));
+        padding: const EdgeInsets.all(20),
+        textStyle: const TextStyle(fontFamily: "Catamaran"));
     const appBarColour = Color.fromARGB(255, 7, 31, 4);
 
     final titleColumn = Container(
@@ -202,11 +211,10 @@ class HelpPage extends StatelessWidget {
         title: IconButton(
           iconSize: 70.0,
           onPressed: () {
-            Get.toNamed("/");
-            // route to homepage
+            Get.to(() => const HomePage(), transition: Transition.noTransition);
           },
           icon: Image.asset(
-            'images/NCL_LOGO.png',
+            'img/NCL_LOGO.png',
           ),
         ),
         actions: <Widget>[
@@ -220,7 +228,8 @@ class HelpPage extends StatelessWidget {
               TextButton(
                 style: style,
                 onPressed: () {
-                  Get.toNamed("/help");
+                  Get.to(() => const HelpPage(),
+                      transition: Transition.noTransition);
                 },
                 child: const Text('Help'),
               ),

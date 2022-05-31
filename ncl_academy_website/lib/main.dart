@@ -4,15 +4,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'screens/help_page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+  // Remove leading hash in address
+  setPathUrlStrategy();
+
   runApp(GetMaterialApp(
     // To implement: handle unknown route by navigating to unknown route page
     //unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoutePage()),
 
     initialRoute: '/',
     getPages: [
-      GetPage(name: '/', page: () => const MyApp()),
+      GetPage(name: '/', page: () => const HomePage()),
       GetPage(name: '/help', page: () => const HelpPage()),
       // GetPage(
       //   name: '/third',
@@ -39,6 +43,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => const HomePage(),
+        '/help': (context) => const HelpPage(),
       },
     );
   }
@@ -287,7 +292,8 @@ class HomePage extends StatelessWidget {
 
     final ButtonStyle style = TextButton.styleFrom(
         primary: Theme.of(context).colorScheme.onPrimary,
-        padding: const EdgeInsets.all(20));
+        padding: const EdgeInsets.all(20),
+        textStyle: const TextStyle(fontFamily: "Catamaran"));
 
     final beginnerCard = Container(
         constraints:
@@ -313,7 +319,7 @@ class HomePage extends StatelessWidget {
             ClipOval(
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(40),
-                child: Image.network('images/pawn.jpg', fit: BoxFit.cover),
+                child: Image.network('img/pawn.jpg', fit: BoxFit.cover),
               ),
             ),
             const Text(
@@ -347,7 +353,7 @@ class HomePage extends StatelessWidget {
             ClipOval(
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(40),
-                child: Image.network('images/bishop.jpg', fit: BoxFit.cover),
+                child: Image.network('img/bishop.jpg', fit: BoxFit.cover),
               ),
             ),
             const Text(
@@ -381,7 +387,7 @@ class HomePage extends StatelessWidget {
             ClipOval(
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(40),
-                child: Image.network('images/knight.jpg', fit: BoxFit.cover),
+                child: Image.network('img/knight.jpg', fit: BoxFit.cover),
               ),
             ),
             const Text(
@@ -438,7 +444,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              'images/homepage_icons/video.svg',
+              'img/homepage_icons/video.svg',
               height: 40,
               width: 40,
               fit: BoxFit.fitWidth,
@@ -480,7 +486,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              'images/homepage_icons/school.svg',
+              'img/homepage_icons/school.svg',
               height: 40,
               width: 40,
               fit: BoxFit.fitWidth,
@@ -522,7 +528,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              'images/homepage_icons/virus.svg',
+              'img/homepage_icons/virus.svg',
               height: 40,
               width: 40,
               fit: BoxFit.fitWidth,
@@ -624,8 +630,7 @@ class HomePage extends StatelessWidget {
                   bottomLeft: Radius.circular(100)),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                child:
-                    Image.network('images/cyberthreat.jpg', fit: BoxFit.cover),
+                child: Image.network('img/cyberthreat.jpg', fit: BoxFit.cover),
               ),
             ),
           ),
@@ -648,7 +653,7 @@ class HomePage extends StatelessWidget {
                   bottomLeft: Radius.circular(100)),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                child: Image.network('images/whyncl.jpg', fit: BoxFit.cover),
+                child: Image.network('img/whyncl.jpg', fit: BoxFit.cover),
               ),
             ),
           ),
@@ -673,7 +678,7 @@ class HomePage extends StatelessWidget {
                   bottomLeft: Radius.circular(100)),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                child: Image.network('images/provide.jpg', fit: BoxFit.cover),
+                child: Image.network('img/provide.jpg', fit: BoxFit.cover),
               ),
             ),
           ),
@@ -726,15 +731,16 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 80.0,
         backgroundColor: appBarColour,
+        automaticallyImplyLeading: false,
         titleSpacing: 100.0,
         title: IconButton(
           iconSize: 70.0,
           onPressed: () {
-            Get.toNamed("/");
+            Get.to(() => const HomePage(), transition: Transition.noTransition);
             // route to homepage
           },
           icon: Image.asset(
-            'images/NCL_LOGO.png',
+            'img/NCL_LOGO.png',
           ),
         ),
         actions: <Widget>[
@@ -748,7 +754,8 @@ class HomePage extends StatelessWidget {
               TextButton(
                 style: style,
                 onPressed: () {
-                  Get.toNamed("/help");
+                  Get.to(() => const HelpPage(),
+                      transition: Transition.noTransition);
                 },
                 child: const Text('Help'),
               ),
