@@ -183,13 +183,26 @@ class HelpPage extends StatelessWidget {
         textStyle: const TextStyle(fontFamily: "Catamaran"));
     const appBarColour = Color.fromARGB(255, 7, 31, 4);
 
-    final titleColumn = Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-        child: const Text(
-          "Help",
-          style: titleStyle,
-        ));
+    final titleColumn = Stack(children: [
+      Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+          child: const Text(
+            "Help",
+            style: titleStyle,
+          )),
+      Positioned(
+        left: 40,
+        bottom: 20,
+        child: FloatingActionButton.extended(
+            label: const Text("Back",
+                style:
+                    TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+            hoverElevation: 30,
+            backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+            onPressed: () => Get.back()),
+      )
+    ]);
 
     final faqHeader = Container(
         padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
