@@ -3,6 +3,7 @@ import 'dart:html' as html;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'screens/help_page.dart';
+import 'screens/spring_beginner.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -18,6 +19,7 @@ void main() {
     getPages: [
       GetPage(name: '/', page: () => const HomePage()),
       GetPage(name: '/help', page: () => const HelpPage()),
+      GetPage(name: '/spring_beginner', page: () => const SpringBeginnerPage()),
       // GetPage(
       //   name: '/third',
       //   page: () => Third(),
@@ -295,39 +297,44 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         textStyle: const TextStyle(fontFamily: "Catamaran"));
 
-    final beginnerCard = Container(
-        constraints:
-            const BoxConstraints(minWidth: 150, maxWidth: 220, minHeight: 280),
-        padding: const EdgeInsets.all(15),
-        decoration: const BoxDecoration(
-          color: difficultyCardColour,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          boxShadow: [
-            BoxShadow(
-                color: Color.fromARGB(255, 133, 132, 132),
-                spreadRadius: 1,
-                blurRadius: 3,
-                offset: Offset(6, 6)),
-          ],
-        ),
-        width: MediaQuery.of(context).size.width * 0.3,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Text('Beginner', style: cardTitleStyle),
-            ClipOval(
-              child: SizedBox.fromSize(
-                size: const Size.fromRadius(40),
-                child: Image.network('img/pawn.jpg', fit: BoxFit.cover),
-              ),
+    final beginnerCard = InkWell(
+        child: Container(
+            constraints: const BoxConstraints(
+                minWidth: 150, maxWidth: 220, minHeight: 280),
+            padding: const EdgeInsets.all(15),
+            decoration: const BoxDecoration(
+              color: difficultyCardColour,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              boxShadow: [
+                BoxShadow(
+                    color: Color.fromARGB(255, 133, 132, 132),
+                    spreadRadius: 1,
+                    blurRadius: 3,
+                    offset: Offset(6, 6)),
+              ],
             ),
-            const Text(
-                'Suited for: Primary/Secondary students and senior citizens',
-                style: cardBodyStyle),
-            const Text('Click to begin!', style: cardLinkStyle)
-          ],
-        ));
+            width: MediaQuery.of(context).size.width * 0.3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text('Beginner', style: cardTitleStyle),
+                ClipOval(
+                  child: SizedBox.fromSize(
+                    size: const Size.fromRadius(40),
+                    child: Image.network('img/pawn.jpg', fit: BoxFit.cover),
+                  ),
+                ),
+                const Text(
+                    'Suited for: Primary/Secondary students and senior citizens',
+                    style: cardBodyStyle),
+                const Text('Click to begin!', style: cardLinkStyle)
+              ],
+            )),
+        onTap: () {
+          Get.to(() => const SpringBeginnerPage(),
+              transition: Transition.noTransition);
+        });
 
     final intermediateCard = Container(
         constraints:
