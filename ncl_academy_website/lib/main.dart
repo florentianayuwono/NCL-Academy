@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
+import 'package:get/get_navigation/src/routes/default_transitions.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
-import 'screens/help_page.dart';
-import 'screens/spring_beginner.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_strategy/url_strategy.dart';
+import 'dart:html' as html;
+
+import 'screens/help_page.dart';
+import 'screens/spring_beginner.dart';
+import 'screens/advanced_page.dart';
 
 void main() {
   // Remove leading hash in address
@@ -17,9 +20,22 @@ void main() {
 
     initialRoute: '/',
     getPages: [
-      GetPage(name: '/', page: () => const HomePage()),
-      GetPage(name: '/help', page: () => const HelpPage()),
-      GetPage(name: '/spring_beginner', page: () => const SpringBeginnerPage()),
+      GetPage(
+          name: '/',
+          page: () => const HomePage(),
+          transition: Transition.noTransition),
+      GetPage(
+          name: '/help',
+          page: () => const HelpPage(),
+          transition: Transition.noTransition),
+      GetPage(
+          name: '/spring_beginner',
+          page: () => const SpringBeginnerPage(),
+          transition: Transition.noTransition),
+      GetPage(
+          name: '/advanced',
+          page: () => const AdvancedPage(),
+          transition: Transition.noTransition),
       // GetPage(
       //   name: '/third',
       //   page: () => Third(),
@@ -46,6 +62,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const HomePage(),
         '/help': (context) => const HelpPage(),
+        '/advanced': (context) => const AdvancedPage(),
+        'spring_beginner': (context) => const SpringBeginnerPage()
       },
     );
   }
@@ -332,8 +350,7 @@ class HomePage extends StatelessWidget {
               ],
             )),
         onTap: () {
-          Get.to(() => const SpringBeginnerPage(),
-              transition: Transition.noTransition);
+          Get.toNamed('/spring_beginner');
         });
 
     final intermediateCard = Container(
@@ -370,39 +387,43 @@ class HomePage extends StatelessWidget {
           ],
         ));
 
-    final advancedCard = Container(
-        constraints:
-            const BoxConstraints(minWidth: 150, maxWidth: 220, minHeight: 280),
-        padding: const EdgeInsets.all(15),
-        decoration: const BoxDecoration(
-          color: difficultyCardColour,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          boxShadow: [
-            BoxShadow(
-                color: Color.fromARGB(255, 133, 132, 132),
-                spreadRadius: 1,
-                blurRadius: 3,
-                offset: Offset(6, 6)),
-          ],
-        ),
-        width: MediaQuery.of(context).size.width * 0.3,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Text('Advanced', style: cardTitleStyle),
-            ClipOval(
-              child: SizedBox.fromSize(
-                size: const Size.fromRadius(40),
-                child: Image.network('img/knight.jpg', fit: BoxFit.cover),
-              ),
+    final advancedCard = InkWell(
+        child: Container(
+            constraints: const BoxConstraints(
+                minWidth: 150, maxWidth: 220, minHeight: 280),
+            padding: const EdgeInsets.all(15),
+            decoration: const BoxDecoration(
+              color: difficultyCardColour,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              boxShadow: [
+                BoxShadow(
+                    color: Color.fromARGB(255, 133, 132, 132),
+                    spreadRadius: 1,
+                    blurRadius: 3,
+                    offset: Offset(6, 6)),
+              ],
             ),
-            const Text(
-                'Suited for: Professionals and industry cybersecurity experts',
-                style: cardBodyStyle),
-            const Text('Click to begin!', style: cardLinkStyle)
-          ],
-        ));
+            width: MediaQuery.of(context).size.width * 0.3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text('Advanced', style: cardTitleStyle),
+                ClipOval(
+                  child: SizedBox.fromSize(
+                    size: const Size.fromRadius(40),
+                    child: Image.network('img/knight.jpg', fit: BoxFit.cover),
+                  ),
+                ),
+                const Text(
+                    'Suited for: Professionals and industry cybersecurity experts',
+                    style: cardBodyStyle),
+                const Text('Click to begin!', style: cardLinkStyle)
+              ],
+            )),
+        onTap: () {
+          Get.toNamed('/advanced');
+        });
 
     final firstColText = Container(
       width: MediaQuery.of(context).size.width * 0.5,
@@ -743,7 +764,7 @@ class HomePage extends StatelessWidget {
         title: IconButton(
           iconSize: 70.0,
           onPressed: () {
-            Get.to(() => const HomePage(), transition: Transition.noTransition);
+            Get.toNamed('/');
             // route to homepage
           },
           icon: Image.asset(
@@ -761,8 +782,7 @@ class HomePage extends StatelessWidget {
               TextButton(
                 style: style,
                 onPressed: () {
-                  Get.to(() => const HelpPage(),
-                      transition: Transition.noTransition);
+                  Get.toNamed('/help');
                 },
                 child: const Text('Help'),
               ),

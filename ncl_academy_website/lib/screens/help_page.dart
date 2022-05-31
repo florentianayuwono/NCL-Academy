@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:ncl_academy_website/main.dart';
+import 'dart:html' as html;
 
 const headerColour = Color.fromARGB(255, 245, 200, 82);
 const titleStyle = TextStyle(
@@ -243,7 +243,7 @@ class HelpPage extends StatelessWidget {
         title: IconButton(
           iconSize: 70.0,
           onPressed: () {
-            Get.to(() => const HomePage(), transition: Transition.noTransition);
+            Get.toNamed('/');
           },
           icon: Image.asset(
             'img/NCL_LOGO.png',
@@ -260,8 +260,7 @@ class HelpPage extends StatelessWidget {
               TextButton(
                 style: style,
                 onPressed: () {
-                  Get.to(() => const HelpPage(),
-                      transition: Transition.noTransition);
+                  Get.toNamed('/help');
                 },
                 child: const Text('Help'),
               ),

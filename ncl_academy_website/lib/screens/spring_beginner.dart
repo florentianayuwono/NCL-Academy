@@ -24,8 +24,7 @@ class SpringBeginnerPage extends StatelessWidget {
           title: IconButton(
             iconSize: 70.0,
             onPressed: () {
-              Get.to(() => const HomePage(),
-                  transition: Transition.noTransition);
+              Get.to('/');
             },
             icon: Image.asset(
               'img/NCL_LOGO.png',
@@ -42,8 +41,7 @@ class SpringBeginnerPage extends StatelessWidget {
                 TextButton(
                   style: style,
                   onPressed: () {
-                    Get.to(() => const HelpPage(),
-                        transition: Transition.noTransition);
+                    Get.toNamed('/help');
                   },
                   child: const Text('Help'),
                 ),
