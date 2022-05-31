@@ -1,18 +1,17 @@
-2022/05/31-15:06:29.621 2730 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.a2d9ebfd\flutter_tools_chrome_device.e562c0f0\Default\Site Characteristics Database/MANIFEST-000001
-2022/05/31-15:06:29.622 622c Compacting 13@0 + 0@1 files
-2022/05/31-15:06:29.625 622c Generated table #31@0: 12 keys, 804 bytes
-2022/05/31-15:06:29.625 622c Compacted 13@0 + 0@1 files => 804 bytes
-2022/05/31-15:06:29.626 622c compacted to: files[ 0 1 0 0 0 0 0 ]
-2022/05/31-15:06:29.627 622c Delete type=2 #4
-2022/05/31-15:06:29.627 622c Delete type=2 #6
-2022/05/31-15:06:29.627 622c Delete type=2 #11
-2022/05/31-15:06:29.627 622c Delete type=2 #13
-2022/05/31-15:06:29.627 622c Delete type=2 #14
-2022/05/31-15:06:29.627 622c Delete type=2 #20
-2022/05/31-15:06:29.627 622c Delete type=2 #22
-2022/05/31-15:06:29.627 622c Delete type=2 #23
-2022/05/31-15:06:29.627 622c Delete type=2 #24
-2022/05/31-15:06:29.627 622c Delete type=2 #25
-2022/05/31-15:06:29.627 622c Delete type=2 #26
-2022/05/31-15:06:29.628 622c Delete type=2 #27
-2022/05/31-15:06:29.628 622c Delete type=2 #28
+2022/05/31-15:31:05.633 4f88 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.273be044\flutter_tools_chrome_device.50809ec8\Default\Site Characteristics Database/MANIFEST-000001
+2022/05/31-15:31:05.634 4f88 Recovering log #30
+2022/05/31-15:31:05.634 4f88 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.273be044\flutter_tools_chrome_device.50809ec8\Default\Site Characteristics Database/000030.log 
+2022/05/31-15:31:05.635 4f88 Delete type=0 #3
+2022/05/31-15:31:05.635 4f88 Delete type=2 #4
+2022/05/31-15:31:05.635 4f88 Delete type=2 #6
+2022/05/31-15:31:05.635 4f88 Delete type=0 #6
+2022/05/31-15:31:05.635 4f88 Delete type=0 #10
+2022/05/31-15:31:05.635 4f88 Delete type=2 #11
+2022/05/31-15:31:05.635 4f88 Delete type=2 #13
+2022/05/31-15:31:05.635 4f88 Delete type=2 #14
+2022/05/31-15:31:05.635 4f88 Delete type=0 #19
+2022/05/31-15:31:05.635 4f88 Delete type=2 #20
+2022/05/31-15:31:05.635 4f88 Delete type=2 #22
+2022/05/31-15:31:05.635 4f88 Delete type=2 #23
+2022/05/31-15:31:05.635 4f88 Delete type=2 #24
+2022/05/31-15:31:05.635 4f88 Delete type=2 #31

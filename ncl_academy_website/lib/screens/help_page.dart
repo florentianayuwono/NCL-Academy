@@ -24,10 +24,14 @@ const headerStyle = TextStyle(
     fontWeight: FontWeight.bold,
     color: headerColour);
 
-const questionTitleStyle =
-    TextStyle(fontFamily: "Catamaran", height: 3, fontWeight: FontWeight.w700);
+const questionTitleStyle = TextStyle(
+    fontFamily: "Catamaran",
+    height: 3,
+    fontWeight: FontWeight.w700,
+    color: Colors.white);
 
-const questionBodyStyle = TextStyle(fontFamily: "Catamaran", height: 1.5);
+const questionBodyStyle =
+    TextStyle(fontFamily: "Catamaran", height: 1.5, color: Colors.white);
 
 final question1 = Column(
   children: const <Widget>[
@@ -198,8 +202,9 @@ class HelpPage extends StatelessWidget {
             label: const Text("Back",
                 style:
                     TextStyle(fontFamily: "Montserrat", color: Colors.black)),
-            hoverElevation: 30,
+            hoverElevation: 10,
             backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+            hoverColor: const Color.fromARGB(255, 244, 255, 252),
             onPressed: () => Get.back()),
       )
     ]);
@@ -235,6 +240,7 @@ class HelpPage extends StatelessWidget {
       child: const Text("Sitemap"),
     );
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 33, 109, 110),
       appBar: AppBar(
         toolbarHeight: 80.0,
         backgroundColor: appBarColour,

@@ -24,7 +24,7 @@ class SpringBeginnerPage extends StatelessWidget {
           title: IconButton(
             iconSize: 70.0,
             onPressed: () {
-              Get.to('/');
+              Get.toNamed('/');
             },
             icon: Image.asset(
               'img/NCL_LOGO.png',

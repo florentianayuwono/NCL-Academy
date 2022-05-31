@@ -179,7 +179,7 @@ class FourthTrianglePainter extends CustomPainter {
   }
 }
 
-const difficultyCardColour = Color.fromARGB(255, 45, 45, 45);
+var difficultyCardColour = const Color.fromARGB(255, 45, 45, 45);
 const difficultyCardTextColour = Color.fromARGB(255, 210, 233, 227);
 const difficultyCardHeaderColour = Color.fromARGB(255, 138, 227, 255);
 
@@ -320,10 +320,10 @@ class HomePage extends StatelessWidget {
             constraints: const BoxConstraints(
                 minWidth: 150, maxWidth: 220, minHeight: 280),
             padding: const EdgeInsets.all(15),
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               color: difficultyCardColour,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              boxShadow: [
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              boxShadow: const [
                 BoxShadow(
                     color: Color.fromARGB(255, 133, 132, 132),
                     spreadRadius: 1,
@@ -357,10 +357,10 @@ class HomePage extends StatelessWidget {
         constraints:
             const BoxConstraints(minWidth: 150, maxWidth: 220, minHeight: 280),
         padding: const EdgeInsets.all(15),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: difficultyCardColour,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          boxShadow: [
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          boxShadow: const [
             BoxShadow(
                 color: Color.fromARGB(255, 133, 132, 132),
                 spreadRadius: 1,
@@ -388,42 +388,51 @@ class HomePage extends StatelessWidget {
         ));
 
     final advancedCard = InkWell(
-        child: Container(
-            constraints: const BoxConstraints(
-                minWidth: 150, maxWidth: 220, minHeight: 280),
-            padding: const EdgeInsets.all(15),
-            decoration: const BoxDecoration(
-              color: difficultyCardColour,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              boxShadow: [
-                BoxShadow(
-                    color: Color.fromARGB(255, 133, 132, 132),
-                    spreadRadius: 1,
-                    blurRadius: 3,
-                    offset: Offset(6, 6)),
-              ],
-            ),
-            width: MediaQuery.of(context).size.width * 0.3,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Text('Advanced', style: cardTitleStyle),
-                ClipOval(
-                  child: SizedBox.fromSize(
-                    size: const Size.fromRadius(40),
-                    child: Image.network('img/knight.jpg', fit: BoxFit.cover),
-                  ),
+      //splashColor: Colors.yellow,
+      child: Container(
+          constraints: const BoxConstraints(
+              minWidth: 150, maxWidth: 220, minHeight: 280),
+          padding: const EdgeInsets.all(15),
+          decoration: BoxDecoration(
+            color: difficultyCardColour,
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            boxShadow: const [
+              BoxShadow(
+                  color: Color.fromARGB(255, 133, 132, 132),
+                  spreadRadius: 1,
+                  blurRadius: 3,
+                  offset: Offset(6, 6)),
+            ],
+          ),
+          width: MediaQuery.of(context).size.width * 0.3,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text('Advanced', style: cardTitleStyle),
+              ClipOval(
+                child: SizedBox.fromSize(
+                  size: const Size.fromRadius(40),
+                  child: Image.network('img/knight.jpg', fit: BoxFit.cover),
                 ),
-                const Text(
-                    'Suited for: Professionals and industry cybersecurity experts',
-                    style: cardBodyStyle),
-                const Text('Click to begin!', style: cardLinkStyle)
-              ],
-            )),
-        onTap: () {
-          Get.toNamed('/advanced');
-        });
+              ),
+              const Text(
+                  'Suited for: Professionals and industry cybersecurity experts',
+                  style: cardBodyStyle),
+              const Text('Click to begin!', style: cardLinkStyle)
+            ],
+          )),
+      onTap: () {
+        Get.toNamed('/advanced');
+      },
+      //  onHover: (isHovering) {
+      //   if (isHovering) {
+      //     difficultyCardColour = const Color.fromARGB(255, 211, 29, 29);
+      //   } else {
+      //     difficultyCardColour = const Color.fromARGB(255, 45, 45, 45);
+      //   }
+      // }
+    );
 
     final firstColText = Container(
       width: MediaQuery.of(context).size.width * 0.5,
