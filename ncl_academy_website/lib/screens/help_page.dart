@@ -199,12 +199,15 @@ class HelpPage extends StatelessWidget {
         left: 40,
         bottom: 20,
         child: FloatingActionButton.extended(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
             label: const Text("Back",
                 style:
                     TextStyle(fontFamily: "Montserrat", color: Colors.black)),
             hoverElevation: 10,
             backgroundColor: const Color.fromARGB(255, 210, 233, 227),
             hoverColor: const Color.fromARGB(255, 244, 255, 252),
+            extendedPadding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
             onPressed: () => Get.back()),
       )
     ]);
@@ -240,7 +243,7 @@ class HelpPage extends StatelessWidget {
       child: const Text("Sitemap"),
     );
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 33, 109, 110),
+      backgroundColor: const Color.fromARGB(255, 2, 81, 83),
       appBar: AppBar(
         toolbarHeight: 80.0,
         backgroundColor: appBarColour,
