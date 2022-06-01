@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'dart:html' as html;
 
+import 'onHover.dart';
 import 'screens/help_page.dart';
 import 'screens/spring_beginner.dart';
 import 'screens/advanced_page.dart';
@@ -180,6 +181,7 @@ class FourthTrianglePainter extends CustomPainter {
 }
 
 var difficultyCardColour = const Color.fromARGB(255, 45, 45, 45);
+var difficultyCardHoverColour = const Color.fromARGB(255, 63, 74, 74);
 const difficultyCardTextColour = Color.fromARGB(255, 210, 233, 227);
 const difficultyCardHeaderColour = Color.fromARGB(255, 138, 227, 255);
 
@@ -315,13 +317,58 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         textStyle: const TextStyle(fontFamily: "Catamaran"));
 
-    final beginnerCard = InkWell(
+    final beginnerCard = OnHover(builder: (isHovered) {
+      final backgroundColor =
+          isHovered ? difficultyCardHoverColour : difficultyCardColour;
+      return InkWell(
+          child: Container(
+              constraints: const BoxConstraints(
+                  minWidth: 150, maxWidth: 220, minHeight: 280),
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: backgroundColor,
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                boxShadow: const [
+                  BoxShadow(
+                      color: Color.fromARGB(255, 133, 132, 132),
+                      spreadRadius: 1,
+                      blurRadius: 3,
+                      offset: Offset(6, 6)),
+                ],
+              ),
+              width: MediaQuery.of(context).size.width * 0.3,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text('Beginner', style: cardTitleStyle),
+                  ClipOval(
+                    child: SizedBox.fromSize(
+                      size: const Size.fromRadius(40),
+                      child: Image.network('img/pawn.jpg', fit: BoxFit.cover),
+                    ),
+                  ),
+                  const Text(
+                      'Suited for: Primary/Secondary students and senior citizens',
+                      style: cardBodyStyle),
+                  const Text('Click to begin!', style: cardLinkStyle)
+                ],
+              )),
+          onTap: () {
+            Get.toNamed('/spring_beginner');
+          });
+    });
+
+    final intermediateCard = OnHover(builder: (isHovered) {
+      final backgroundColor =
+          isHovered ? difficultyCardHoverColour : difficultyCardColour;
+      return InkWell(
         child: Container(
             constraints: const BoxConstraints(
                 minWidth: 150, maxWidth: 220, minHeight: 280),
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
-              color: difficultyCardColour,
+              color: backgroundColor,
               borderRadius: const BorderRadius.all(Radius.circular(10)),
               boxShadow: const [
                 BoxShadow(
@@ -336,103 +383,68 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text('Beginner', style: cardTitleStyle),
+                const Text('Intermediate', style: cardTitleStyle),
                 ClipOval(
                   child: SizedBox.fromSize(
                     size: const Size.fromRadius(40),
-                    child: Image.network('img/pawn.jpg', fit: BoxFit.cover),
+                    child: Image.network('img/bishop.jpg', fit: BoxFit.cover),
                   ),
                 ),
                 const Text(
-                    'Suited for: Primary/Secondary students and senior citizens',
+                    'Suited for: People with 2-3 years of experience with cybersecurity',
                     style: cardBodyStyle),
                 const Text('Click to begin!', style: cardLinkStyle)
               ],
             )),
         onTap: () {
-          Get.toNamed('/spring_beginner');
-        });
+          // Navigate to intermediate page
+          //Get.toNamed('/help');
+        },
+      );
+    });
 
-    final intermediateCard = Container(
-        constraints:
-            const BoxConstraints(minWidth: 150, maxWidth: 220, minHeight: 280),
-        padding: const EdgeInsets.all(15),
-        decoration: BoxDecoration(
-          color: difficultyCardColour,
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-          boxShadow: const [
-            BoxShadow(
-                color: Color.fromARGB(255, 133, 132, 132),
-                spreadRadius: 1,
-                blurRadius: 3,
-                offset: Offset(6, 6)),
-          ],
-        ),
-        width: MediaQuery.of(context).size.width * 0.3,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Text('Intermediate', style: cardTitleStyle),
-            ClipOval(
-              child: SizedBox.fromSize(
-                size: const Size.fromRadius(40),
-                child: Image.network('img/bishop.jpg', fit: BoxFit.cover),
-              ),
+    final advancedCard = OnHover(builder: (isHovered) {
+      final backgroundColor =
+          isHovered ? difficultyCardHoverColour : difficultyCardColour;
+      return InkWell(
+        child: Container(
+            constraints: const BoxConstraints(
+                minWidth: 150, maxWidth: 220, minHeight: 280),
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              color: backgroundColor,
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              boxShadow: const [
+                BoxShadow(
+                    color: Color.fromARGB(255, 133, 132, 132),
+                    spreadRadius: 1,
+                    blurRadius: 3,
+                    offset: Offset(6, 6)),
+              ],
             ),
-            const Text(
-                'Suited for: People with 2-3 years of experience with cybersecurity',
-                style: cardBodyStyle),
-            const Text('Click to begin!', style: cardLinkStyle)
-          ],
-        ));
-
-    final advancedCard = InkWell(
-      //splashColor: Colors.yellow,
-      child: Container(
-          constraints: const BoxConstraints(
-              minWidth: 150, maxWidth: 220, minHeight: 280),
-          padding: const EdgeInsets.all(15),
-          decoration: BoxDecoration(
-            color: difficultyCardColour,
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-            boxShadow: const [
-              BoxShadow(
-                  color: Color.fromARGB(255, 133, 132, 132),
-                  spreadRadius: 1,
-                  blurRadius: 3,
-                  offset: Offset(6, 6)),
-            ],
-          ),
-          width: MediaQuery.of(context).size.width * 0.3,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text('Advanced', style: cardTitleStyle),
-              ClipOval(
-                child: SizedBox.fromSize(
-                  size: const Size.fromRadius(40),
-                  child: Image.network('img/knight.jpg', fit: BoxFit.cover),
+            width: MediaQuery.of(context).size.width * 0.3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text('Advanced', style: cardTitleStyle),
+                ClipOval(
+                  child: SizedBox.fromSize(
+                    size: const Size.fromRadius(40),
+                    child: Image.network('img/knight.jpg', fit: BoxFit.cover),
+                  ),
                 ),
-              ),
-              const Text(
-                  'Suited for: Professionals and industry cybersecurity experts',
-                  style: cardBodyStyle),
-              const Text('Click to begin!', style: cardLinkStyle)
-            ],
-          )),
-      onTap: () {
-        Get.toNamed('/advanced');
-      },
-      //  onHover: (isHovering) {
-      //   if (isHovering) {
-      //     difficultyCardColour = const Color.fromARGB(255, 211, 29, 29);
-      //   } else {
-      //     difficultyCardColour = const Color.fromARGB(255, 45, 45, 45);
-      //   }
-      // }
-    );
+                const Text(
+                    'Suited for: Professionals and industry cybersecurity experts',
+                    style: cardBodyStyle),
+                const Text('Click to begin!', style: cardLinkStyle)
+              ],
+            )),
+        onTap: () {
+          Get.toNamed('/advanced');
+        },
+      );
+    });
 
     final firstColText = Container(
       width: MediaQuery.of(context).size.width * 0.5,
@@ -440,15 +452,39 @@ class HomePage extends StatelessWidget {
       child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text(
+          children: [
+            const Text(
               'Tackle the Latest Cyberthreat',
               style: headerStyle,
             ),
-            Padding(padding: EdgeInsets.all(20)),
-            Text(
+            const Padding(padding: EdgeInsets.all(20)),
+            const Text(
                 'Explore cyberthreats and learn to defend yourself against them with NCLHub',
                 style: bodyFont),
+            const Padding(padding: EdgeInsets.all(20)),
+            Container(
+                alignment: Alignment.center,
+                child: OutlinedButton(
+                    style: ButtonStyle(
+                      padding: MaterialStateProperty.all(
+                          const EdgeInsets.fromLTRB(35, 20, 35, 20)),
+                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                        if (states.contains(MaterialState.hovered)) {
+                          return const Color.fromARGB(255, 196, 255, 99);
+                        }
+                        return const Color.fromARGB(255, 165, 255, 81);
+                      }),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0))),
+                    ),
+                    onPressed: () => Get.toNamed('/advanced'),
+                    child: const Text("Start here!",
+                        style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.black))))
           ]),
     );
 
@@ -652,7 +688,7 @@ class HomePage extends StatelessWidget {
     // Code for main blocks on homepage
     final firstColumn = Container(
       padding: const EdgeInsets.fromLTRB(20, 100, 80, 50),
-      color: const Color.fromARGB(255, 33, 109, 110),
+      color: const Color.fromARGB(255, 2, 81, 83),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
