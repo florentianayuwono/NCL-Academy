@@ -104,13 +104,16 @@ class SpringBeginnerPage extends StatelessWidget {
         left: 40,
         bottom: 20,
         child: FloatingActionButton.extended(
-            label: const Text("Back",
+            label: const Text("Chapter Select",
                 style:
                 TextStyle(fontFamily: "Montserrat", color: Colors.black)),
             hoverElevation: 10,
             backgroundColor: const Color.fromARGB(255, 210, 233, 227),
             hoverColor: const Color.fromARGB(255, 244, 255, 252),
-            onPressed: () => Get.back()),
+            onPressed: () {
+              Get.toNamed('/advanced');
+            },
+        )
       )
     ]);
 

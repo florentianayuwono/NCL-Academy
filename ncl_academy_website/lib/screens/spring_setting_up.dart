@@ -36,7 +36,8 @@ TextStyle(fontFamily: "Catamaran", height: 1.5, color: Colors.white);
 const codeDisplayStyle = TextStyle(
     fontFamily: "FiraCode",
     height: 1.5,
-    color: Colors.white,
+    letterSpacing: 1.5,
+    color: Colors.black,
     backgroundColor: Color(0xffFFCFA3)
 );
 
@@ -60,6 +61,17 @@ final video = Image.asset(
   fit: BoxFit.cover,
 );
 
+final codeSnippet = Row(
+  children: <Widget> [
+    Expanded(
+      child: Container(
+        color: Color(0xffFFCFA3),
+        child: Text("code code code", style: codeDisplayStyle)
+      )
+    )
+  ]
+);
+
 final explanation = Column(
   children: <Widget>[
     Align(
@@ -74,12 +86,51 @@ final explanation = Column(
     ),
     Align(
       alignment: Alignment.centerLeft,
-      child: Text(
-      'code code code',
-      overflow: TextOverflow.ellipsis,
-      style: codeDisplayStyle),
+      child: Column(
+        children: <Widget>[
+          SizedBox(height: 40),
+          codeSnippet,
+          SizedBox(height: 20),
+          codeSnippet,
+          SizedBox(height: 20),
+          codeSnippet,
+          SizedBox(height: 40)
+        ]
+      )
     )
   ],
+);
+
+final topicSummary = Column(
+    children: const <Widget> [
+      Align(
+        alignment: Alignment.centerLeft,
+        child: Text("Topic Summary", style: headerStyle),
+      ),
+      Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+              "Spring4Shell is a etc etc etc. "
+              "It posed dangers to blah blah blah. "
+              "The way to tackle this vulneraility is by doing this and that. "
+              "Visit our NCL website for more information about Spring4Shell.",
+              style: explanationBodyStyle
+          )
+      ),
+      SizedBox(height: 40)
+    ]
+);
+
+final backButton = Align(
+  alignment: Alignment.centerLeft,
+  child: FloatingActionButton.extended(
+      label: const Text("Prev",
+          style:
+          TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+      hoverElevation: 10,
+      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+      hoverColor: const Color.fromARGB(255, 244, 255, 252),
+      onPressed: () => Get.back()),
 );
 
 final nextButton = Align(
@@ -118,13 +169,16 @@ class SpringSettingUpPage extends StatelessWidget {
         left: 40,
         bottom: 20,
         child: FloatingActionButton.extended(
-            label: const Text("Back",
+            label: const Text("Chapter Select",
                 style:
                 TextStyle(fontFamily: "Montserrat", color: Colors.black)),
             hoverElevation: 10,
             backgroundColor: const Color.fromARGB(255, 210, 233, 227),
             hoverColor: const Color.fromARGB(255, 244, 255, 252),
-            onPressed: () => Get.back()),
+            onPressed: () {
+              Get.toNamed('/advanced');
+            },
+        )
       )
     ]);
 
@@ -140,7 +194,14 @@ class SpringSettingUpPage extends StatelessWidget {
           children: <Widget>[
             video,
             explanation,
-            nextButton,
+            topicSummary,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget> [
+                backButton,
+                nextButton
+              ]
+            )
           ],
         ));
 
