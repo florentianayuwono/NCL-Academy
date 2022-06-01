@@ -77,8 +77,8 @@ final nextButton = Align(
       hoverElevation: 10,
       backgroundColor: const Color.fromARGB(255, 210, 233, 227),
       hoverColor: const Color.fromARGB(255, 244, 255, 252),
-      onPressed: () => Get.back()),
-);
+      onPressed: () {Get.toNamed('/spring_setting_up');}
+));
 
 class SpringBeginnerPage extends StatelessWidget {
   const SpringBeginnerPage();
