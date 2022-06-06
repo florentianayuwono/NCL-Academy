@@ -33,6 +33,13 @@ const explanationTitleStyle = TextStyle(
 const explanationBodyStyle =
     TextStyle(fontFamily: "Catamaran", height: 1.5, color: Colors.white);
 
+const codeDisplayStyle = TextStyle(
+    fontFamily: "FiraCode",
+    height: 1.5,
+    letterSpacing: 1.5,
+    color: Colors.black,
+    backgroundColor: Color(0xffFFCFA3));
+
 final chapterTitle = Column(children: const <Widget>[
   Align(
     alignment: Alignment.center,
@@ -43,42 +50,49 @@ final chapterTitle = Column(children: const <Widget>[
       child: Text("Beginner Level", style: explanationBodyStyle))
 ]);
 
-final video = Image.asset(
-  'img/cyberthreat.jpg',
-  width: 840,
-  height: 400,
-  fit: BoxFit.cover,
-);
-
 final explanation = Column(
-  children: const <Widget>[
+  children: <Widget>[
     Align(
       alignment: Alignment.centerLeft,
-      child: Text("What is Spring4Shell?", style: explanationTitleStyle),
+      child: Text("Sources for our materials", style: explanationTitleStyle),
     ),
     Align(
       alignment: Alignment.centerLeft,
       child: Text(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Auctor eu augue ut lectus arcu bibendum. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Purus semper eget duis at tellus at urna condimentum. Mi bibendum neque egestas congue quisque. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Vel turpis nunc eget lorem dolor sed viverra. Quis auctor elit sed vulputate mi sit. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Feugiat nisl pretium fusce id velit ut tortor pretium viverra.",
+          "Youtube. Video by 123SantaClause "
+          "PurplePlanet. Spring House by 123SantaClauseXXXXXXX by XX "
+          "HELLOWORLD by THEWORLD "
+          "FANTASY by FFSTAR",
           style: explanationBodyStyle),
-    )
+    ),
+    SizedBox(height: 40)
   ],
 );
 
-final nextButton = Align(
-    alignment: Alignment.centerRight,
-    child: FloatingActionButton.extended(
-        label: const Text("Next",
-            style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
-        hoverElevation: 10,
-        backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-        hoverColor: const Color.fromARGB(255, 244, 255, 252),
-        onPressed: () {
-          Get.toNamed('/spring_setting_up');
-        }));
+final backButton = Align(
+  alignment: Alignment.centerLeft,
+  child: FloatingActionButton.extended(
+      label: const Text("Prev",
+          style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+      hoverElevation: 10,
+      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+      hoverColor: const Color.fromARGB(255, 244, 255, 252),
+      onPressed: () => Get.back()),
+);
 
-class SpringBeginnerPage extends StatelessWidget {
-  const SpringBeginnerPage();
+final nextButton = Align(
+  alignment: Alignment.centerRight,
+  child: FloatingActionButton.extended(
+      label: const Text("Next",
+          style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+      hoverElevation: 10,
+      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+      hoverColor: const Color.fromARGB(255, 244, 255, 252),
+      onPressed: () => Get.back()),
+);
+
+class SpringReferencePage extends StatelessWidget {
+  const SpringReferencePage();
 
   @override
   Widget build(BuildContext context) {
@@ -112,17 +126,17 @@ class SpringBeginnerPage extends StatelessWidget {
     final titleHeader = Container(
         padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
         alignment: Alignment.centerLeft,
-        child:
-            const Text("An Introduction to Spring4Shell", style: headerStyle));
+        child: const Text("References/Credits", style: headerStyle));
 
     final textColumn = Container(
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.fromLTRB(250, 20, 250, 20),
         child: Column(
           children: <Widget>[
-            video,
             explanation,
-            nextButton,
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[backButton, nextButton])
           ],
         ));
 

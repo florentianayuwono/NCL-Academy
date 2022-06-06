@@ -33,6 +33,13 @@ const explanationTitleStyle = TextStyle(
 const explanationBodyStyle =
     TextStyle(fontFamily: "Catamaran", height: 1.5, color: Colors.white);
 
+const codeDisplayStyle = TextStyle(
+    fontFamily: "FiraCode",
+    height: 1.5,
+    letterSpacing: 1.5,
+    color: Colors.black,
+    backgroundColor: Color(0xffFFCFA3));
+
 final chapterTitle = Column(children: const <Widget>[
   Align(
     alignment: Alignment.center,
@@ -50,35 +57,82 @@ final video = Image.asset(
   fit: BoxFit.cover,
 );
 
+final codeSnippet = Row(children: <Widget>[
+  Expanded(
+      child: Container(
+          color: Color(0xffFFCFA3),
+          child: Text("code code code", style: codeDisplayStyle)))
+]);
+
 final explanation = Column(
-  children: const <Widget>[
+  children: <Widget>[
     Align(
       alignment: Alignment.centerLeft,
-      child: Text("What is Spring4Shell?", style: explanationTitleStyle),
+      child:
+          Text("How to setup the environment?", style: explanationTitleStyle),
     ),
     Align(
       alignment: Alignment.centerLeft,
       child: Text(
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Auctor eu augue ut lectus arcu bibendum. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Purus semper eget duis at tellus at urna condimentum. Mi bibendum neque egestas congue quisque. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Vel turpis nunc eget lorem dolor sed viverra. Quis auctor elit sed vulputate mi sit. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Feugiat nisl pretium fusce id velit ut tortor pretium viverra.",
           style: explanationBodyStyle),
-    )
+    ),
+    Align(
+        alignment: Alignment.centerLeft,
+        child: Column(children: <Widget>[
+          SizedBox(height: 40),
+          codeSnippet,
+          SizedBox(height: 20),
+          codeSnippet,
+          SizedBox(height: 20),
+          codeSnippet,
+          SizedBox(height: 40)
+        ]))
   ],
 );
 
-final nextButton = Align(
-    alignment: Alignment.centerRight,
-    child: FloatingActionButton.extended(
-        label: const Text("Next",
-            style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
-        hoverElevation: 10,
-        backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-        hoverColor: const Color.fromARGB(255, 244, 255, 252),
-        onPressed: () {
-          Get.toNamed('/spring_setting_up');
-        }));
+final topicSummary = Column(children: const <Widget>[
+  Align(
+    alignment: Alignment.centerLeft,
+    child: Text("Topic Summary", style: headerStyle),
+  ),
+  Align(
+      alignment: Alignment.centerLeft,
+      child: Text(
+          "Spring4Shell is a etc etc etc. "
+          "It posed dangers to blah blah blah. "
+          "The way to tackle this vulneraility is by doing this and that. "
+          "Visit our NCL website for more information about Spring4Shell.",
+          style: explanationBodyStyle)),
+  SizedBox(height: 40)
+]);
 
-class SpringBeginnerPage extends StatelessWidget {
-  const SpringBeginnerPage();
+final backButton = Align(
+  alignment: Alignment.centerLeft,
+  child: FloatingActionButton.extended(
+      label: const Text("Prev",
+          style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+      hoverElevation: 10,
+      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+      hoverColor: const Color.fromARGB(255, 244, 255, 252),
+      onPressed: () => Get.back()),
+);
+
+final nextButton = Align(
+  alignment: Alignment.centerRight,
+  child: FloatingActionButton.extended(
+      label: const Text("Next",
+          style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+      hoverElevation: 10,
+      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+      hoverColor: const Color.fromARGB(255, 244, 255, 252),
+      onPressed: () {
+        Get.toNamed('/spring_reference');
+      }),
+);
+
+class SpringSettingUpPage extends StatelessWidget {
+  const SpringSettingUpPage();
 
   @override
   Widget build(BuildContext context) {
@@ -112,8 +166,8 @@ class SpringBeginnerPage extends StatelessWidget {
     final titleHeader = Container(
         padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
         alignment: Alignment.centerLeft,
-        child:
-            const Text("An Introduction to Spring4Shell", style: headerStyle));
+        child: const Text("Setting Up Spring4Shell Environment",
+            style: headerStyle));
 
     final textColumn = Container(
         alignment: Alignment.centerLeft,
@@ -122,7 +176,10 @@ class SpringBeginnerPage extends StatelessWidget {
           children: <Widget>[
             video,
             explanation,
-            nextButton,
+            topicSummary,
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[backButton, nextButton])
           ],
         ));
 

@@ -10,7 +10,7 @@ To run the app on your local machine, please follow the following steps:
 
 2. Navigate to /ncl_academy_website folder.
 
-2. Open a cmd/terminal in the folder and run the command `flutter run -d chrome`.
+2. Open a cmd/terminal in the folder and run the command `flutter pub get`. Then run `flutter run -d chrome`.
 
 **Make sure you have Flutter installed on your machine!**
 

@@ -1,6 +1,0 @@
-2022/05/25-11:16:08.523 1954 Creating DB C:\Users\thngy\AppData\Local\Temp\flutter_tools.15e99e4\flutter_tools_chrome_device.a6ed3661\Default\IndexedDB\https_shapemaker.web.app_0.indexeddb.leveldb since it was missing.
-2022/05/25-11:16:08.530 1954 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.15e99e4\flutter_tools_chrome_device.a6ed3661\Default\IndexedDB\https_shapemaker.web.app_0.indexeddb.leveldb/MANIFEST-000001
-2022/05/25-11:16:08.544 d54 Level-0 table #5: started
-2022/05/25-11:16:08.546 d54 Level-0 table #5: 620 bytes OK
-2022/05/25-11:16:08.548 d54 Delete type=0 #3
-2022/05/25-11:16:08.548 d54 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
