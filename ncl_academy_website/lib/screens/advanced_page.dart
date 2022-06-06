@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:ncl_academy_website/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:textfield_search/textfield_search.dart';
 import 'package:get/get.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'dart:html' as html;
+import '../main.dart';
+import 'spring_beginner.dart';
 
-class AdvancedPage extends StatelessWidget {
-  const AdvancedPage();
+class AdvancedPage extends StatefulWidget {
+  const AdvancedPage({Key? key}) : super(key: key);
 
+  @override
+  State<AdvancedPage> createState() => _AdvancedState();
+}
+
+class _AdvancedState extends State<AdvancedPage> {
+  var items = [" Vulnerabilities","log4shell", "Spring4shell"];
+  String DDvalue = " Vulnerabilities";
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style = TextButton.styleFrom(
@@ -55,53 +65,19 @@ class AdvancedPage extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-                  Widget>[
-            // Container(
-            //   height:88, width: double.infinity,color: Color.fromRGBO(217, 217, 217, 1),
-            // ),
-            // Container(
-            //     height: 88,
-            //     width: double.infinity,
-            //     color: Color.fromRGBO(44, 53, 50, 1),
-            //     child: Row(children: <Widget>[
-            //       SizedBox(width: 74),
-            //       Expanded(
-            //           flex: 1,
-            //           child: Image.asset(
-            //             "NCL_LOGO.png",
-            //             scale: 7,
-            //           )),
-            //       Expanded(flex: 10, child: SizedBox()),
-            //       Expanded(
-            //           flex: 1,
-            //           child: Padding(
-            //               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-            //               child: InkWell(
-            //                   child: Text("NCL Website",
-            //                       style: TextStyle(color: Colors.white)),
-            //                   onTap: () => launch('https://ncl.sg/')))),
-            //       Expanded(
-            //           flex: 1,
-            //           child: Padding(
-            //             padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-            //             child: Text(
-            //               "Help",
-            //               style: TextStyle(color: Colors.white),
-            //             ),
-            //           ))
-            //     ])),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
+              Widget>[
             Padding(
                 padding: EdgeInsets.fromLTRB(33, 15, 0, 15),
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => HomePage()),
                     style: ButtonStyle(
                         minimumSize:
-                            MaterialStateProperty.all(const Size(130.0, 50.0)),
+                        MaterialStateProperty.all(const Size(130.0, 50.0)),
                         backgroundColor: MaterialStateProperty.all(
                             Color.fromRGBO(196, 196, 196, 1))),
                     child:
-                        Text("Back", style: TextStyle(color: Colors.black)))),
+                    Text("Back", style: TextStyle(color: Colors.black)))),
             Center(
                 child: Text("Advanced",
                     style: TextStyle(
@@ -147,68 +123,44 @@ class AdvancedPage extends StatelessWidget {
               child: Container(
                 width: 1029,
                 height: 52,
-                child: ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        minimumSize:
-                            MaterialStateProperty.all(const Size(1029.0, 52.0)),
-                        backgroundColor: MaterialStateProperty.all(
-                            Color.fromRGBO(138, 227, 255, 1))),
+                child: Container(
+                    width: 1029, height:52,color: Color.fromRGBO(138, 227, 255, 1),
                     child: Row(children: [
-                      Expanded(
-                          flex: 18,
-                          child: Text("Vulnerabilities",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ))),
-                      Expanded(
-                          flex: 1,
-                          child: Icon(Icons.arrow_drop_down,
-                              color: Colors.black, size: 60))
+                      DropdownButtonHideUnderline(
+                        child: DropdownButton2(
+                          buttonPadding: EdgeInsets.fromLTRB(10,0,0,0),
+                          style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),
+                          dropdownDecoration: BoxDecoration(color:Color.fromRGBO(210, 233, 227, 1), ),
+                          value: DDvalue,
+                          buttonWidth: 1029,
+                          buttonHeight: 52,
+                          icon:Icon(Icons.arrow_drop_down,
+                                  color: Colors.black, size: 60),
+                                 onChanged: (newValue) {
+                            setState((){DDvalue = newValue as String;});
+                            switch(DDvalue){
+                              case "log4shell":
+                                Get.to(() => HomePage());
+                                break;
+                              case "spring4shell":
+                                Get.to(() => SpringBeginnerPage());
+                                break;
+                            }
+                                 },
+                          items: items.map((String items){
+                            return DropdownMenuItem(value: items,child: Text(items));
+                          }).toList(),
+                        ),
+                      )
                     ])),
               ),
             ),
-            // DropdownButtonHideUnderline(
-            //   child: DropdownButton2(
-            //     hint: Text(
-            //       'Select Item',
-            //       style: TextStyle(
-            //         fontSize: 14,
-            //         color: Theme
-            //             .of(context)
-            //             .hintColor,
-            //       ),
-            //     ),
-            //     items: items
-            //         .map((item) =>
-            //         DropdownMenuItem<String>(
-            //           value: item,
-            //           child: Text(
-            //             item,
-            //             style: const TextStyle(
-            //               fontSize: 14,
-            //             ),
-            //           ),
-            //         ))
-            //         .toList(),
-            //     value: selectedValue,
-            //     onChanged: (value) {
-            //       setState(() {
-            //         selectedValue = value as String;
-            //       });
-            //     },
-            //     buttonHeight: 40,
-            //     buttonWidth: 140,
-            //     itemHeight: 40,
-            //   ),
-            // ),
           ]),
         ));
-    ;
   }
 }
+
+
 
 void _launchNCLwebsiteURL() {
   String url = 'https://ncl.sg';
