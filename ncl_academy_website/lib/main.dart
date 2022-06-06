@@ -12,6 +12,7 @@ import 'screens/spring_beginner.dart';
 import 'screens/spring_setting_up.dart';
 import 'screens/spring_reference.dart';
 import 'screens/advanced_page.dart';
+import 'screens/intermediate.dart';
 
 void main() {
   // Remove leading hash in address
@@ -412,7 +413,7 @@ class HomePage extends StatelessWidget {
             )),
         onTap: () {
           // Navigate to intermediate page
-          //Get.toNamed('/help');
+          Get.to(() => IntermediatePage());
         },
       );
     });

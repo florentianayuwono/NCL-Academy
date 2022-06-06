@@ -143,7 +143,7 @@ class _AdvancedState extends State<AdvancedPage> {
                                 Get.to(() => HomePage());
                                 break;
                               case "spring4shell":
-                                Get.to(() => SpringBeginnerPage());
+                                Get.to(() => HomePage());
                                 break;
                             }
                                  },
