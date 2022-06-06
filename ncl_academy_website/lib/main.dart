@@ -10,6 +10,7 @@ import 'onHover.dart';
 import 'screens/help_page.dart';
 import 'screens/spring_beginner.dart';
 import 'screens/spring_setting_up.dart';
+import 'screens/spring_reference.dart';
 import 'screens/advanced_page.dart';
 
 void main() {
@@ -37,6 +38,10 @@ void main() {
       GetPage(
           name: '/spring_setting_up',
           page: () => const SpringSettingUpPage(),
+          transition: Transition.noTransition),
+      GetPage(
+          name: '/spring_reference',
+          page: () => const SpringReferencePage(),
           transition: Transition.noTransition),
       GetPage(
           name: '/advanced',
@@ -70,7 +75,8 @@ class MyApp extends StatelessWidget {
         '/help': (context) => const HelpPage(),
         '/advanced': (context) => const AdvancedPage(),
         'spring_beginner': (context) => const SpringBeginnerPage(),
-        'spring_setting_up': (context) => const SpringSettingUpPage()
+        'spring_setting_up': (context) => const SpringSettingUpPage(),
+        'spring_reference': (context) => const SpringReferencePage()
       },
     );
   }

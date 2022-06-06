@@ -31,20 +31,17 @@ const explanationTitleStyle = TextStyle(
     color: Colors.white);
 
 const explanationBodyStyle =
-TextStyle(fontFamily: "Catamaran", height: 1.5, color: Colors.white);
+    TextStyle(fontFamily: "Catamaran", height: 1.5, color: Colors.white);
 
-final chapterTitle = Column(
-  children: const <Widget> [
-    Align(
+final chapterTitle = Column(children: const <Widget>[
+  Align(
+    alignment: Alignment.center,
+    child: Text("Spring4Shell", style: titleStyle),
+  ),
+  Align(
       alignment: Alignment.center,
-      child: Text("Spring4Shell", style: titleStyle),
-    ),
-    Align(
-      alignment: Alignment.center,
-      child: Text("Beginner Level", style: explanationBodyStyle)
-    )
-  ]
-);
+      child: Text("Beginner Level", style: explanationBodyStyle))
+]);
 
 final video = Image.asset(
   'img/cyberthreat.jpg',
@@ -69,16 +66,16 @@ final explanation = Column(
 );
 
 final nextButton = Align(
-  alignment: Alignment.centerRight,
-  child: FloatingActionButton.extended(
-      label: const Text("Next",
-          style:
-          TextStyle(fontFamily: "Montserrat", color: Colors.black)),
-      hoverElevation: 10,
-      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-      hoverColor: const Color.fromARGB(255, 244, 255, 252),
-      onPressed: () {Get.toNamed('/spring_setting_up');}
-));
+    alignment: Alignment.centerRight,
+    child: FloatingActionButton.extended(
+        label: const Text("Next",
+            style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+        hoverElevation: 10,
+        backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+        hoverColor: const Color.fromARGB(255, 244, 255, 252),
+        onPressed: () {
+          Get.toNamed('/spring_setting_up');
+        }));
 
 class SpringBeginnerPage extends StatelessWidget {
   const SpringBeginnerPage();
@@ -95,32 +92,28 @@ class SpringBeginnerPage extends StatelessWidget {
       Container(
           alignment: Alignment.center,
           padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-          child: Column(
-            children: <Widget>[
-              chapterTitle
-            ]
-          )),
+          child: Column(children: <Widget>[chapterTitle])),
       Positioned(
-        left: 40,
-        bottom: 20,
-        child: FloatingActionButton.extended(
+          left: 40,
+          bottom: 20,
+          child: FloatingActionButton.extended(
             label: const Text("Chapter Select",
                 style:
-                TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+                    TextStyle(fontFamily: "Montserrat", color: Colors.black)),
             hoverElevation: 10,
             backgroundColor: const Color.fromARGB(255, 210, 233, 227),
             hoverColor: const Color.fromARGB(255, 244, 255, 252),
             onPressed: () {
               Get.toNamed('/advanced');
             },
-        )
-      )
+          ))
     ]);
 
     final titleHeader = Container(
         padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
         alignment: Alignment.centerLeft,
-        child: const Text("An Introduction to Spring4Shell", style: headerStyle));
+        child:
+            const Text("An Introduction to Spring4Shell", style: headerStyle));
 
     final textColumn = Container(
         alignment: Alignment.centerLeft,
@@ -142,7 +135,7 @@ class SpringBeginnerPage extends StatelessWidget {
     );
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 33, 109, 110),
+      backgroundColor: const Color.fromARGB(255, 2, 81, 83),
       appBar: AppBar(
         toolbarHeight: 80.0,
         backgroundColor: appBarColour,
@@ -183,12 +176,7 @@ class SpringBeginnerPage extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              titleColumn,
-              titleHeader,
-              textColumn,
-              footer
-            ],
+            children: <Widget>[titleColumn, titleHeader, textColumn, footer],
           ),
         ),
       ),

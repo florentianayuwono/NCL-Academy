@@ -50,62 +50,24 @@ final chapterTitle = Column(children: const <Widget>[
       child: Text("Beginner Level", style: explanationBodyStyle))
 ]);
 
-final video = Image.asset(
-  'img/cyberthreat.jpg',
-  width: 840,
-  height: 400,
-  fit: BoxFit.cover,
-);
-
-final codeSnippet = Row(children: <Widget>[
-  Expanded(
-      child: Container(
-          color: Color(0xffFFCFA3),
-          child: Text("code code code", style: codeDisplayStyle)))
-]);
-
 final explanation = Column(
   children: <Widget>[
     Align(
       alignment: Alignment.centerLeft,
-      child:
-          Text("How to setup the environment?", style: explanationTitleStyle),
+      child: Text("Sources for our materials", style: explanationTitleStyle),
     ),
     Align(
       alignment: Alignment.centerLeft,
       child: Text(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Auctor eu augue ut lectus arcu bibendum. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Purus semper eget duis at tellus at urna condimentum. Mi bibendum neque egestas congue quisque. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Vel turpis nunc eget lorem dolor sed viverra. Quis auctor elit sed vulputate mi sit. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Feugiat nisl pretium fusce id velit ut tortor pretium viverra.",
+          "Youtube. Video by 123SantaClause "
+          "PurplePlanet. Spring House by 123SantaClauseXXXXXXX by XX "
+          "HELLOWORLD by THEWORLD "
+          "FANTASY by FFSTAR",
           style: explanationBodyStyle),
     ),
-    Align(
-        alignment: Alignment.centerLeft,
-        child: Column(children: <Widget>[
-          SizedBox(height: 40),
-          codeSnippet,
-          SizedBox(height: 20),
-          codeSnippet,
-          SizedBox(height: 20),
-          codeSnippet,
-          SizedBox(height: 40)
-        ]))
+    SizedBox(height: 40)
   ],
 );
-
-final topicSummary = Column(children: const <Widget>[
-  Align(
-    alignment: Alignment.centerLeft,
-    child: Text("Topic Summary", style: headerStyle),
-  ),
-  Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-          "Spring4Shell is a etc etc etc. "
-          "It posed dangers to blah blah blah. "
-          "The way to tackle this vulneraility is by doing this and that. "
-          "Visit our NCL website for more information about Spring4Shell.",
-          style: explanationBodyStyle)),
-  SizedBox(height: 40)
-]);
 
 final backButton = Align(
   alignment: Alignment.centerLeft,
@@ -126,13 +88,11 @@ final nextButton = Align(
       hoverElevation: 10,
       backgroundColor: const Color.fromARGB(255, 210, 233, 227),
       hoverColor: const Color.fromARGB(255, 244, 255, 252),
-      onPressed: () {
-        Get.toNamed('/spring_reference');
-      }),
+      onPressed: () => Get.back()),
 );
 
-class SpringSettingUpPage extends StatelessWidget {
-  const SpringSettingUpPage();
+class SpringReferencePage extends StatelessWidget {
+  const SpringReferencePage();
 
   @override
   Widget build(BuildContext context) {
@@ -166,17 +126,14 @@ class SpringSettingUpPage extends StatelessWidget {
     final titleHeader = Container(
         padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
         alignment: Alignment.centerLeft,
-        child: const Text("Setting Up Spring4Shell Environment",
-            style: headerStyle));
+        child: const Text("References/Credits", style: headerStyle));
 
     final textColumn = Container(
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.fromLTRB(250, 20, 250, 20),
         child: Column(
           children: <Widget>[
-            video,
             explanation,
-            topicSummary,
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[backButton, nextButton])
