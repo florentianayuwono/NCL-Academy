@@ -8,14 +8,14 @@ import 'dart:html' as html;
 import '../main.dart';
 import 'spring_beginner.dart';
 
-class IntermediatePage extends StatefulWidget {
-  const IntermediatePage({Key? key}) : super(key: key);
+class AdvancedPage extends StatefulWidget {
+  const AdvancedPage({Key? key}) : super(key: key);
 
   @override
-  State<IntermediatePage> createState() => _IntermediateState();
+  State<AdvancedPage> createState() => _AdvancedState();
 }
 
-class _IntermediateState extends State<IntermediatePage> {
+class _AdvancedState extends State<AdvancedPage> {
   var items = [" Vulnerabilities", "log4shell", "Spring4shell"];
   String DDvalue = " Vulnerabilities";
   @override
@@ -79,7 +79,7 @@ class _IntermediateState extends State<IntermediatePage> {
                         child: Text("Back",
                             style: TextStyle(color: Colors.black)))),
                 Center(
-                    child: Text("Intermediate",
+                    child: Text("Advanced",
                         style: TextStyle(
                             color: Color.fromRGBO(245, 200, 82, 1),
                             fontSize: 40,
@@ -102,20 +102,6 @@ class _IntermediateState extends State<IntermediatePage> {
                             fontSize: 24,
                             color: Color.fromRGBO(1, 83, 85, 1),
                             fontWeight: FontWeight.w800)),
-                  ),
-                ),
-                Center(
-                  child: Container(
-                    width: 1029,
-                    height: 41,
-                    color: Color.fromRGBO(210, 233, 227, 1),
-                    padding: EdgeInsets.fromLTRB(40, 5, 15, 0),
-                    child: Text("Starter Pack: Introduction to Cybersecurity",
-                        style: TextStyle(
-                          fontFamily: "Catamaran",
-                          fontSize: 20,
-                          color: Colors.black,
-                        )),
                   ),
                 ),
                 Center(
@@ -161,11 +147,10 @@ class _IntermediateState extends State<IntermediatePage> {
                                 });
                                 switch (DDvalue) {
                                   case "log4shell":
-                                    // Route to homepage first as log4shell page is not developed yet
                                     Get.toNamed('/');
                                     break;
                                   case "Spring4shell":
-                                    Get.toNamed('/spring_beginner');
+                                    Get.toNamed('/spring_setting_up');
                                     break;
                                 }
                               },

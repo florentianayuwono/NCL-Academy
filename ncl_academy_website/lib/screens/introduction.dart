@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'dart:html' as html;
+import 'dart:ui' as ui;
+import 'package:ncl_academy_website/onHover.dart';
 
 const headerColour = Color.fromARGB(255, 245, 200, 82);
 const titleStyle = TextStyle(
@@ -68,45 +70,125 @@ final explanation = Column(
   ],
 );
 
-class ButtonShapePainter extends CustomPainter {
+class BackButtonClipper extends CustomClipper<Path> {
   @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint0 = Paint()
-      ..color = const Color.fromARGB(255, 33, 150, 243)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1;
-
-    Path path0 = Path();
-    path0.moveTo(size.width * 0.3300000, size.height * 0.3333333);
-    path0.lineTo(size.width * 0.6666667, size.height * 0.3317333);
-    path0.lineTo(size.width * 0.6000000, size.height * 0.5000000);
-    path0.lineTo(size.width * 0.6666667, size.height * 0.6666667);
-    path0.lineTo(size.width * 0.3333333, size.height * 0.6666667);
-    path0.lineTo(size.width * 0.2500000, size.height * 0.4933333);
-    path0.lineTo(size.width * 0.3300000, size.height * 0.3333333);
-    path0.close();
-
-    canvas.drawPath(path0, paint0);
+  Path getClip(Size size) {
+    return Path()
+      ..moveTo(size.width * 0.2074500, size.height * 0.3999500)
+      ..lineTo(size.width * 0.8513000, size.height * 0.3989500)
+      ..lineTo(size.width * 0.7519000, size.height * 0.5003000)
+      ..lineTo(size.width * 0.8494000, size.height * 0.6029000)
+      ..lineTo(size.width * 0.2003500, size.height * 0.6048000)
+      ..lineTo(size.width * 0.1007000, size.height * 0.5017500)
+      ..lineTo(size.width * 0.2074500, size.height * 0.3999500)
+      ..close();
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+}
+
+class NextButtonClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    return Path()
+      ..moveTo(size.width * 0.1067500, size.height * 0.3999500)
+      ..lineTo(size.width * 0.7506000, size.height * 0.3989500)
+      ..lineTo(size.width * 0.8469000, size.height * 0.4984000)
+      ..lineTo(size.width * 0.7487000, size.height * 0.6029000)
+      ..lineTo(size.width * 0.1034500, size.height * 0.6048000)
+      ..lineTo(size.width * 0.2024500, size.height * 0.4998500)
+      ..lineTo(size.width * 0.1067500, size.height * 0.3999500)
+      ..close();
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+}
+
+class BackButton extends StatefulWidget {
+  BackButton({Key? key}) : super(key: key);
+
+  @override
+  _BackButtonState createState() => _BackButtonState();
+}
+
+class _BackButtonState extends State<BackButton> {
+  var backButtonColor = const Color.fromARGB(255, 223, 62, 62);
+
+  Widget build(BuildContext context) {
+    return Center(
+        child: SizedBox(
+      height: 200,
+      width: 200,
+      child: ClipPath(
+        clipper: BackButtonClipper(),
+        child: (TextButton(
+          style: TextButton.styleFrom(
+            backgroundColor: backButtonColor,
+          ),
+          child: const Text("Prev",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.bold)),
+          // Navigate to previous page, input previous page's name here
+          onPressed: () => Get.toNamed('/spring_setting_up'),
+          onHover: (isHovered) {
+            setState(() {
+              backButtonColor = isHovered
+                  ? const Color.fromARGB(255, 255, 68, 102)
+                  : const Color.fromARGB(255, 223, 62, 62);
+            });
+          },
+        )),
+      ),
+    ));
   }
 }
 
-// class BackButton extends StatelessWidget {
-//   final String text;
-//   final GestureTapCallback onTap;
-//   const BackButton(this.text, this.onTap);
+class NextButton extends StatefulWidget {
+  NextButton({Key? key}) : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Material(
-//       shape: ButtonShapePainter()
-//     );
-//   }
-// }
+  @override
+  _NextButtonState createState() => _NextButtonState();
+}
+
+class _NextButtonState extends State<NextButton> {
+  var nextButtonColor = const Color.fromARGB(255, 0, 168, 107);
+
+  Widget build(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        height: 200,
+        width: 200,
+        child: ClipPath(
+            clipper: NextButtonClipper(),
+            child: (TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: nextButtonColor,
+              ),
+              child: const Text("Next",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.bold)),
+              // Navigate to previous page, input previous page's name here
+              onPressed: () => Get.toNamed('/'),
+              onHover: (isHovered) {
+                setState(() {
+                  nextButtonColor = isHovered
+                      ? const Color.fromARGB(255, 2, 199, 127)
+                      : const Color.fromARGB(255, 0, 168, 107);
+                });
+              },
+            ))),
+      ),
+    );
+  }
+}
 
 class IntroductionPage extends StatelessWidget {
   const IntroductionPage();
@@ -152,14 +234,11 @@ class IntroductionPage extends StatelessWidget {
           children: <Widget>[
             video,
             explanation,
-            RawMaterialButton(
-              onPressed: () => Get.back(),
-              child: CustomPaint(
-                size: Size(300, 150),
-                painter: ButtonShapePainter(),
-                //child: Container(height: 300, width: 150)
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [BackButton(), NextButton()],
             )
+            //child: Container(height: 300, width: 150)
           ],
         ));
 

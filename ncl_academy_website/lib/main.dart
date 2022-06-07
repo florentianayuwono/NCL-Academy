@@ -8,11 +8,13 @@ import 'dart:html' as html;
 
 import 'onHover.dart';
 import 'screens/help_page.dart';
+import 'screens/introduction.dart';
+import 'screens/beginner.dart';
+import 'screens/intermediate.dart';
+import 'screens/advanced.dart';
 import 'screens/spring_beginner.dart';
 import 'screens/spring_setting_up.dart';
 import 'screens/spring_reference.dart';
-import 'screens/advanced_page.dart';
-import 'screens/intermediate.dart';
 
 void main() {
   // Remove leading hash in address
@@ -33,6 +35,10 @@ void main() {
           page: () => const HelpPage(),
           transition: Transition.noTransition),
       GetPage(
+          name: '/introduction',
+          page: () => const IntroductionPage(),
+          transition: Transition.noTransition),
+      GetPage(
           name: '/spring_beginner',
           page: () => const SpringBeginnerPage(),
           transition: Transition.noTransition),
@@ -45,14 +51,17 @@ void main() {
           page: () => const SpringReferencePage(),
           transition: Transition.noTransition),
       GetPage(
+          name: '/beginner',
+          page: () => const BeginnerPage(),
+          transition: Transition.noTransition),
+      GetPage(
+          name: '/intermediate',
+          page: () => const IntermediatePage(),
+          transition: Transition.noTransition),
+      GetPage(
           name: '/advanced',
           page: () => const AdvancedPage(),
           transition: Transition.noTransition),
-      // GetPage(
-      //   name: '/third',
-      //   page: () => Third(),
-      //   transition: Transition.zoom
-      // ),
     ],
   ));
 }
@@ -66,8 +75,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'NCL Academy',
       theme: ThemeData(
-        // This is the theme of your application.
-
         scaffoldBackgroundColor: const Color.fromARGB(255, 229, 229, 229),
         primarySwatch: Colors.blue,
       ),
@@ -75,6 +82,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/help': (context) => const HelpPage(),
         '/advanced': (context) => const AdvancedPage(),
+        '/introduction': (context) => const IntroductionPage(),
         'spring_beginner': (context) => const SpringBeginnerPage(),
         'spring_setting_up': (context) => const SpringSettingUpPage(),
         'spring_reference': (context) => const SpringReferencePage()
@@ -360,7 +368,7 @@ class HomePage extends StatelessWidget {
                   ClipOval(
                     child: SizedBox.fromSize(
                       size: const Size.fromRadius(40),
-                      child: Image.network('img/pawn.jpg', fit: BoxFit.cover),
+                      child: Image.asset('img/pawn.jpg', fit: BoxFit.cover),
                     ),
                   ),
                   const Text(
@@ -370,7 +378,7 @@ class HomePage extends StatelessWidget {
                 ],
               )),
           onTap: () {
-            Get.toNamed('/spring_beginner');
+            Get.toNamed('/beginner');
           });
     });
 
@@ -402,7 +410,7 @@ class HomePage extends StatelessWidget {
                 ClipOval(
                   child: SizedBox.fromSize(
                     size: const Size.fromRadius(40),
-                    child: Image.network('img/bishop.jpg', fit: BoxFit.cover),
+                    child: Image.asset('img/bishop.jpg', fit: BoxFit.cover),
                   ),
                 ),
                 const Text(
@@ -413,7 +421,7 @@ class HomePage extends StatelessWidget {
             )),
         onTap: () {
           // Navigate to intermediate page
-          Get.to(() => IntermediatePage());
+          Get.toNamed('/intermediate');
         },
       );
     });
@@ -446,7 +454,7 @@ class HomePage extends StatelessWidget {
                 ClipOval(
                   child: SizedBox.fromSize(
                     size: const Size.fromRadius(40),
-                    child: Image.network('img/knight.jpg', fit: BoxFit.cover),
+                    child: Image.asset('img/knight.jpg', fit: BoxFit.cover),
                   ),
                 ),
                 const Text(
@@ -718,7 +726,7 @@ class HomePage extends StatelessWidget {
                   bottomLeft: Radius.circular(100)),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                child: Image.network('img/cyberthreat.jpg', fit: BoxFit.cover),
+                child: Image.asset('img/cyberthreat.jpg', fit: BoxFit.cover),
               ),
             ),
           ),
@@ -741,7 +749,7 @@ class HomePage extends StatelessWidget {
                   bottomLeft: Radius.circular(100)),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                child: Image.network('img/whyncl.jpg', fit: BoxFit.cover),
+                child: Image.asset('img/whyncl.jpg', fit: BoxFit.cover),
               ),
             ),
           ),
@@ -766,7 +774,7 @@ class HomePage extends StatelessWidget {
                   bottomLeft: Radius.circular(100)),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                child: Image.network('img/provide.jpg', fit: BoxFit.cover),
+                child: Image.asset('img/provide.jpg', fit: BoxFit.cover),
               ),
             ),
           ),
