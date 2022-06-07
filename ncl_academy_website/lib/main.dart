@@ -8,13 +8,14 @@ import 'dart:html' as html;
 
 import 'onHover.dart';
 import 'screens/help_page.dart';
-import 'screens/introduction.dart';
+import 'buttons.dart';
 import 'screens/beginner.dart';
 import 'screens/intermediate.dart';
 import 'screens/advanced.dart';
 import 'screens/spring_beginner.dart';
 import 'screens/spring_setting_up.dart';
 import 'screens/spring_reference.dart';
+import 'screens/cybersecurity.dart';
 
 void main() {
   // Remove leading hash in address
@@ -34,10 +35,10 @@ void main() {
           name: '/help',
           page: () => const HelpPage(),
           transition: Transition.noTransition),
-      GetPage(
-          name: '/introduction',
-          page: () => const IntroductionPage(),
-          transition: Transition.noTransition),
+      // GetPage(
+      //     name: '/introduction',
+      //     page: () => const IntroductionPage(),
+      //     transition: Transition.noTransition),
       GetPage(
           name: '/spring_beginner',
           page: () => const SpringBeginnerPage(),
@@ -62,6 +63,15 @@ void main() {
           name: '/advanced',
           page: () => const AdvancedPage(),
           transition: Transition.noTransition),
+      GetPage(
+          name: '/cybersecurity',
+          page: () => const CybersecurityPage(),
+          transition: Transition.noTransition),
+      // GetPage(
+      //   name: '/third',
+      //   page: () => Third(),
+      //   transition: Transition.zoom
+      // ),
     ],
   ));
 }
@@ -82,10 +92,11 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/help': (context) => const HelpPage(),
         '/advanced': (context) => const AdvancedPage(),
-        '/introduction': (context) => const IntroductionPage(),
+        //'/introduction': (context) => const IntroductionPage(),
         'spring_beginner': (context) => const SpringBeginnerPage(),
         'spring_setting_up': (context) => const SpringSettingUpPage(),
-        'spring_reference': (context) => const SpringReferencePage()
+        'spring_reference': (context) => const SpringReferencePage(),
+        'cybersecurity': (context) => const CybersecurityPage(),
       },
     );
   }
