@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:ncl_academy_website/main.dart';
 import 'dart:html' as html;
+import 'package:ncl_academy_website/buttons.dart';
 
 const headerColour = Color.fromARGB(255, 245, 200, 82);
 const titleStyle = TextStyle(
@@ -179,7 +180,12 @@ class SpringSettingUpPage extends StatelessWidget {
             topicSummary,
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[backButton, nextButton])
+                children: <Widget>[
+                  PrevButton(prevPage: '/spring_beginner'),
+                  NextButton(
+                    nextPage: 'spring_reference',
+                  )
+                ])
           ],
         ));
 

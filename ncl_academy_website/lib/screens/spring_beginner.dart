@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:ncl_academy_website/main.dart';
 import 'dart:html' as html;
+import 'package:ncl_academy_website/buttons.dart';
 
 const headerColour = Color.fromARGB(255, 245, 200, 82);
 const titleStyle = TextStyle(
@@ -122,7 +123,7 @@ class SpringBeginnerPage extends StatelessWidget {
           children: <Widget>[
             video,
             explanation,
-            nextButton,
+            NextButton(nextPage: 'spring_setting_up'),
           ],
         ));
 

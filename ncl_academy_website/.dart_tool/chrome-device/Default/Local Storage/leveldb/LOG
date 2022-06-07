@@ -1,4 +1,22 @@
-2022/06/07-12:21:20.256 177c Reusing MANIFEST C:\Users\HEWLET~1\AppData\Local\Temp\flutter_tools.302e04eb\flutter_tools_chrome_device.997d2a71\Default\Local Storage\leveldb/MANIFEST-000001
-2022/06/07-12:21:20.257 177c Recovering log #3
-2022/06/07-12:21:20.258 177c Reusing old log C:\Users\HEWLET~1\AppData\Local\Temp\flutter_tools.302e04eb\flutter_tools_chrome_device.997d2a71\Default\Local Storage\leveldb/000003.log 
-2022/06/07-12:21:20.259 177c Delete type=2 #4
+2022/06/07-15:33:48.457 2e5c Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.7dd94068\flutter_tools_chrome_device.479a8120\Default\Local Storage\leveldb/MANIFEST-000001
+2022/06/07-15:33:48.458 2e5c Recovering log #3
+2022/06/07-15:33:48.458 2e5c Recovering log #4
+2022/06/07-15:33:48.458 2e5c Level-0 table #4: started
+2022/06/07-15:33:48.460 2e5c Level-0 table #4: 27289 bytes OK
+2022/06/07-15:33:48.461 2e5c Recovering log #5
+2022/06/07-15:33:48.461 2e5c Level-0 table #5: started
+2022/06/07-15:33:48.462 2e5c Level-0 table #5: 13915 bytes OK
+2022/06/07-15:33:48.463 2e5c Recovering log #8
+2022/06/07-15:33:48.463 2e5c Level-0 table #6: started
+2022/06/07-15:33:48.464 2e5c Level-0 table #6: 742 bytes OK
+2022/06/07-15:33:48.464 2e5c Recovering log #11
+2022/06/07-15:33:48.465 2e5c Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.7dd94068\flutter_tools_chrome_device.479a8120\Default\Local Storage\leveldb/000011.log 
+2022/06/07-15:33:48.467 2e5c Delete type=2 #3
+2022/06/07-15:33:48.467 2e5c Delete type=0 #3
+2022/06/07-15:33:48.467 2e5c Delete type=0 #4
+2022/06/07-15:33:48.467 2e5c Delete type=0 #5
+2022/06/07-15:33:48.467 2e5c Delete type=2 #7
+2022/06/07-15:33:48.467 2e5c Delete type=2 #8
+2022/06/07-15:33:48.467 2e5c Delete type=0 #8
+2022/06/07-15:33:48.467 2e5c Delete type=2 #9
+2022/06/07-15:33:48.467 2e5c Delete type=2 #12

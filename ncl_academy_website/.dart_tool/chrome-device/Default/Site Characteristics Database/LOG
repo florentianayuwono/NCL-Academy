@@ -1,9 +1,2 @@
-2022/06/07-12:21:20.207 1f94 Reusing MANIFEST C:\Users\HEWLET~1\AppData\Local\Temp\flutter_tools.302e04eb\flutter_tools_chrome_device.997d2a71\Default\Site Characteristics Database/MANIFEST-000001
-2022/06/07-12:21:20.208 1f94 Recovering log #3
-2022/06/07-12:21:20.208 1f94 Level-0 table #3: started
-2022/06/07-12:21:20.211 1f94 Level-0 table #3: 194 bytes OK
-2022/06/07-12:21:20.211 1f94 Recovering log #44
-2022/06/07-12:21:20.212 1f94 Reusing old log C:\Users\HEWLET~1\AppData\Local\Temp\flutter_tools.302e04eb\flutter_tools_chrome_device.997d2a71\Default\Site Characteristics Database/000044.log 
-2022/06/07-12:21:20.214 1f94 Delete type=0 #3
-2022/06/07-12:21:20.214 1f94 Delete type=2 #45
-2022/06/07-12:21:20.214 1f94 Delete type=2 #52
+2022/06/07-15:33:48.422 5484 Creating DB C:\Users\thngy\AppData\Local\Temp\flutter_tools.7dd94068\flutter_tools_chrome_device.479a8120\Default\Site Characteristics Database since it was missing.
+2022/06/07-15:33:48.427 5484 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.7dd94068\flutter_tools_chrome_device.479a8120\Default\Site Characteristics Database/MANIFEST-000001
