@@ -1,42 +1,20 @@
-2022/06/07-16:08:56.004 5008 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.69f15d23\flutter_tools_chrome_device.d1765171\Default\Site Characteristics Database/MANIFEST-000001
-2022/06/07-16:08:56.005 5008 Recovering log #3
-2022/06/07-16:08:56.005 5008 Level-0 table #3: started
-2022/06/07-16:08:56.007 5008 Level-0 table #3: 179 bytes OK
-2022/06/07-16:08:56.007 5008 Recovering log #6
-2022/06/07-16:08:56.007 5008 Level-0 table #4: started
-2022/06/07-16:08:56.008 5008 Level-0 table #4: 172 bytes OK
-2022/06/07-16:08:56.008 5008 Recovering log #10
-2022/06/07-16:08:56.008 5008 Level-0 table #7: started
-2022/06/07-16:08:56.010 5008 Level-0 table #7: 295 bytes OK
-2022/06/07-16:08:56.010 5008 Recovering log #19
-2022/06/07-16:08:56.010 5008 Level-0 table #11: started
-2022/06/07-16:08:56.011 5008 Level-0 table #11: 268 bytes OK
-2022/06/07-16:08:56.012 5008 Recovering log #30
-2022/06/07-16:08:56.012 5008 Level-0 table #20: started
-2022/06/07-16:08:56.013 5008 Level-0 table #20: 808 bytes OK
-2022/06/07-16:08:56.013 5008 Recovering log #44
-2022/06/07-16:08:56.013 5008 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.69f15d23\flutter_tools_chrome_device.d1765171\Default\Site Characteristics Database/000044.log 
-2022/06/07-16:08:56.014 5008 Delete type=0 #3
-2022/06/07-16:08:56.014 5008 Delete type=2 #6
-2022/06/07-16:08:56.015 5008 Delete type=0 #6
-2022/06/07-16:08:56.015 5008 Delete type=0 #10
-2022/06/07-16:08:56.015 5008 Delete type=2 #13
-2022/06/07-16:08:56.015 5008 Delete type=2 #14
-2022/06/07-16:08:56.015 5008 Delete type=0 #19
-2022/06/07-16:08:56.015 5008 Delete type=2 #22
-2022/06/07-16:08:56.015 5008 Delete type=2 #23
-2022/06/07-16:08:56.015 5008 Delete type=2 #24
-2022/06/07-16:08:56.015 5008 Delete type=0 #30
-2022/06/07-16:08:56.015 5008 Delete type=2 #31
-2022/06/07-16:08:56.015 5008 Delete type=2 #37
-2022/06/07-16:08:56.015 5008 Delete type=2 #45
-2022/06/07-16:08:56.015 5008 Delete type=2 #52
-2022/06/07-16:08:56.018 5464 Compacting 5@0 + 0@1 files
-2022/06/07-16:08:56.020 5464 Generated table #45@0: 8 keys, 571 bytes
-2022/06/07-16:08:56.020 5464 Compacted 5@0 + 0@1 files => 571 bytes
-2022/06/07-16:08:56.020 5464 compacted to: files[ 0 1 0 0 0 0 0 ]
-2022/06/07-16:08:56.021 5464 Delete type=2 #3
-2022/06/07-16:08:56.021 5464 Delete type=2 #4
-2022/06/07-16:08:56.021 5464 Delete type=2 #7
-2022/06/07-16:08:56.021 5464 Delete type=2 #11
-2022/06/07-16:08:56.021 5464 Delete type=2 #20
+2022/06/07-16:50:39.030 44e0 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.2773e87e\flutter_tools_chrome_device.2f50517a\Default\Site Characteristics Database/MANIFEST-000001
+2022/06/07-16:50:39.030 44e0 Recovering log #44
+2022/06/07-16:50:39.031 44e0 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.2773e87e\flutter_tools_chrome_device.2f50517a\Default\Site Characteristics Database/000044.log 
+2022/06/07-16:50:39.031 44e0 Delete type=0 #3
+2022/06/07-16:50:39.031 44e0 Delete type=2 #4
+2022/06/07-16:50:39.031 44e0 Delete type=2 #6
+2022/06/07-16:50:39.031 44e0 Delete type=0 #6
+2022/06/07-16:50:39.031 44e0 Delete type=0 #10
+2022/06/07-16:50:39.031 44e0 Delete type=2 #11
+2022/06/07-16:50:39.031 44e0 Delete type=2 #13
+2022/06/07-16:50:39.031 44e0 Delete type=2 #14
+2022/06/07-16:50:39.031 44e0 Delete type=0 #19
+2022/06/07-16:50:39.031 44e0 Delete type=2 #20
+2022/06/07-16:50:39.031 44e0 Delete type=2 #22
+2022/06/07-16:50:39.031 44e0 Delete type=2 #23
+2022/06/07-16:50:39.031 44e0 Delete type=2 #24
+2022/06/07-16:50:39.031 44e0 Delete type=0 #30
+2022/06/07-16:50:39.031 44e0 Delete type=2 #31
+2022/06/07-16:50:39.031 44e0 Delete type=2 #37
+2022/06/07-16:50:39.031 44e0 Delete type=2 #52

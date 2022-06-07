@@ -6,6 +6,7 @@ import 'dart:html' as html;
 import 'package:flutter/foundation.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:ncl_academy_website/buttons.dart';
 
 const headerColour = Color.fromARGB(255, 245, 200, 82);
 const titleStyle = TextStyle(
@@ -44,7 +45,6 @@ const codeDisplayStyle = TextStyle(
     backgroundColor: Color(0xffFFCFA3));
 
 class SettingExecutionTemplate extends StatelessWidget {
-
   String title;
   String level;
   String subTitle;
@@ -55,11 +55,18 @@ class SettingExecutionTemplate extends StatelessWidget {
   String previousPage;
   String nextPage;
 
-  SettingExecutionTemplate(this.title, this.level, this.subTitle, this.textTitle,
-      this.textMaterial, this.code, this.summary, this.previousPage, this.nextPage);
+  SettingExecutionTemplate(
+      this.title,
+      this.level,
+      this.subTitle,
+      this.textTitle,
+      this.textMaterial,
+      this.code,
+      this.summary,
+      this.previousPage,
+      this.nextPage);
 
-  Widget chapterTitle(String title, String level) =>
-      Column(children: [
+  Widget chapterTitle(String title, String level) => Column(children: [
         Align(
           alignment: Alignment.center,
           child: Text(title, style: titleStyle),
@@ -69,8 +76,7 @@ class SettingExecutionTemplate extends StatelessWidget {
             child: Text(level, style: explanationBodyStyle))
       ]);
 
-  Widget titleColumn(String bigTitle, String level) =>
-      Stack(children: [
+  Widget titleColumn(String bigTitle, String level) => Stack(children: [
         Container(
             alignment: Alignment.center,
             padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
@@ -81,7 +87,7 @@ class SettingExecutionTemplate extends StatelessWidget {
             child: FloatingActionButton.extended(
               label: const Text("Chapter Select",
                   style:
-                  TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+                      TextStyle(fontFamily: "Montserrat", color: Colors.black)),
               hoverElevation: 10,
               backgroundColor: const Color.fromARGB(255, 210, 233, 227),
               hoverColor: const Color.fromARGB(255, 244, 255, 252),
@@ -91,13 +97,10 @@ class SettingExecutionTemplate extends StatelessWidget {
             ))
       ]);
 
-  Widget smallTitle(String title) =>
-      Container(
-          padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
-          alignment: Alignment.centerLeft,
-          child:
-          Text(title, style: headerStyle)
-      );
+  Widget smallTitle(String title) => Container(
+      padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
+      alignment: Alignment.centerLeft,
+      child: Text(title, style: headerStyle));
 
   final video = Image.asset(
     'img/cyberthreat.jpg',
@@ -107,88 +110,90 @@ class SettingExecutionTemplate extends StatelessWidget {
   );
 
   Widget codeSnippet(String code) => Row(children: <Widget>[
-    Expanded(
-        child: Container(
-            color: Color(0xffFFCFA3),
-            child: Text(code, style: codeDisplayStyle)))
-  ]);
+        Expanded(
+            child: Container(
+                color: Color(0xffFFCFA3),
+                child: Text(code, style: codeDisplayStyle)))
+      ]);
 
-  Widget explanation(String textTitle, String textMaterial, String code) => Column(
-    children: [
-      Align(
-        alignment: Alignment.centerLeft,
-        child: Text(textTitle, style: explanationTitleStyle),
-      ),
-      Align(
-        alignment: Alignment.centerLeft,
-        child: Text(
-            textMaterial,
-            style: explanationBodyStyle),
-      ),
-      Align(
-          alignment: Alignment.centerLeft,
-          child: Column(children: <Widget>[
-            SizedBox(height: 40),
-            codeSnippet(code),
-            SizedBox(height: 20),
-            codeSnippet(code),
-            SizedBox(height: 20),
-            codeSnippet(code),
-            SizedBox(height: 40)
-          ]))
-    ],
-  );
+  Widget explanation(String textTitle, String textMaterial, String code) =>
+      Column(
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(textTitle, style: explanationTitleStyle),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(textMaterial, style: explanationBodyStyle),
+          ),
+          Align(
+              alignment: Alignment.centerLeft,
+              child: Column(children: <Widget>[
+                SizedBox(height: 40),
+                codeSnippet(code),
+                SizedBox(height: 20),
+                codeSnippet(code),
+                SizedBox(height: 20),
+                codeSnippet(code),
+                SizedBox(height: 40)
+              ]))
+        ],
+      );
 
   Widget topicSummary(String summary) => Column(children: [
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text("Topic Summary", style: headerStyle),
-    ),
-    Align(
-        alignment: Alignment.centerLeft,
-        child: Text(summary, style: explanationBodyStyle)
-    ),
-    SizedBox(height: 40)
-  ]);
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text("Topic Summary", style: headerStyle),
+        ),
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Text(summary, style: explanationBodyStyle)),
+        SizedBox(height: 40)
+      ]);
 
-  Widget backButton(String previousPage) => Align(
-    alignment: Alignment.centerLeft,
-    child: FloatingActionButton.extended(
-        label: const Text("Prev",
-            style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
-        hoverElevation: 10,
-        backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-        hoverColor: const Color.fromARGB(255, 244, 255, 252),
-        onPressed: () => Get.toNamed(previousPage)),
-  );
+  // Widget backButton(String previousPage) => Align(
+  //       alignment: Alignment.centerLeft,
+  //       child: FloatingActionButton.extended(
+  //           label: const Text("Prev",
+  //               style:
+  //                   TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+  //           hoverElevation: 10,
+  //           backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+  //           hoverColor: const Color.fromARGB(255, 244, 255, 252),
+  //           onPressed: () => Get.toNamed(previousPage)),
+  //     );
 
-  Widget nextButton(String nextPage) => Align(
-      alignment: Alignment.centerRight,
-      child: FloatingActionButton.extended(
-          label: const Text("Next",
-              style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
-          hoverElevation: 10,
-          backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-          hoverColor: const Color.fromARGB(255, 244, 255, 252),
-          onPressed: () {
-            Get.toNamed(nextPage);
-          }));
+  // Widget nextButton(String nextPage) => Align(
+  //     alignment: Alignment.centerRight,
+  //     child: FloatingActionButton.extended(
+  //         label: const Text("Next",
+  //             style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+  //         hoverElevation: 10,
+  //         backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+  //         hoverColor: const Color.fromARGB(255, 244, 255, 252),
+  //         onPressed: () {
+  //           Get.toNamed(nextPage);
+  //         }));
 
   Widget textColumn(String textTitle, String textMaterial, String code,
-      String summary, String previousPage, String nextPage) =>
+          String summary, String previousPage, String nextPage) =>
       Container(
-      alignment: Alignment.centerLeft,
-      padding: const EdgeInsets.fromLTRB(250, 20, 250, 20),
-      child: Column(
-        children: <Widget>[
-          video,
-          explanation(textTitle, textMaterial, code),
-          topicSummary(summary),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[backButton(previousPage), nextButton(nextPage)])
-        ],
-      ));
+          alignment: Alignment.centerLeft,
+          padding: const EdgeInsets.fromLTRB(250, 20, 250, 20),
+          child: Column(
+            children: <Widget>[
+              video,
+              explanation(textTitle, textMaterial, code),
+              topicSummary(summary),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    PrevButton(prevPage: previousPage),
+                    NextButton(nextPage: nextPage)
+                  ])
+            ],
+          ));
 
   final footer = Container(
     padding: const EdgeInsets.all(8.0),
@@ -253,7 +258,8 @@ class SettingExecutionTemplate extends StatelessWidget {
               smallTitle(this.subTitle),
               textColumn(this.textTitle, this.textMaterial, this.code,
                   this.summary, this.previousPage, this.nextPage),
-              footer],
+              footer
+            ],
           ),
         ),
       ),

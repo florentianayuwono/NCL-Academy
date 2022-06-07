@@ -14,6 +14,11 @@ To run the app on your local machine, please follow the following steps:
 
 **Make sure you have Flutter installed on your machine!**
 
+## Folders
+img: Contains the assets used in the web application (Images and SVG icons).
+lib: Contains the main project code, as well as the dart files for each screen, as well as some custom widgets.
+lib/screens: Contains the code for each page of this web app.
+lib/screens/templates: Contains the templates for the content pages. A guide on how to create new pages can be found in the README in this folder.
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
