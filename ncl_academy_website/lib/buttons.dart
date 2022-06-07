@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 
 /*
 This dart file contains the stylized 'Prev' and 'Next' arrow button widgets for the content pages.
+Import the dart file with the statement: import 'package:ncl_academy_website/buttons.dart';
 Include the previous and next page name when calling the button widgets.
-Example usage: PrevButton('/spring_beginner') => the button will navigate to '/spring_beginner'
-NextButton('/spring_references') => the button will navigate to '/spring_references'
+Example usage: PrevButton(prevPage: '/spring_beginner') => the button will navigate to '/spring_beginner'
+NextButton(nextPage: '/spring_references') => the button will navigate to '/spring_references'
  */
 
 class PrevButtonClipper extends CustomClipper<Path> {
