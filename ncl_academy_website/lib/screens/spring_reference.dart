@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:ncl_academy_website/main.dart';
+import 'package:ncl_academy_website/buttons.dart';
 import 'dart:html' as html;
 
 const headerColour = Color.fromARGB(255, 245, 200, 82);
@@ -138,7 +138,14 @@ class SpringReferencePage extends StatelessWidget {
             explanation,
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[backButton, nextButton])
+                children: <Widget>[
+                  PrevButton(
+                    prevPage: '/spring_setting_up',
+                  ),
+                  NextButton(
+                    nextPage: '/',
+                  )
+                ])
           ],
         ));
 
