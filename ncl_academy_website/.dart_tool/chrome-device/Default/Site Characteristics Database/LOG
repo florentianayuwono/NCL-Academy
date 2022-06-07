@@ -1,20 +1,9 @@
-2022/06/06-15:52:18.640 5168 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.747d972d\flutter_tools_chrome_device.893751d9\Default\Site Characteristics Database/MANIFEST-000001
-2022/06/06-15:52:18.641 5168 Recovering log #44
-2022/06/06-15:52:18.641 5168 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.747d972d\flutter_tools_chrome_device.893751d9\Default\Site Characteristics Database/000044.log 
-2022/06/06-15:52:18.641 5168 Delete type=0 #3
-2022/06/06-15:52:18.641 5168 Delete type=2 #4
-2022/06/06-15:52:18.641 5168 Delete type=2 #6
-2022/06/06-15:52:18.641 5168 Delete type=0 #6
-2022/06/06-15:52:18.641 5168 Delete type=0 #10
-2022/06/06-15:52:18.641 5168 Delete type=2 #11
-2022/06/06-15:52:18.642 5168 Delete type=2 #13
-2022/06/06-15:52:18.642 5168 Delete type=2 #14
-2022/06/06-15:52:18.642 5168 Delete type=0 #19
-2022/06/06-15:52:18.642 5168 Delete type=2 #20
-2022/06/06-15:52:18.642 5168 Delete type=2 #22
-2022/06/06-15:52:18.642 5168 Delete type=2 #23
-2022/06/06-15:52:18.642 5168 Delete type=2 #24
-2022/06/06-15:52:18.642 5168 Delete type=0 #30
-2022/06/06-15:52:18.642 5168 Delete type=2 #31
-2022/06/06-15:52:18.642 5168 Delete type=2 #37
-2022/06/06-15:52:18.642 5168 Delete type=2 #45
+2022/06/07-12:21:20.207 1f94 Reusing MANIFEST C:\Users\HEWLET~1\AppData\Local\Temp\flutter_tools.302e04eb\flutter_tools_chrome_device.997d2a71\Default\Site Characteristics Database/MANIFEST-000001
+2022/06/07-12:21:20.208 1f94 Recovering log #3
+2022/06/07-12:21:20.208 1f94 Level-0 table #3: started
+2022/06/07-12:21:20.211 1f94 Level-0 table #3: 194 bytes OK
+2022/06/07-12:21:20.211 1f94 Recovering log #44
+2022/06/07-12:21:20.212 1f94 Reusing old log C:\Users\HEWLET~1\AppData\Local\Temp\flutter_tools.302e04eb\flutter_tools_chrome_device.997d2a71\Default\Site Characteristics Database/000044.log 
+2022/06/07-12:21:20.214 1f94 Delete type=0 #3
+2022/06/07-12:21:20.214 1f94 Delete type=2 #45
+2022/06/07-12:21:20.214 1f94 Delete type=2 #52

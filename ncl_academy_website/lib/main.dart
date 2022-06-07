@@ -13,6 +13,7 @@ import 'screens/spring_setting_up.dart';
 import 'screens/spring_reference.dart';
 import 'screens/advanced_page.dart';
 import 'screens/intermediate.dart';
+import 'screens/cybersecurity.dart';
 
 void main() {
   // Remove leading hash in address
@@ -48,6 +49,10 @@ void main() {
           name: '/advanced',
           page: () => const AdvancedPage(),
           transition: Transition.noTransition),
+      GetPage(
+          name: '/cybersecurity',
+          page: () => const CybersecurityPage(),
+          transition: Transition.noTransition),
       // GetPage(
       //   name: '/third',
       //   page: () => Third(),
@@ -77,7 +82,8 @@ class MyApp extends StatelessWidget {
         '/advanced': (context) => const AdvancedPage(),
         'spring_beginner': (context) => const SpringBeginnerPage(),
         'spring_setting_up': (context) => const SpringSettingUpPage(),
-        'spring_reference': (context) => const SpringReferencePage()
+        'spring_reference': (context) => const SpringReferencePage(),
+        'cybersecurity': (context) => const CybersecurityPage(),
       },
     );
   }
