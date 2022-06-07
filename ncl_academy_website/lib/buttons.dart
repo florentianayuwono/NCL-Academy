@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+/*
+This dart file contains the stylized 'Prev' and 'Next' arrow button widgets for the content pages.
+Include the previous and next page name when calling the button widgets.
+Example usage: PrevButton('/spring_beginner') => the button will navigate to '/spring_beginner'
+NextButton('/spring_references') => the button will navigate to '/spring_references'
+ */
+
 class PrevButtonClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
