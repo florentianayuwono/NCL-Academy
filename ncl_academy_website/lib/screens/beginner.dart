@@ -161,7 +161,7 @@ class _BeginnerState extends State<BeginnerPage> {
                                 });
                                 switch (DDvalue) {
                                   case "log4shell":
-                                    Get.toNamed('/');
+                                    Get.toNamed('/log_introduction');
                                     break;
                                   case "Spring4shell":
                                     Get.toNamed('/spring_beginner');

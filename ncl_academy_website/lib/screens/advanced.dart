@@ -147,7 +147,7 @@ class _AdvancedState extends State<AdvancedPage> {
                                 });
                                 switch (DDvalue) {
                                   case "log4shell":
-                                    Get.toNamed('/');
+                                    Get.toNamed('/log_setting_up');
                                     break;
                                   case "Spring4shell":
                                     Get.toNamed('/spring_setting_up');

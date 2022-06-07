@@ -3,12 +3,15 @@ import 'package:get/get_navigation/src/routes/default_transitions.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ncl_academy_website/screens/log_setting_up.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'dart:html' as html;
 
 import 'onHover.dart';
-import 'screens/help_page.dart';
 import 'buttons.dart';
+
+import 'screens/help_page.dart';
+import 'screens/log_introduction.dart';
 import 'screens/beginner.dart';
 import 'screens/intermediate.dart';
 import 'screens/advanced.dart';
@@ -21,6 +24,7 @@ void main() {
   // Remove leading hash in address
   setPathUrlStrategy();
 
+  // Add routes here
   runApp(GetMaterialApp(
     // To implement: handle unknown route by navigating to unknown route page
     //unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoutePage()),
@@ -35,10 +39,14 @@ void main() {
           name: '/help',
           page: () => const HelpPage(),
           transition: Transition.noTransition),
-      // GetPage(
-      //     name: '/introduction',
-      //     page: () => const IntroductionPage(),
-      //     transition: Transition.noTransition),
+      GetPage(
+          name: '/log_introduction',
+          page: () => const Log4ShellIntroPage(),
+          transition: Transition.noTransition),
+      GetPage(
+          name: '/log_setting_up',
+          page: () => const LogSettingUpPage(),
+          transition: Transition.noTransition),
       GetPage(
           name: '/spring_beginner',
           page: () => const SpringBeginnerPage(),
@@ -68,9 +76,9 @@ void main() {
           page: () => const CybersecurityPage(),
           transition: Transition.noTransition),
       // GetPage(
-      //   name: '/third',
-      //   page: () => Third(),
-      //   transition: Transition.zoom
+      //   name: '/new_page',
+      //   page: () => NewPage(),
+      //   transition: Transition.noTransition
       // ),
     ],
   ));
@@ -80,6 +88,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
+  // Add new routes under routes:
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -92,11 +101,12 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/help': (context) => const HelpPage(),
         '/advanced': (context) => const AdvancedPage(),
-        //'/introduction': (context) => const IntroductionPage(),
-        'spring_beginner': (context) => const SpringBeginnerPage(),
-        'spring_setting_up': (context) => const SpringSettingUpPage(),
-        'spring_reference': (context) => const SpringReferencePage(),
-        'cybersecurity': (context) => const CybersecurityPage(),
+        '/log_introduction': (context) => const Log4ShellIntroPage(),
+        '/log_setting_up': (context) => const LogSettingUpPage(),
+        '/spring_beginner': (context) => const SpringBeginnerPage(),
+        '/spring_setting_up': (context) => const SpringSettingUpPage(),
+        '/spring_reference': (context) => const SpringReferencePage(),
+        '/cybersecurity': (context) => const CybersecurityPage(),
       },
     );
   }

@@ -162,7 +162,7 @@ class _IntermediateState extends State<IntermediatePage> {
                                 switch (DDvalue) {
                                   case "log4shell":
                                     // Route to homepage first as log4shell page is not developed yet
-                                    Get.toNamed('/');
+                                    Get.toNamed('/log_introduction');
                                     break;
                                   case "Spring4shell":
                                     Get.toNamed('/spring_beginner');
