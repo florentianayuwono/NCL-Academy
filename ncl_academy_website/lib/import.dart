@@ -23,6 +23,8 @@ export 'package:youtube_player_flutter/youtube_player_flutter.dart';
 // Main screen
 export 'main.dart';
 
+/* --- */
+
 // Components
 export 'components/buttons.dart';
 export 'components/onHover.dart';
@@ -60,3 +62,5 @@ export 'screens/help_page.dart';
 export 'templates/introduction.dart';
 export 'templates/reference.dart';
 export 'templates/setting_and_execution.dart';
+
+/* --- */
