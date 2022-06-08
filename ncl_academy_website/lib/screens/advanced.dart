@@ -7,6 +7,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'dart:html' as html;
 import '../main.dart';
 import 'spring_beginner.dart';
+import 'package:ncl_academy_website/styles.dart';
 
 class AdvancedPage extends StatefulWidget {
   const AdvancedPage({Key? key}) : super(key: key);
@@ -20,49 +21,9 @@ class _AdvancedState extends State<AdvancedPage> {
   String DDvalue = " Vulnerabilities";
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style = TextButton.styleFrom(
-        primary: Theme.of(context).colorScheme.onPrimary,
-        padding: const EdgeInsets.all(20),
-        textStyle: const TextStyle(fontFamily: "Catamaran"));
-    const appBarColour = Color.fromARGB(255, 7, 31, 4);
     return Scaffold(
         backgroundColor: Color.fromRGBO(2, 81, 83, 1),
-        appBar: AppBar(
-          toolbarHeight: 80.0,
-          backgroundColor: appBarColour,
-          automaticallyImplyLeading: false,
-          titleSpacing: 100.0,
-          title: IconButton(
-            iconSize: 70.0,
-            onPressed: () {
-              Get.toNamed('/');
-            },
-            icon: Image.asset(
-              'img/NCL_LOGO.png',
-            ),
-          ),
-          actions: <Widget>[
-            Row(
-              children: [
-                TextButton(
-                  style: style,
-                  onPressed: _launchNCLwebsiteURL,
-                  child: const Text('NCL Website'),
-                ),
-                TextButton(
-                  style: style,
-                  onPressed: () {
-                    Get.toNamed('/help');
-                  },
-                  child: const Text('Help'),
-                ),
-                const SizedBox(
-                  width: 100,
-                )
-              ],
-            ),
-          ],
-        ),
+        appBar: BaseAppBar(),
         body: SingleChildScrollView(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,9 +127,4 @@ class _AdvancedState extends State<AdvancedPage> {
               ]),
         ));
   }
-}
-
-void _launchNCLwebsiteURL() {
-  String url = 'https://ncl.sg';
-  html.window.open(url, '_blank');
 }

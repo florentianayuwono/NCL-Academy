@@ -7,35 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:ncl_academy_website/buttons.dart';
-
-const headerColour = Color.fromARGB(255, 245, 200, 82);
-const titleStyle = TextStyle(
-  fontFamily: "Azonix",
-  fontSize: 40,
-  color: headerColour,
-  shadows: <Shadow>[
-    Shadow(
-      offset: Offset(4.0, 2.0),
-      blurRadius: 5.0,
-      color: Color.fromARGB(255, 82, 82, 82),
-    ),
-  ],
-);
-
-const headerStyle = TextStyle(
-    fontFamily: "Montserrat",
-    fontSize: 24,
-    fontWeight: FontWeight.bold,
-    color: headerColour);
-
-const explanationTitleStyle = TextStyle(
-    fontFamily: "Catamaran",
-    height: 3,
-    fontWeight: FontWeight.w700,
-    color: Colors.white);
-
-const explanationBodyStyle =
-    TextStyle(fontFamily: "Catamaran", height: 1.5, color: Colors.white);
+import 'package:ncl_academy_website/styles.dart';
 
 class SettingExecutionTemplate extends StatelessWidget {
   String title;
@@ -98,30 +70,6 @@ class SettingExecutionTemplate extends StatelessWidget {
         ],
       );
 
-  // Widget backButton(String previousPage) => Align(
-  //       alignment: Alignment.centerLeft,
-  //       child: FloatingActionButton.extended(
-  //           label: const Text("Prev",
-  //               style:
-  //                   TextStyle(fontFamily: "Montserrat", color: Colors.black)),
-  //           hoverElevation: 10,
-  //           backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-  //           hoverColor: const Color.fromARGB(255, 244, 255, 252),
-  //           onPressed: () => Get.toNamed(previousPage)),
-  //     );
-
-  // Widget nextButton(String nextPage) => Align(
-  //     alignment: Alignment.centerRight,
-  //     child: FloatingActionButton.extended(
-  //         label: const Text("End",
-  //             style: TextStyle(fontFamily: "Montserrat", color: Colors.black)),
-  //         hoverElevation: 10,
-  //         backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-  //         hoverColor: const Color.fromARGB(255, 244, 255, 252),
-  //         onPressed: () {
-  //           Get.toNamed(nextPage);
-  //         }));
-
   Widget textColumn(String textTitle, String textMaterial, String previousPage,
           String nextPage) =>
       Container(
@@ -157,42 +105,7 @@ class SettingExecutionTemplate extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
-      appBar: AppBar(
-        toolbarHeight: 80.0,
-        backgroundColor: appBarColour,
-        automaticallyImplyLeading: false,
-        titleSpacing: 100.0,
-        title: IconButton(
-          iconSize: 70.0,
-          onPressed: () {
-            Get.toNamed('/');
-          },
-          icon: Image.asset(
-            'img/NCL_LOGO.png',
-          ),
-        ),
-        actions: <Widget>[
-          Row(
-            children: [
-              TextButton(
-                style: style,
-                onPressed: _launchNCLwebsiteURL,
-                child: const Text('NCL Website'),
-              ),
-              TextButton(
-                style: style,
-                onPressed: () {
-                  Get.toNamed('/help');
-                },
-                child: const Text('Help'),
-              ),
-              const SizedBox(
-                width: 100,
-              )
-            ],
-          ),
-        ],
-      ),
+      appBar: BaseAppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -209,9 +122,4 @@ class SettingExecutionTemplate extends StatelessWidget {
       ),
     );
   }
-}
-
-void _launchNCLwebsiteURL() {
-  String url = 'https://ncl.sg';
-  html.window.open(url, '_blank');
 }
