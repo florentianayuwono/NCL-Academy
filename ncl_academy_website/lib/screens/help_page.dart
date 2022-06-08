@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:get/get.dart';
-import 'package:ncl_academy_website/main.dart';
-import 'package:ncl_academy_website/styles.dart';
-import 'dart:html' as html;
+import '../import.dart';
 
 // Question widget with short answer (one liner)
 class ShortQuestion extends StatelessWidget {
