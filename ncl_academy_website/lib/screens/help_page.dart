@@ -2,117 +2,61 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:ncl_academy_website/main.dart';
+import 'package:ncl_academy_website/styles.dart';
 import 'dart:html' as html;
 
-const headerColour = Color.fromARGB(255, 245, 200, 82);
-const titleStyle = TextStyle(
-  fontFamily: "Azonix",
-  fontSize: 40,
-  color: headerColour,
-  shadows: <Shadow>[
-    Shadow(
-      offset: Offset(4.0, 2.0),
-      blurRadius: 5.0,
-      color: Color.fromARGB(255, 82, 82, 82),
-    ),
-  ],
-);
+// Question widget with short answer (one liner)
+class ShortQuestion extends StatelessWidget {
+  final String question;
+  final String answer;
+  const ShortQuestion({required this.question, required this.answer});
 
-const headerStyle = TextStyle(
-    fontFamily: "Montserrat",
-    fontSize: 24,
-    fontWeight: FontWeight.bold,
-    color: headerColour);
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(question, style: questionTitleStyle),
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(answer, style: questionBodyStyle),
+        ),
+      ],
+    );
+  }
+}
 
-const questionTitleStyle = TextStyle(
-    fontFamily: "Catamaran",
-    height: 3,
-    fontWeight: FontWeight.w700,
-    color: Colors.white);
+// Question widget for 2 lines of answers
+class LongQuestion extends StatelessWidget {
+  final String question;
+  final String answer;
+  final String answer2;
 
-const questionBodyStyle =
-    TextStyle(fontFamily: "Catamaran", height: 1.5, color: Colors.white);
+  const LongQuestion(
+      {required this.question, required this.answer, required this.answer2});
 
-final question1 = Column(
-  children: const <Widget>[
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text("What is NCLHub?", style: questionTitleStyle),
-    ),
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-          "We think NCLHub is an accessible way for you to learn about cybersecurity and how to defend yourselves against cyberthreats by providing information on the threats, and testbeds to simulate such attacks.",
-          style: questionBodyStyle),
-    ),
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-          "Are you just starting out on learning cybersecurity? Are you an industry professional looking for testbeds? NCLHub can help you!",
-          style: questionBodyStyle),
-    ),
-  ],
-);
-
-final question2 = Column(
-  children: const <Widget>[
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text("How do I use NCLHub?", style: questionTitleStyle),
-    ),
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-          "Pick a skill level based on your experience with cybersecurity, and then select a topic that interests you. You can learn about cyberthreats, and how to set up and execute testbeds to simulate attacks through the videos provided and/or reading the descriptions provided, whichever works best for you!",
-          style: questionBodyStyle),
-    ),
-  ],
-);
-
-final question3 = Column(
-  children: const <Widget>[
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text("Who manages NCLHub?", style: questionTitleStyle),
-    ),
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-          "We are National Cybersecurity R&D Lab (NCL), and we provide computing resources, repeatable and controllable experimentation environments, as well as application services. Our goal in creating NCLHub is to allow people of all walks in life to learn cybersecurity.",
-          style: questionBodyStyle),
-    ),
-  ],
-);
-
-final question4 = Column(
-  children: const <Widget>[
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text("Why aren't the pages working?", style: questionTitleStyle),
-    ),
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-          "If you are experiencing persisting technical problems, please contact us using the info below, and explain to us what difficulties you are running into.",
-          style: questionBodyStyle),
-    ),
-  ],
-);
-
-final question5 = Column(
-  children: const <Widget>[
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text("Why isn't ___ topic available?", style: questionTitleStyle),
-    ),
-    Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-          "If you have any cyberthreats you want NCLHub to cover, please email us with your suggestions. We work hard to provide accurate and comprehensive cybersecurity information, and this takes time and effort so we hope to have your patience and understanding.",
-          style: questionBodyStyle),
-    ),
-  ],
-);
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(question, style: questionTitleStyle),
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(answer, style: questionBodyStyle),
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(answer2, style: questionBodyStyle),
+        ),
+      ],
+    );
+  }
+}
 
 final termsAndConditions = Column(
   children: const <Widget>[
@@ -227,59 +171,36 @@ class HelpPage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(250, 20, 250, 20),
         child: Column(
           children: <Widget>[
-            question1,
-            question2,
-            question3,
-            question4,
-            question5,
+            const LongQuestion(
+                question: "What is NCLHub?",
+                answer:
+                    "We think NCLHub is an accessible way for you to learn about cybersecurity and how to defend yourselves against cyberthreats by providing information on the threats, and testbeds to simulate such attacks.",
+                answer2:
+                    "Are you just starting out on learning cybersecurity? Are you an industry professional looking for testbeds? NCLHub can help you!"),
+            const ShortQuestion(
+              question: "How do I use NCLHub?",
+              answer:
+                  "Pick a skill level based on your experience with cybersecurity, and then select a topic that interests you. You can learn about cyberthreats, and how to set up and execute testbeds to simulate attacks through the videos provided and/or reading the descriptions provided, whichever works best for you!",
+            ),
+            const ShortQuestion(
+                question: "Who manages NCLHub?",
+                answer:
+                    "We are National Cybersecurity R&D Lab (NCL), and we provide computing resources, repeatable and controllable experimentation environments, as well as application services. Our goal in creating NCLHub is to allow people of all walks in life to learn cybersecurity."),
+            const ShortQuestion(
+                question: "Why aren't the pages working?",
+                answer:
+                    "If you are experiencing persisting technical problems, please contact us using the info below, and explain to us what difficulties you are running into."),
+            const ShortQuestion(
+                question: "Why isn't ___ topic available?",
+                answer:
+                    "If you have any cyberthreats you want NCLHub to cover, please email us with your suggestions. We work hard to provide accurate and comprehensive cybersecurity information, and this takes time and effort so we hope to have your patience and understanding."),
             termsAndConditions
           ],
         ));
-    final footer = Container(
-      padding: const EdgeInsets.all(8.0),
-      height: 70,
-      color: const Color.fromARGB(255, 7, 31, 4),
-      alignment: Alignment.center,
-      child: const Text("Sitemap"),
-    );
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
-      appBar: AppBar(
-        toolbarHeight: 80.0,
-        backgroundColor: appBarColour,
-        automaticallyImplyLeading: false,
-        titleSpacing: 100.0,
-        title: IconButton(
-          iconSize: 70.0,
-          onPressed: () {
-            Get.toNamed('/');
-          },
-          icon: Image.asset(
-            'img/NCL_LOGO.png',
-          ),
-        ),
-        actions: <Widget>[
-          Row(
-            children: [
-              TextButton(
-                style: style,
-                onPressed: _launchNCLwebsiteURL,
-                child: const Text('NCL Website'),
-              ),
-              TextButton(
-                style: style,
-                onPressed: () {
-                  Get.toNamed('/help');
-                },
-                child: const Text('Help'),
-              ),
-              const SizedBox(
-                width: 100,
-              )
-            ],
-          ),
-        ],
-      ),
+      appBar: BaseAppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -298,9 +219,4 @@ class HelpPage extends StatelessWidget {
       ),
     );
   }
-}
-
-void _launchNCLwebsiteURL() {
-  String url = 'https://ncl.sg';
-  html.window.open(url, '_blank');
 }

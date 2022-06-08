@@ -2,44 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:ncl_academy_website/main.dart';
+import 'package:ncl_academy_website/styles.dart';
 import 'dart:html' as html;
 import 'package:ncl_academy_website/buttons.dart';
-
-const headerColour = Color.fromARGB(255, 245, 200, 82);
-const titleStyle = TextStyle(
-  fontFamily: "Azonix",
-  fontSize: 40,
-  color: headerColour,
-  shadows: <Shadow>[
-    Shadow(
-      offset: Offset(4.0, 2.0),
-      blurRadius: 5.0,
-      color: Color.fromARGB(255, 82, 82, 82),
-    ),
-  ],
-);
-
-const headerStyle = TextStyle(
-    fontFamily: "Montserrat",
-    fontSize: 24,
-    fontWeight: FontWeight.bold,
-    color: headerColour);
-
-const explanationTitleStyle = TextStyle(
-    fontFamily: "Catamaran",
-    height: 3,
-    fontWeight: FontWeight.w700,
-    color: Colors.white);
-
-const explanationBodyStyle =
-    TextStyle(fontFamily: "Catamaran", height: 1.5, color: Colors.white);
-
-const codeDisplayStyle = TextStyle(
-    fontFamily: "FiraCode",
-    height: 1.5,
-    letterSpacing: 1.5,
-    color: Colors.black,
-    backgroundColor: Color(0xffFFCFA3));
 
 final chapterTitle = Column(children: const <Widget>[
   Align(
@@ -199,42 +164,7 @@ class SpringSettingUpPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
-      appBar: AppBar(
-        toolbarHeight: 80.0,
-        backgroundColor: appBarColour,
-        automaticallyImplyLeading: false,
-        titleSpacing: 100.0,
-        title: IconButton(
-          iconSize: 70.0,
-          onPressed: () {
-            Get.toNamed('/');
-          },
-          icon: Image.asset(
-            'img/NCL_LOGO.png',
-          ),
-        ),
-        actions: <Widget>[
-          Row(
-            children: [
-              TextButton(
-                style: style,
-                onPressed: _launchNCLwebsiteURL,
-                child: const Text('NCL Website'),
-              ),
-              TextButton(
-                style: style,
-                onPressed: () {
-                  Get.toNamed('/help');
-                },
-                child: const Text('Help'),
-              ),
-              const SizedBox(
-                width: 100,
-              )
-            ],
-          ),
-        ],
-      ),
+      appBar: BaseAppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -245,9 +175,4 @@ class SpringSettingUpPage extends StatelessWidget {
       ),
     );
   }
-}
-
-void _launchNCLwebsiteURL() {
-  String url = 'https://ncl.sg';
-  html.window.open(url, '_blank');
 }
