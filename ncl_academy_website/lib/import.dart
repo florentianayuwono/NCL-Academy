@@ -1,5 +1,5 @@
 // Please add your export statement in alphabetical ordering
-// according to relevant the section
+// according to the relevant section
 
 /* --- */
 
