@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart';
 
 // App bar styles
 const appBarColour = Color.fromARGB(255, 7, 31, 4);
@@ -40,7 +41,7 @@ class _BaseAppBarState extends State<BaseAppBar> {
           children: [
             TextButton(
               style: style,
-              onPressed: () => launchNCLwebsiteURL,
+              onPressed: _launchNCLwebsiteURL,
               child: const Text('NCL Website'),
             ),
             TextButton(
@@ -263,9 +264,15 @@ const codeDisplayStyle = TextStyle(
     color: Colors.black,
     backgroundColor: Color(0xffFFCFA3));
 
-void launchNCLwebsiteURL() {
-  String url = 'https://ncl.sg';
-  html.window.open(url, '_blank');
+Future<void> _launchNCLwebsiteURL() async {
+  // String url = 'https://ncl.sg';
+  // html.window.open(url, '_blank');
+  Uri url = Uri.parse('https://ncl.sg');
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
 }
 
 // Footer
