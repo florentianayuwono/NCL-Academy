@@ -1,4 +1,4 @@
-### Instruction on how to create new screens using templates
+# Instruction on how to create new screens using templates
 
 ## Templates
 This directory contains templates for pages such as:
