@@ -10,7 +10,7 @@ This directory contains templates for pages such as:
 ## How to create new screens
 For example, let's say we want to create an introduction page for Log4Shell. Then we can do the following:
 1. As usual, create new file inside the screens directory.
-2. Import the relevant template page by adding: `import 'templates/introduction_template.dart';`
+2. Import all the import statements by adding: `import 'import.dart';`
 3. Inside the `introduction_template.dart`, we can see that there is a constructor inside the class. Here is the code snippet:
 ```
 class IntroductionTemplate extends StatelessWidget {
