@@ -1,25 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/routes/default_transitions.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:get/get.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ncl_academy_website/screens/log_setting_up.dart';
-import 'package:url_strategy/url_strategy.dart';
-import 'dart:html' as html;
-
-import 'styles.dart';
-import 'onHover.dart';
-import 'buttons.dart';
-
-import 'screens/help_page.dart';
-import 'screens/log_introduction.dart';
-import 'screens/beginner.dart';
-import 'screens/intermediate.dart';
-import 'screens/advanced.dart';
-import 'screens/spring_beginner.dart';
-import 'screens/spring_setting_up.dart';
-import 'screens/spring_reference.dart';
-import 'screens/cybersecurity.dart';
+import 'import.dart';
 
 void main() {
   // Remove leading hash in address
@@ -49,8 +28,8 @@ void main() {
           page: () => const LogSettingUpPage(),
           transition: Transition.noTransition),
       GetPage(
-          name: '/spring_beginner',
-          page: () => const SpringBeginnerPage(),
+          name: '/spring_introduction',
+          page: () => const SpringIntroductionPage(),
           transition: Transition.noTransition),
       GetPage(
           name: '/spring_setting_up',
@@ -104,7 +83,7 @@ class MyApp extends StatelessWidget {
         '/advanced': (context) => const AdvancedPage(),
         '/log_introduction': (context) => const Log4ShellIntroPage(),
         '/log_setting_up': (context) => const LogSettingUpPage(),
-        '/spring_beginner': (context) => const SpringBeginnerPage(),
+        '/spring_introduction': (context) => const SpringIntroductionPage(),
         '/spring_setting_up': (context) => const SpringSettingUpPage(),
         '/spring_reference': (context) => const SpringReferencePage(),
         '/cybersecurity': (context) => const CybersecurityPage(),
