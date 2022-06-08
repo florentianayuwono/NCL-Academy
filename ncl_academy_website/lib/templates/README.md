@@ -11,7 +11,7 @@ This directory contains templates for pages such as:
 For example, let's say we want to create an introduction page for Log4Shell. Then we can do the following:
 1. As usual, create new file inside the screens directory.
 2. Import all the import statements by adding: `import 'import.dart';`
-Although import.dart is the unified import file, please take note on the directory structure when importing. For example, if your file is located inside a sub-directory of lib, then the proper statement is `import '../import.dart';`. Add `../` for every sub-directory need to be bypassed before reaching your file location.
+Although `import.dart` is the unified import file, please take note on the directory structure when importing. For example, if your file is located inside a sub-directory of lib, then the proper statement is `import '../import.dart';`. Add `../` for every sub-directory need to be bypassed before reaching your file location.
 4. Inside the `introduction_template.dart`, we can see that there is a constructor inside the class. Here is the code snippet:
 ```
 class IntroductionTemplate extends StatelessWidget {
@@ -53,4 +53,4 @@ class IntroductionTemplate extends StatelessWidget {
 }
 
 ```
-5. After that, the Log4Shell page is done. We only need to import and set the routing to the new page in `main.dart`
+5. After that, the Log4Shell page is done. We only need to export the new page in `import.dart` and set the routing in `main.dart`
