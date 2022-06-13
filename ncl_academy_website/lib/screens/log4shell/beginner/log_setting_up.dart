@@ -8,7 +8,7 @@ class LogSettingUpPage extends StatelessWidget {
     return SettingExecutionTemplate(
         "Log4Shell",
         "Beginner Level",
-        "An Introductin to Log4Shell",
+        "An Introduction to Log4Shell",
         "How to set up the environment?",
         "This is explanation on how to set up log4shell environment",
         "code here",

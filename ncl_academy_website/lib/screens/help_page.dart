@@ -154,12 +154,12 @@ class HelpPage extends StatelessWidget {
     final faqHeader = Container(
         padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
         alignment: Alignment.centerLeft,
-        child: const Text("FAQ", style: headerStyle));
+        child: const Text("FAQ", style: cardTitleStyle));
 
     final contactUsHeader = Container(
         padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
         alignment: Alignment.centerLeft,
-        child: const Text("Contact Us", style: headerStyle));
+        child: const Text("Contact Us", style: cardTitleStyle));
 
     final textColumn = Container(
         alignment: Alignment.centerLeft,

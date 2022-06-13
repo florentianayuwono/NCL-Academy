@@ -117,7 +117,7 @@ class _IntermediateState extends State<IntermediatePage> {
                                     Get.toNamed('/log_introduction');
                                     break;
                                   case "Spring4shell":
-                                    Get.toNamed('/spring_beginner');
+                                    Get.toNamed('/spring_setting_up');
                                     break;
                                 }
                               },

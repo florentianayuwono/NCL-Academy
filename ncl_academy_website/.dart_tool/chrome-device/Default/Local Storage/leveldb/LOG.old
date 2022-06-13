@@ -1,12 +1,22 @@
-2022/06/08-11:32:27.331 4fd0 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.217396ee\flutter_tools_chrome_device.547567f0\Default\Local Storage\leveldb/MANIFEST-000001
-2022/06/08-11:32:27.332 4fd0 Recovering log #11
-2022/06/08-11:32:27.333 4fd0 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.217396ee\flutter_tools_chrome_device.547567f0\Default\Local Storage\leveldb/000011.log 
-2022/06/08-11:32:27.333 4fd0 Delete type=2 #3
-2022/06/08-11:32:27.333 4fd0 Delete type=0 #3
-2022/06/08-11:32:27.333 4fd0 Delete type=0 #4
-2022/06/08-11:32:27.333 4fd0 Delete type=0 #5
-2022/06/08-11:32:27.333 4fd0 Delete type=2 #7
-2022/06/08-11:32:27.333 4fd0 Delete type=2 #8
-2022/06/08-11:32:27.333 4fd0 Delete type=0 #8
-2022/06/08-11:32:27.333 4fd0 Delete type=2 #9
-2022/06/08-11:32:27.334 4fd0 Delete type=2 #12
+2022/06/13-10:05:04.444 5634 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.35a7f6f\flutter_tools_chrome_device.3f78277a\Default\Local Storage\leveldb/MANIFEST-000001
+2022/06/13-10:05:04.445 5634 Recovering log #3
+2022/06/13-10:05:04.445 5634 Recovering log #4
+2022/06/13-10:05:04.446 5634 Level-0 table #4: started
+2022/06/13-10:05:04.447 5634 Level-0 table #4: 27289 bytes OK
+2022/06/13-10:05:04.447 5634 Recovering log #5
+2022/06/13-10:05:04.448 5634 Level-0 table #5: started
+2022/06/13-10:05:04.449 5634 Level-0 table #5: 13915 bytes OK
+2022/06/13-10:05:04.449 5634 Recovering log #8
+2022/06/13-10:05:04.449 5634 Level-0 table #6: started
+2022/06/13-10:05:04.450 5634 Level-0 table #6: 742 bytes OK
+2022/06/13-10:05:04.450 5634 Recovering log #11
+2022/06/13-10:05:04.451 5634 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.35a7f6f\flutter_tools_chrome_device.3f78277a\Default\Local Storage\leveldb/000011.log 
+2022/06/13-10:05:04.452 5634 Delete type=2 #3
+2022/06/13-10:05:04.452 5634 Delete type=0 #3
+2022/06/13-10:05:04.452 5634 Delete type=0 #4
+2022/06/13-10:05:04.452 5634 Delete type=0 #5
+2022/06/13-10:05:04.452 5634 Delete type=2 #7
+2022/06/13-10:05:04.452 5634 Delete type=2 #8
+2022/06/13-10:05:04.452 5634 Delete type=0 #8
+2022/06/13-10:05:04.452 5634 Delete type=2 #9
+2022/06/13-10:05:04.452 5634 Delete type=2 #12
