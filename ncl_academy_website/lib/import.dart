@@ -4,6 +4,7 @@
 /* --- */
 
 // Packages
+
 export 'package:dropdown_button2/dropdown_button2.dart';
 export 'package:flutter/foundation.dart';
 export 'package:flutter/material.dart';
@@ -27,6 +28,7 @@ export 'main.dart';
 
 // Components
 export 'components/buttons.dart';
+export 'components/dropDownMenu.dart';
 export 'components/onHover.dart';
 export 'components/styles.dart';
 
@@ -59,6 +61,7 @@ export 'screens/help_page.dart';
 /* --- */
 
 // Templates
+export 'templates/chapterSelect.dart';
 export 'templates/introduction.dart';
 export 'templates/reference.dart';
 export 'templates/setting_and_execution.dart';
