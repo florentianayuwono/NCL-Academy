@@ -28,6 +28,10 @@ void main() {
           page: () => const LogSettingUpPage(),
           transition: Transition.noTransition),
       GetPage(
+          name: '/log_reference',
+          page: () => const LogReferencePage(),
+          transition: Transition.noTransition),
+      GetPage(
           name: '/spring_introduction',
           page: () => const SpringIntroductionPage(),
           transition: Transition.noTransition),
@@ -83,6 +87,7 @@ class MyApp extends StatelessWidget {
         '/advanced': (context) => const AdvancedPage(),
         '/log_introduction': (context) => const Log4ShellIntroPage(),
         '/log_setting_up': (context) => const LogSettingUpPage(),
+        '/log_reference': (context) => const LogReferencePage(),
         '/spring_introduction': (context) => const SpringIntroductionPage(),
         '/spring_setting_up': (context) => const SpringSettingUpPage(),
         '/spring_reference': (context) => const SpringReferencePage(),
@@ -326,7 +331,7 @@ class HomePage extends StatelessWidget {
             ),
             const Padding(padding: EdgeInsets.all(20)),
             const Text(
-                'Explore cyberthreats and learn to defend yourself against them with NCLHub',
+                'Explore cyberthreats and learn to defend yourself against them with Collegium Pyxisia',
                 style: bodyFont),
             const Padding(padding: EdgeInsets.all(20)),
             Container(
@@ -367,7 +372,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             const Text(
-              'Why NCLHub?',
+              'Why Collegium Pyxisia?',
               style: headerStyle,
             ),
             const Padding(padding: EdgeInsets.all(10)),

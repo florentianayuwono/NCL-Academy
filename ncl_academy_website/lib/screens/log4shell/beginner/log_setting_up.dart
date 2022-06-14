@@ -14,6 +14,6 @@ class LogSettingUpPage extends StatelessWidget {
         "code here",
         "summary here",
         "/log_introduction",
-        "/log_references");
+        "/log_reference");
   }
 }
