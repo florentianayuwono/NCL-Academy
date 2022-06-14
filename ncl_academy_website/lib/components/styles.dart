@@ -25,12 +25,12 @@ class _BaseAppBarState extends State<BaseAppBar> {
       automaticallyImplyLeading: false,
       titleSpacing: 100.0,
       title: IconButton(
-        iconSize: 70.0,
+        iconSize: 100.0,
         onPressed: () {
           Get.toNamed('/');
         },
         icon: Image.asset(
-          'img/NCL_LOGO.png',
+          'img/applogo.png',
         ),
       ),
       actions: <Widget>[

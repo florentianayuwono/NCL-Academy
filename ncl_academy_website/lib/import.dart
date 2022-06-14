@@ -47,6 +47,7 @@ export 'screens/cybersecurity/cyber_introduction.dart';
 // Log4Shell
 export 'screens/log4shell/beginner/log_introduction.dart';
 export 'screens/log4shell/beginner/log_setting_up.dart';
+export 'screens/log4shell/beginner/log_reference.dart';
 
 // Spring4Shell
 export 'screens/spring4shell/beginner/spring_introduction.dart';
