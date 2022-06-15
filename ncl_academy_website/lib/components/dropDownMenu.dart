@@ -41,7 +41,7 @@ class _DropDownMenuState extends State<DropDownMenu> {
                       onChanged: (newValue) {
                         setState(() {
                           DDvalue = newValue as String;
-                          print(DDvalue);
+                          //print(DDvalue);
                         });
                         for (int i = 0; i < items.length; i++) {
                           if (DDvalue == items[i]) {
