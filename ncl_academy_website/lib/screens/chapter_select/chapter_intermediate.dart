@@ -9,7 +9,7 @@ class IntermediatePage extends StatelessWidget {
       "Starter pack: Introduction to cybersecurity",
       "Spring4Shell"
     ], [
-      ["vulnerabilities", "log4shell", "Spring4shell"]
+      ["Vulnerabilities", "log4shell", "Spring4shell"]
     ], [
       ["/intermediate", "/log_introduction", "/spring_introduction"]
     ]);
