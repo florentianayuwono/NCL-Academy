@@ -1,6 +1,5 @@
 import '../import.dart';
 
-
 class IntroductionTemplate extends StatelessWidget {
   String title;
   String level;
@@ -29,8 +28,10 @@ class IntroductionTemplate extends StatelessWidget {
             child: Column(children: <Widget>[chapterTitle(bigTitle, level)])),
         Positioned(
             left: 40,
-            bottom: 20,
+            bottom: 40,
             child: FloatingActionButton.extended(
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
               label: const Text("Chapter Select",
                   style:
                       TextStyle(fontFamily: "Montserrat", color: Colors.black)),
@@ -38,7 +39,7 @@ class IntroductionTemplate extends StatelessWidget {
               backgroundColor: const Color.fromARGB(255, 210, 233, 227),
               hoverColor: const Color.fromARGB(255, 244, 255, 252),
               onPressed: () {
-                Get.toNamed('/advanced');
+                Get.toNamed('/beginner');
               },
             ))
       ]);

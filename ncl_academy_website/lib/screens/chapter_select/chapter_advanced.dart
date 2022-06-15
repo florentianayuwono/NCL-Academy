@@ -8,7 +8,7 @@ class AdvancedPage extends StatelessWidget {
     return ChapSelectTemplate("Advanced", [
       "Spring4Shell"
     ], [
-      ["vulnerabilities", "log4shell", "Spring4shell"]
+      ["Vulnerabilities", "log4shell", "Spring4shell"]
     ], [
       ["/advanced", "/log_introduction", "/spring_introduction"]
     ]);

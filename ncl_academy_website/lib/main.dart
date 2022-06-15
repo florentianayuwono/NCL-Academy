@@ -184,11 +184,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Build widgets for home page
 
-    final ButtonStyle style = TextButton.styleFrom(
-        primary: Theme.of(context).colorScheme.onPrimary,
-        padding: const EdgeInsets.all(20),
-        textStyle: const TextStyle(fontFamily: "Catamaran"));
-
     final beginnerCard = OnHover(builder: (isHovered) {
       final backgroundColor =
           isHovered ? difficultyCardHoverColour : difficultyCardColour;

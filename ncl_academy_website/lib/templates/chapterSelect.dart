@@ -10,18 +10,26 @@ class ChapSelectTemplate extends StatelessWidget {
       this.level, this.recommended, this.dropDownMenus, this.pages);
 
   //back button
-  Widget BackButton() => Padding(
-      padding: EdgeInsets.fromLTRB(33, 15, 0, 15),
-      child: ElevatedButton(
-          onPressed: () => Get.back(),
-          style: ButtonStyle(
-              minimumSize: MaterialStateProperty.all(const Size(130.0, 50.0)),
-              backgroundColor:
-                  MaterialStateProperty.all(Color.fromRGBO(196, 196, 196, 1))),
-          child: Text("Back", style: TextStyle(color: Colors.black))));
+  Widget BackButton() => Positioned(
+        left: 40,
+        bottom: 20,
+        child: FloatingActionButton.extended(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+            label: const Text("Back",
+                style:
+                    TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+            hoverElevation: 10,
+            backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+            hoverColor: const Color.fromARGB(255, 244, 255, 252),
+            extendedPadding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+            onPressed: () => Get.back()),
+      );
 
   //title with the level
-  Widget CenterTitle(String level) => Center(
+  Widget CenterTitle(String level) => Container(
+      alignment: Alignment.center,
+      padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
       child: Text(level,
           style: TextStyle(
               color: Color.fromRGBO(245, 200, 82, 1),
@@ -75,8 +83,9 @@ class ChapSelectTemplate extends StatelessWidget {
         body: SingleChildScrollView(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          BackButton(),
-          CenterTitle(level),
+          Stack(
+            children: [BackButton(), CenterTitle(level)],
+          ),
           SizedBox(height: 66),
           RecommendedHeader(),
           for (String element in recommended) RecommendedText(element),

@@ -120,12 +120,6 @@ class HelpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style = TextButton.styleFrom(
-        primary: Theme.of(context).colorScheme.onPrimary,
-        padding: const EdgeInsets.all(20),
-        textStyle: const TextStyle(fontFamily: "Catamaran"));
-    const appBarColour = Color.fromARGB(255, 7, 31, 4);
-
     final titleColumn = Stack(children: [
       Container(
           alignment: Alignment.center,
@@ -204,7 +198,6 @@ class HelpPage extends StatelessWidget {
               titleColumn,
               faqHeader,
               textColumn,
-              // fourthColumn,
               contactUsHeader,
               contactColumn,
               footer
