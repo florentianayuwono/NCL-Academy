@@ -276,8 +276,6 @@ const codeDisplayStyle = TextStyle(
     backgroundColor: Color(0xffFFCFA3));
 
 Future<void> _launchNCLwebsiteURL() async {
-  // String url = 'https://ncl.sg';
-  // html.window.open(url, '_blank');
   Uri url = Uri.parse('https://ncl.sg');
   if (await canLaunchUrl(url)) {
     await launchUrl(url);

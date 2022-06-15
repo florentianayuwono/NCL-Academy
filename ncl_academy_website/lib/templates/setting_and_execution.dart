@@ -25,7 +25,11 @@ class SettingExecutionTemplate extends StatelessWidget {
   Widget chapterTitle(String title, String level) => Column(children: [
         Align(
           alignment: Alignment.center,
-          child: Text(title, style: titleStyle),
+          child: Text(
+            title,
+            style: titleStyle,
+            textAlign: TextAlign.center,
+          ),
         ),
         Align(
             alignment: Alignment.center,
@@ -34,9 +38,13 @@ class SettingExecutionTemplate extends StatelessWidget {
 
   Widget titleColumn(String bigTitle, String level) => Stack(children: [
         Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-            child: Column(children: <Widget>[chapterTitle(bigTitle, level)])),
+          alignment: Alignment.center,
+          padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+            child: Column(children: <Widget>[chapterTitle(bigTitle, level)]),
+          ),
+        ),
         Positioned(
             left: 40,
             bottom: 40,
@@ -128,14 +136,6 @@ class SettingExecutionTemplate extends StatelessWidget {
                   ])
             ],
           ));
-
-  final footer = Container(
-    padding: const EdgeInsets.all(8.0),
-    height: 70,
-    color: const Color.fromARGB(255, 7, 31, 4),
-    alignment: Alignment.center,
-    child: const Text("Sitemap"),
-  );
 
   @override
   Widget build(BuildContext context) {
