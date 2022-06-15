@@ -660,6 +660,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
       appBar: BaseAppBar(),
+      //floatingActionButtonAnimator: NoScalingAnimation(),
       body: SingleChildScrollView(
         controller: _controller,
         child: Center(
