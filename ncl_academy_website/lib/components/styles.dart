@@ -5,9 +5,9 @@ const appBarColour = Color.fromARGB(255, 7, 31, 4);
 
 // App bar
 class BaseAppBar extends StatefulWidget implements PreferredSizeWidget {
-  BaseAppBar() : preferredSize = Size.fromHeight(70.0);
+  BaseAppBar();
   @override
-  final Size preferredSize;
+  Size get preferredSize => const Size.fromHeight(100);
   @override
   _BaseAppBarState createState() => _BaseAppBarState();
 }
@@ -55,6 +55,100 @@ class _BaseAppBarState extends State<BaseAppBar> {
         ),
       ],
     );
+  }
+}
+
+// Responsive app bar
+PreferredSizeWidget responsiveAppBar() {
+  final ButtonStyle style = TextButton.styleFrom(
+      primary: const Color.fromARGB(255, 229, 229, 229),
+      padding: const EdgeInsets.all(20),
+      textStyle: const TextStyle(fontFamily: "Catamaran", fontSize: 15.0));
+  return AppBar(
+    toolbarHeight: 80.0,
+    backgroundColor: appBarColour,
+    automaticallyImplyLeading: false,
+    titleSpacing: 100.0,
+    title: IconButton(
+      iconSize: 100.0,
+      onPressed: () {
+        Get.toNamed('/');
+      },
+      icon: Image.asset(
+        'img/applogo.png',
+      ),
+    ),
+    actions: <Widget>[
+      Row(
+        children: [
+          TextButton(
+            style: style,
+            onPressed: _launchNCLwebsiteURL,
+            child: const Text('NCL Website'),
+          ),
+          TextButton(
+            style: style,
+            onPressed: () {
+              Get.toNamed('/help');
+            },
+            child: const Text('Help'),
+          ),
+          const SizedBox(
+            width: 100,
+          )
+        ],
+      ),
+    ],
+  );
+}
+
+// App bar drawer
+class AppBarDrawer extends StatefulWidget {
+  const AppBarDrawer({Key? key}) : super(key: key);
+
+  @override
+  State<AppBarDrawer> createState() => _AppBarDrawerState();
+}
+
+class _AppBarDrawerState extends State<AppBarDrawer> {
+  final ButtonStyle style = TextButton.styleFrom(
+      primary: const Color.fromARGB(255, 229, 229, 229),
+      padding: const EdgeInsets.all(20),
+      textStyle: const TextStyle(fontFamily: "Catamaran", fontSize: 15.0));
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        width: MediaQuery.of(context).size.width * 0.35,
+        child: Drawer(
+            child: Container(
+                color: appBarColour,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          style: style,
+                          onPressed: () {
+                            Get.toNamed('/');
+                          },
+                          child: const Text('Homepage'),
+                        ),
+                        TextButton(
+                          style: style,
+                          onPressed: _launchNCLwebsiteURL,
+                          child: const Text('NCL Website'),
+                        ),
+                        TextButton(
+                          style: style,
+                          onPressed: () {
+                            Get.toNamed('/help');
+                          },
+                          child: const Text('Help'),
+                        ),
+                      ]),
+                ))));
   }
 }
 
@@ -182,6 +276,20 @@ const headerStyle = TextStyle(
     ),
   ],
 );
+
+const smallHeaderStyle = TextStyle(
+  fontFamily: "Azonix",
+  fontSize: 35,
+  color: Color.fromARGB(255, 245, 200, 82),
+  shadows: <Shadow>[
+    Shadow(
+      offset: Offset(4.0, 2.0),
+      blurRadius: 5.0,
+      color: Color.fromARGB(80, 0, 0, 0),
+    ),
+  ],
+);
+
 const headerColour = Color.fromARGB(255, 245, 200, 82);
 
 const fourthHeaderStyle = TextStyle(
@@ -219,6 +327,8 @@ const cardLinkStyle = TextStyle(
 // Fonts for content text in homepage
 const bodyFont =
     TextStyle(fontFamily: "Catamaran", fontSize: 20, color: Colors.white);
+const smallBodyFont =
+    TextStyle(fontFamily: "Catamaran", fontSize: 15, color: Colors.white);
 const provideFont = TextStyle(fontFamily: "Catamaran", fontSize: 16);
 
 // Styles for questions in help page

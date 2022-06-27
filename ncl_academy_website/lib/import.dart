@@ -31,6 +31,7 @@ export 'components/buttons.dart';
 export 'components/dropDownMenu.dart';
 export 'components/onHover.dart';
 export 'components/styles.dart';
+export 'components/responsive.dart';
 
 /* --- */
 

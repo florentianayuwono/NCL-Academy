@@ -182,8 +182,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Build widgets for home page
+    var screenSize = MediaQuery.of(context).size;
 
+    // Build widgets for home page
     final beginnerCard = OnHover(builder: (isHovered) {
       final backgroundColor =
           isHovered ? difficultyCardHoverColour : difficultyCardColour;
@@ -203,12 +204,14 @@ class HomePage extends StatelessWidget {
                       offset: Offset(6, 6)),
                 ],
               ),
-              width: MediaQuery.of(context).size.width * 0.3,
+              width: screenSize.width * 0.3,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text('Beginner', style: cardTitleStyle),
+                  const FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text("Beginner", style: cardTitleStyle)),
                   ClipOval(
                     child: SizedBox.fromSize(
                       size: const Size.fromRadius(40),
@@ -245,12 +248,14 @@ class HomePage extends StatelessWidget {
                     offset: Offset(6, 6)),
               ],
             ),
-            width: MediaQuery.of(context).size.width * 0.3,
+            width: screenSize.width * 0.3,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text('Intermediate', style: cardTitleStyle),
+                const FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text("Intermediate", style: cardTitleStyle)),
                 ClipOval(
                   child: SizedBox.fromSize(
                     size: const Size.fromRadius(40),
@@ -289,12 +294,15 @@ class HomePage extends StatelessWidget {
                     offset: Offset(6, 6)),
               ],
             ),
-            width: MediaQuery.of(context).size.width * 0.3,
+            width: screenSize.width * 0.3,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text('Advanced', style: cardTitleStyle),
+                //const Text('Advanced', style: cardTitleStyle),
+                const FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text("Advanced", style: cardTitleStyle)),
                 ClipOval(
                   child: SizedBox.fromSize(
                     size: const Size.fromRadius(40),
@@ -313,76 +321,170 @@ class HomePage extends StatelessWidget {
       );
     });
 
-    final firstColText = Container(
-      width: MediaQuery.of(context).size.width * 0.5,
-      padding: const EdgeInsets.all(80),
-      child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Tackle the Latest Cyberthreat',
-              style: headerStyle,
-            ),
-            const Padding(padding: EdgeInsets.all(20)),
-            const Text(
-                'Explore cyberthreats and learn to defend yourself against them with Collegium Pyxisia',
-                style: bodyFont),
-            const Padding(padding: EdgeInsets.all(20)),
-            Container(
-                alignment: Alignment.center,
-                child: OutlinedButton(
-                    style: ButtonStyle(
-                      padding: MaterialStateProperty.all(
-                          const EdgeInsets.fromLTRB(35, 20, 35, 20)),
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                          (Set<MaterialState> states) {
-                        if (states.contains(MaterialState.hovered)) {
-                          return const Color.fromARGB(255, 196, 255, 99);
-                        }
-                        return const Color.fromARGB(255, 165, 255, 81);
-                      }),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0))),
-                    ),
-                    onPressed: () => _controller.animateTo(
-                          MediaQuery.of(context).size.height * 4,
-                          duration: const Duration(milliseconds: 700),
-                          curve: Curves.fastOutSlowIn,
-                        ),
-                    child: const Text("Start here!",
-                        style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Colors.black))))
-          ]),
-    );
+    final firstColText = ResponsiveWidget.isSmallScreen(context)
+        ? Container(
+            width: screenSize.width * 0.9,
+            padding: const EdgeInsets.all(50),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Tackle the Latest Cyberthreat',
+                    style: smallHeaderStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                  const Padding(padding: EdgeInsets.all(20)),
+                  const Text(
+                      'Explore cyberthreats and learn to defend yourself against them with Collegium Pyxisia',
+                      style: smallBodyFont,
+                      textAlign: TextAlign.center),
+                  const Padding(padding: EdgeInsets.all(20)),
+                  Container(
+                      alignment: Alignment.center,
+                      child: OutlinedButton(
+                          style: ButtonStyle(
+                            padding: MaterialStateProperty.all(
+                                const EdgeInsets.fromLTRB(35, 20, 35, 20)),
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.hovered)) {
+                                return const Color.fromARGB(255, 196, 255, 99);
+                              }
+                              return const Color.fromARGB(255, 165, 255, 81);
+                            }),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0))),
+                          ),
+                          onPressed: () => _controller.animateTo(
+                                screenSize.height * 4,
+                                duration: const Duration(milliseconds: 700),
+                                curve: Curves.fastOutSlowIn,
+                              ),
+                          child: const Text("Start here!",
+                              style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.black))))
+                ]),
+          )
+        : Container(
+            width: screenSize.width * 0.5,
+            padding: const EdgeInsets.all(80),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Tackle the Latest Cyberthreat',
+                    style: headerStyle,
+                  ),
+                  const Padding(padding: EdgeInsets.all(20)),
+                  const Text(
+                      'Explore cyberthreats and learn to defend yourself against them with Collegium Pyxisia',
+                      style: bodyFont),
+                  const Padding(padding: EdgeInsets.all(20)),
+                  Container(
+                      alignment: Alignment.center,
+                      child: OutlinedButton(
+                          style: ButtonStyle(
+                            padding: MaterialStateProperty.all(
+                                const EdgeInsets.fromLTRB(35, 20, 35, 20)),
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.hovered)) {
+                                return const Color.fromARGB(255, 196, 255, 99);
+                              }
+                              return const Color.fromARGB(255, 165, 255, 81);
+                            }),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0))),
+                          ),
+                          onPressed: () => _controller.animateTo(
+                                screenSize.height * 4,
+                                duration: const Duration(milliseconds: 700),
+                                curve: Curves.fastOutSlowIn,
+                              ),
+                          child: const Text("Start here!",
+                              style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.black))))
+                ]),
+          );
 
-    final secondColText = Container(
-      width: MediaQuery.of(context).size.width * 0.5,
-      padding: const EdgeInsets.all(80),
-      child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            const Text(
-              'Why Collegium Pyxisia?',
-              style: headerStyle,
-            ),
-            const Padding(padding: EdgeInsets.all(10)),
-            outlineText1,
-            const Padding(padding: EdgeInsets.all(10)),
-            outlineText2,
-            const Padding(padding: EdgeInsets.all(10)),
-            outlineText3
-          ]),
-    );
+    final secondColText = ResponsiveWidget.isSmallScreen(context)
+        ? Container(
+            width: screenSize.width * 0.9,
+            padding: const EdgeInsets.all(50),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  Text(
+                    'Why Collegium Pyxisia?',
+                    style: smallHeaderStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                  Padding(padding: EdgeInsets.all(10)),
+                  Text(
+                    'Personalised learning to your preferred pace, skill level, and topic interests',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Color.fromARGB(255, 210, 233, 227),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Padding(padding: EdgeInsets.all(10)),
+                  Text(
+                    'Latest cyberthreat info from leading experts in Singapore',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Color.fromARGB(255, 210, 233, 227),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Padding(padding: EdgeInsets.all(10)),
+                  Text(
+                    'Hands-on simulations specific to each vulnerability',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Color.fromARGB(255, 210, 233, 227),
+                    ),
+                    textAlign: TextAlign.right,
+                  ),
+                ]),
+          )
+        : Container(
+            width: screenSize.width * 0.5,
+            padding: const EdgeInsets.all(80),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const Text(
+                    'Why Collegium Pyxisia?',
+                    style: headerStyle,
+                  ),
+                  const Padding(padding: EdgeInsets.all(10)),
+                  outlineText1,
+                  const Padding(padding: EdgeInsets.all(10)),
+                  outlineText2,
+                  const Padding(padding: EdgeInsets.all(10)),
+                  outlineText3
+                ]),
+          );
 
     final provideFirstCard = Container(
         constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
         padding: const EdgeInsets.all(15),
-        width: MediaQuery.of(context).size.width * 0.3,
+        width: screenSize.width * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -423,7 +525,7 @@ class HomePage extends StatelessWidget {
     final provideSecondCard = Container(
         constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
         padding: const EdgeInsets.all(15),
-        width: MediaQuery.of(context).size.width * 0.3,
+        width: screenSize.width * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -464,7 +566,7 @@ class HomePage extends StatelessWidget {
     final provideThirdCard = Container(
         constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
         padding: const EdgeInsets.all(15),
-        width: MediaQuery.of(context).size.width * 0.3,
+        width: screenSize.width * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -502,28 +604,52 @@ class HomePage extends StatelessWidget {
             )
           ],
         ));
-    final thirdColText = Container(
-      width: MediaQuery.of(context).size.width * 0.5,
-      padding: const EdgeInsets.all(50),
-      child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Text(
-              'What We Provide',
-              style: headerStyle,
-            ),
-            const Padding(padding: EdgeInsets.all(20)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                provideFirstCard,
-                provideSecondCard,
-                provideThirdCard
-              ],
-            ),
-          ]),
-    );
+    final thirdColText = ResponsiveWidget.isSmallScreen(context)
+        ? Container(
+            width: screenSize.width * 0.9,
+            padding: const EdgeInsets.all(15),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text(
+                    'What We Provide',
+                    style: headerStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                  const Padding(padding: EdgeInsets.all(20)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      provideFirstCard,
+                      provideSecondCard,
+                      provideThirdCard
+                    ],
+                  ),
+                ]),
+          )
+        : Container(
+            width: screenSize.width * 0.5,
+            padding: const EdgeInsets.all(50),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text(
+                    'What We Provide',
+                    style: headerStyle,
+                  ),
+                  const Padding(padding: EdgeInsets.all(20)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      provideFirstCard,
+                      provideSecondCard,
+                      provideThirdCard
+                    ],
+                  ),
+                ]),
+          );
 
     final firstColLeft = Stack(
       children: <Widget>[
@@ -554,100 +680,151 @@ class HomePage extends StatelessWidget {
     );
 
     // Code for main blocks on homepage
-    final firstColumn = Container(
-      padding: const EdgeInsets.fromLTRB(20, 100, 80, 50),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          firstColLeft,
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(100),
-                  topRight: Radius.circular(100),
-                  bottomRight: Radius.circular(100),
-                  bottomLeft: Radius.circular(100)),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
-                child: Image.asset('img/cyberthreat.jpg', fit: BoxFit.cover),
+    final firstColumn = ResponsiveWidget.isSmallScreen(context)
+        ? SizedBox(
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: firstColText,
+          )
+        : Container(
+            padding: const EdgeInsets.fromLTRB(20, 100, 80, 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                firstColLeft,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(100),
+                        topRight: Radius.circular(100),
+                        bottomRight: Radius.circular(100),
+                        bottomLeft: Radius.circular(100)),
+                    child: SizedBox(
+                      width: screenSize.width * 0.3,
+                      child:
+                          Image.asset('img/cyberthreat.jpg', fit: BoxFit.cover),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+
+    final secondColumn = ResponsiveWidget.isSmallScreen(context)
+        ? Container(
+            padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                // ClipRRect(
+                //   borderRadius: const BorderRadius.only(
+                //       topLeft: Radius.circular(100),
+                //       topRight: Radius.circular(100),
+                //       bottomRight: Radius.circular(100),
+                //       bottomLeft: Radius.circular(100)),
+                //   child: SizedBox(
+                //     width: screenSize.width * 0.9,
+                //     child: Image.asset('img/whyncl.jpg', fit: BoxFit.cover),
+                //   ),
+                // ),
+                secondColText,
+              ],
+            ),
+          )
+        : Container(
+            padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(100),
+                        topRight: Radius.circular(100),
+                        bottomRight: Radius.circular(100),
+                        bottomLeft: Radius.circular(100)),
+                    child: SizedBox(
+                      width: screenSize.width * 0.3,
+                      child: Image.asset('img/whyncl.jpg', fit: BoxFit.cover),
+                    ),
+                  ),
+                ),
+                secondColLeft,
+              ],
+            ),
+          );
+
+    final thirdColumn = ResponsiveWidget.isSmallScreen(context)
+        ? Container(
+            padding: const EdgeInsets.fromLTRB(00, 30, 20, 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                thirdColText,
+              ],
+            ),
+          )
+        : Container(
+            padding: const EdgeInsets.fromLTRB(00, 30, 20, 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                thirdColLeft,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(100),
+                        topRight: Radius.circular(100),
+                        bottomRight: Radius.circular(100),
+                        bottomLeft: Radius.circular(100)),
+                    child: SizedBox(
+                      width: screenSize.width * 0.3,
+                      child: Image.asset('img/provide.jpg', fit: BoxFit.cover),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+
+    final fourthColumn = ResponsiveWidget.isSmallScreen(context)
+        ? Align(
+            alignment: Alignment.center,
+            child: Container(
+                width: screenSize.width * 0.9,
+                padding: const EdgeInsets.fromLTRB(40, 40, 40, 150),
+                child: const Center(
+                  child: Text(
+                    'Pick a skill level and start learning today!',
+                    style: fourthHeaderStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                )),
+          )
+        : Stack(children: <Widget>[
+            Align(
+              alignment: Alignment.center,
+              child: CustomPaint(
+                size: const Size(1200, 300),
+                painter: FourthTrianglePainter(),
               ),
             ),
-          ),
-        ],
-      ),
-    );
-
-    final secondColumn = Container(
-      padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(100),
-                  topRight: Radius.circular(100),
-                  bottomRight: Radius.circular(100),
-                  bottomLeft: Radius.circular(100)),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
-                child: Image.asset('img/whyncl.jpg', fit: BoxFit.cover),
-              ),
-            ),
-          ),
-          secondColLeft,
-        ],
-      ),
-    );
-
-    final thirdColumn = Container(
-      padding: const EdgeInsets.fromLTRB(00, 30, 20, 50),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          thirdColLeft,
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(100),
-                  topRight: Radius.circular(100),
-                  bottomRight: Radius.circular(100),
-                  bottomLeft: Radius.circular(100)),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
-                child: Image.asset('img/provide.jpg', fit: BoxFit.cover),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-
-    final fourthColumn = Stack(children: <Widget>[
-      Align(
-        alignment: Alignment.center,
-        child: CustomPaint(
-          size: const Size(1200, 300),
-          painter: FourthTrianglePainter(),
-        ),
-      ),
-      Align(
-        alignment: Alignment.center,
-        child: Container(
-            width: MediaQuery.of(context).size.width * 0.5,
-            padding: const EdgeInsets.fromLTRB(80, 80, 80, 200),
-            child: const Center(
-              child: Text(
-                'Pick a skill level and start learning today!',
-                style: fourthHeaderStyle,
-                textAlign: TextAlign.center,
-              ),
-            )),
-      )
-    ]);
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                  width: screenSize.width * 0.5,
+                  padding: const EdgeInsets.fromLTRB(80, 80, 80, 200),
+                  child: const Center(
+                    child: Text(
+                      'Pick a skill level and start learning today!',
+                      style: fourthHeaderStyle,
+                      textAlign: TextAlign.center,
+                    ),
+                  )),
+            )
+          ]);
 
     final fifthColumn = Container(
       padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
@@ -659,7 +836,23 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
-      appBar: BaseAppBar(),
+      appBar: ResponsiveWidget.isSmallScreen(context)
+          ? AppBar(
+              backgroundColor: appBarColour,
+              elevation: 0,
+              title: Text(
+                'COLLEGIUM PYXISIA',
+                style: TextStyle(
+                  color: Colors.blueGrey.shade100,
+                  fontSize: 20,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 3,
+                ),
+              ),
+            )
+          : responsiveAppBar(),
+      drawer: const AppBarDrawer(),
       //floatingActionButtonAnimator: NoScalingAnimation(),
       body: SingleChildScrollView(
         controller: _controller,
