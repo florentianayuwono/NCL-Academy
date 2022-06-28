@@ -118,7 +118,7 @@ class _AppBarDrawerState extends State<AppBarDrawer> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: MediaQuery.of(context).size.width * 0.35,
+        width: MediaQuery.of(context).size.width * 0.4,
         child: Drawer(
             child: Container(
                 color: appBarColour,

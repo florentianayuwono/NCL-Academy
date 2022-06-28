@@ -96,68 +96,60 @@ var emailDetails = RichText(
   ]),
 );
 
-final contactColumn = Container(
-  alignment: Alignment.topLeft,
-  padding: const EdgeInsets.fromLTRB(250, 20, 250, 20),
-  child: Column(children: [
-    Align(
-      alignment: Alignment.centerLeft,
-      child: phoneDetails,
-    ),
-    Align(
-      alignment: Alignment.centerLeft,
-      child: addressDetails,
-    ),
-    Align(
-      alignment: Alignment.centerLeft,
-      child: emailDetails,
-    ),
-  ]),
-);
-
 class HelpPage extends StatelessWidget {
   const HelpPage();
 
   @override
   Widget build(BuildContext context) {
-    final titleColumn = Stack(children: [
-      Container(
-          alignment: Alignment.center,
-          padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-          child: const Text(
-            "Help",
-            style: titleStyle,
-          )),
-      Positioned(
-        left: 40,
-        bottom: 20,
-        child: FloatingActionButton.extended(
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10))),
-            label: const Text("Back",
-                style:
-                    TextStyle(fontFamily: "Montserrat", color: Colors.black)),
-            hoverElevation: 10,
-            backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-            hoverColor: const Color.fromARGB(255, 244, 255, 252),
-            extendedPadding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
-            onPressed: () => Get.back()),
-      )
-    ]);
+    final titleColumn = ResponsiveWidget.isSmallScreen(context)
+        ? Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+            child: const Text(
+              "Help",
+              style: titleStyle,
+            ))
+        : Stack(children: [
+            Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+                child: const Text(
+                  "Help",
+                  style: titleStyle,
+                )),
+            Positioned(
+              left: 40,
+              bottom: 20,
+              child: FloatingActionButton.extended(
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  label: const Text("Back",
+                      style: TextStyle(
+                          fontFamily: "Montserrat", color: Colors.black)),
+                  hoverElevation: 10,
+                  backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+                  hoverColor: const Color.fromARGB(255, 244, 255, 252),
+                  extendedPadding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+                  onPressed: () => Get.back()),
+            )
+          ]);
 
     final faqHeader = Container(
-        padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
+        padding: EdgeInsets.fromLTRB(
+            MediaQuery.of(context).size.width * 0.2, 50, 50, 0),
         alignment: Alignment.centerLeft,
         child: const Text("FAQ", style: cardTitleStyle));
 
     final contactUsHeader = Container(
-        padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
+        padding: EdgeInsets.fromLTRB(
+            MediaQuery.of(context).size.width * 0.2, 50, 50, 0),
         alignment: Alignment.centerLeft,
         child: const Text("Contact Us", style: cardTitleStyle));
 
     final textColumn = Container(
         alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.fromLTRB(250, 20, 250, 20),
+        padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.25,
+            20, MediaQuery.of(context).size.width * 0.25, 20),
         child: Column(
           children: <Widget>[
             const LongQuestion(
@@ -186,10 +178,44 @@ class HelpPage extends StatelessWidget {
             termsAndConditions
           ],
         ));
-
+    final contactColumn = Container(
+      alignment: Alignment.topLeft,
+      padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.25, 20,
+          MediaQuery.of(context).size.width * 0.25, 20),
+      child: Column(children: [
+        Align(
+          alignment: Alignment.centerLeft,
+          child: phoneDetails,
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: addressDetails,
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: emailDetails,
+        ),
+      ]),
+    );
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
-      appBar: BaseAppBar(),
+      appBar: ResponsiveWidget.isSmallScreen(context)
+          ? AppBar(
+              backgroundColor: appBarColour,
+              elevation: 0,
+              title: Text(
+                'COLLEGIUM PYXISIA',
+                style: TextStyle(
+                  color: Colors.blueGrey.shade100,
+                  fontSize: 20,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 3,
+                ),
+              ),
+            )
+          : responsiveAppBar(),
+      drawer: const AppBarDrawer(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
