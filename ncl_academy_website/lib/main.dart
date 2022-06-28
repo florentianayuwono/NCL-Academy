@@ -191,7 +191,7 @@ class HomePage extends StatelessWidget {
       return InkWell(
           child: Container(
               constraints: const BoxConstraints(
-                  minWidth: 150, maxWidth: 220, minHeight: 280),
+                  minWidth: 200, maxWidth: 220, minHeight: 280, maxHeight: 320),
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: backgroundColor,
@@ -204,7 +204,7 @@ class HomePage extends StatelessWidget {
                       offset: Offset(6, 6)),
                 ],
               ),
-              width: screenSize.width * 0.3,
+              width: screenSize.width * 0.25,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -212,10 +212,14 @@ class HomePage extends StatelessWidget {
                   const FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text("Beginner", style: cardTitleStyle)),
-                  ClipOval(
-                    child: SizedBox.fromSize(
-                      size: const Size.fromRadius(40),
-                      child: Image.asset('img/pawn.jpg', fit: BoxFit.cover),
+                  ConstrainedBox(
+                    constraints:
+                        const BoxConstraints(maxWidth: 100, maxHeight: 100),
+                    child: ClipOval(
+                      child: SizedBox.fromSize(
+                        size: Size.fromRadius(screenSize.width / 15),
+                        child: Image.asset('img/pawn.jpg', fit: BoxFit.cover),
+                      ),
                     ),
                   ),
                   const Text(
@@ -235,7 +239,7 @@ class HomePage extends StatelessWidget {
       return InkWell(
         child: Container(
             constraints: const BoxConstraints(
-                minWidth: 150, maxWidth: 220, minHeight: 280),
+                minWidth: 200, maxWidth: 220, minHeight: 280, maxHeight: 320),
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               color: backgroundColor,
@@ -248,7 +252,7 @@ class HomePage extends StatelessWidget {
                     offset: Offset(6, 6)),
               ],
             ),
-            width: screenSize.width * 0.3,
+            width: screenSize.width * 0.25,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -256,10 +260,14 @@ class HomePage extends StatelessWidget {
                 const FittedBox(
                     fit: BoxFit.fitWidth,
                     child: Text("Intermediate", style: cardTitleStyle)),
-                ClipOval(
-                  child: SizedBox.fromSize(
-                    size: const Size.fromRadius(40),
-                    child: Image.asset('img/bishop.jpg', fit: BoxFit.cover),
+                ConstrainedBox(
+                  constraints:
+                      const BoxConstraints(maxWidth: 100, maxHeight: 100),
+                  child: ClipOval(
+                    child: SizedBox.fromSize(
+                      size: Size.fromRadius(screenSize.width / 15),
+                      child: Image.asset('img/bishop.jpg', fit: BoxFit.cover),
+                    ),
                   ),
                 ),
                 const Text(
@@ -281,7 +289,7 @@ class HomePage extends StatelessWidget {
       return InkWell(
         child: Container(
             constraints: const BoxConstraints(
-                minWidth: 150, maxWidth: 220, minHeight: 280),
+                minWidth: 200, maxWidth: 220, minHeight: 280, maxHeight: 320),
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               color: backgroundColor,
@@ -294,7 +302,7 @@ class HomePage extends StatelessWidget {
                     offset: Offset(6, 6)),
               ],
             ),
-            width: screenSize.width * 0.3,
+            width: screenSize.width * 0.25,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -303,10 +311,14 @@ class HomePage extends StatelessWidget {
                 const FittedBox(
                     fit: BoxFit.fitWidth,
                     child: Text("Advanced", style: cardTitleStyle)),
-                ClipOval(
-                  child: SizedBox.fromSize(
-                    size: const Size.fromRadius(40),
-                    child: Image.asset('img/knight.jpg', fit: BoxFit.cover),
+                ConstrainedBox(
+                  constraints:
+                      const BoxConstraints(maxWidth: 100, maxHeight: 100),
+                  child: ClipOval(
+                    child: SizedBox.fromSize(
+                      size: Size.fromRadius(screenSize.width / 15),
+                      child: Image.asset('img/knight.jpg', fit: BoxFit.cover),
+                    ),
                   ),
                 ),
                 const Text(
@@ -321,10 +333,12 @@ class HomePage extends StatelessWidget {
       );
     });
 
+    final List<Widget> cards = [beginnerCard, intermediateCard, advancedCard];
+
     final firstColText = ResponsiveWidget.isSmallScreen(context)
         ? Container(
             width: screenSize.width * 0.9,
-            padding: const EdgeInsets.all(50),
+            padding: const EdgeInsets.all(15),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -422,7 +436,7 @@ class HomePage extends StatelessWidget {
     final secondColText = ResponsiveWidget.isSmallScreen(context)
         ? Container(
             width: screenSize.width * 0.9,
-            padding: const EdgeInsets.all(50),
+            padding: const EdgeInsets.all(15),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -457,7 +471,7 @@ class HomePage extends StatelessWidget {
                       fontSize: 15,
                       color: Color.fromARGB(255, 210, 233, 227),
                     ),
-                    textAlign: TextAlign.right,
+                    textAlign: TextAlign.center,
                   ),
                 ]),
           )
@@ -794,7 +808,7 @@ class HomePage extends StatelessWidget {
             alignment: Alignment.center,
             child: Container(
                 width: screenSize.width * 0.9,
-                padding: const EdgeInsets.fromLTRB(40, 40, 40, 150),
+                padding: const EdgeInsets.fromLTRB(15, 40, 15, 150),
                 child: const Center(
                   child: Text(
                     'Pick a skill level and start learning today!',
@@ -826,13 +840,25 @@ class HomePage extends StatelessWidget {
             )
           ]);
 
-    final fifthColumn = Container(
-      padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[beginnerCard, intermediateCard, advancedCard],
-      ),
-    );
+    final fifthColumn = ResponsiveWidget.isSmallScreen(context)
+        ? Container(
+            padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
+            child: CarouselSlider(
+              items: cards,
+              options: CarouselOptions(
+                  enlargeCenterPage: false,
+                  viewportFraction: 0.6,
+                  height: 280,
+                  autoPlay: true),
+            ),
+          )
+        : Container(
+            padding: const EdgeInsets.fromLTRB(10, 30, 10, 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[beginnerCard, intermediateCard, advancedCard],
+            ),
+          );
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),

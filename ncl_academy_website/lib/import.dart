@@ -18,6 +18,7 @@ export 'package:textfield_search/textfield_search.dart';
 export 'package:url_launcher/url_launcher.dart';
 export 'package:url_strategy/url_strategy.dart';
 export 'package:youtube_player_flutter/youtube_player_flutter.dart';
+export 'package:carousel_slider/carousel_slider.dart';
 
 /* --- */
 
