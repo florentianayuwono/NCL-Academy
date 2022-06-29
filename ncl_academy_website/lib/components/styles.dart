@@ -118,7 +118,7 @@ class _AppBarDrawerState extends State<AppBarDrawer> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: MediaQuery.of(context).size.width * 0.4,
+        width: MediaQuery.of(context).size.width * 0.45,
         child: Drawer(
             child: Container(
                 color: appBarColour,
@@ -134,6 +134,53 @@ class _AppBarDrawerState extends State<AppBarDrawer> {
                             Get.toNamed('/');
                           },
                           child: const Text('Homepage'),
+                        ),
+                        ExpansionTile(
+                          tilePadding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          title: const Text(
+                            "Difficulty",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 229, 229, 229),
+                            ),
+                          ),
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 5.0),
+                              child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextButton(
+                                        style: style,
+                                        onPressed: () {
+                                          Get.toNamed('/beginner');
+                                        },
+                                        child: const Text(
+                                          'Beginner',
+                                        ),
+                                      ),
+                                      TextButton(
+                                        style: style,
+                                        onPressed: () {
+                                          Get.toNamed('/intermediate');
+                                        },
+                                        child: const Text(
+                                          'Intermediate',
+                                        ),
+                                      ),
+                                      TextButton(
+                                        style: style,
+                                        onPressed: () {
+                                          Get.toNamed('/advanced');
+                                        },
+                                        child: const Text('Advanced'),
+                                      )
+                                    ],
+                                  )),
+                            )
+                          ],
                         ),
                         TextButton(
                           style: style,

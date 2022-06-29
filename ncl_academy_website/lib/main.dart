@@ -619,9 +619,8 @@ class HomePage extends StatelessWidget {
           ],
         ));
     final thirdColText = ResponsiveWidget.isSmallScreen(context)
-        ? Container(
+        ? SizedBox(
             width: screenSize.width * 0.9,
-            padding: const EdgeInsets.all(15),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -697,6 +696,7 @@ class HomePage extends StatelessWidget {
     final firstColumn = ResponsiveWidget.isSmallScreen(context)
         ? SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
+            height: screenSize.height,
             child: firstColText,
           )
         : Container(
@@ -726,7 +726,7 @@ class HomePage extends StatelessWidget {
 
     final secondColumn = ResponsiveWidget.isSmallScreen(context)
         ? Container(
-            padding: const EdgeInsets.fromLTRB(20, 30, 20, 50),
+            padding: const EdgeInsets.fromLTRB(10, 30, 10, 50),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -771,7 +771,7 @@ class HomePage extends StatelessWidget {
 
     final thirdColumn = ResponsiveWidget.isSmallScreen(context)
         ? Container(
-            padding: const EdgeInsets.fromLTRB(00, 30, 20, 50),
+            padding: const EdgeInsets.fromLTRB(0, 30, 0, 50),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
