@@ -36,22 +36,6 @@ class ChapSelectTemplate extends StatelessWidget {
               fontSize: 40,
               fontFamily: "Azonix")));
 
-  //recommended text
-  Widget RecommendedText(String recommended) => Center(
-        child: Container(
-          width: 1029,
-          height: 41,
-          color: Color.fromRGBO(210, 233, 227, 1),
-          padding: EdgeInsets.fromLTRB(40, 5, 15, 0),
-          child: Text(recommended,
-              style: TextStyle(
-                fontFamily: "Catamaran",
-                fontSize: 20,
-                color: Colors.black,
-              )),
-        ),
-      );
-
   @override
   Widget build(BuildContext context) {
     final recommendedHeader = Column(children: [

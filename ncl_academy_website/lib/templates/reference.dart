@@ -26,11 +26,6 @@ class ReferenceTemplate extends StatelessWidget {
             child: Text(level, style: explanationBodyStyle))
       ]);
 
-  Widget smallTitle(String title) => Container(
-      padding: const EdgeInsets.fromLTRB(220, 50, 50, 0),
-      alignment: Alignment.centerLeft,
-      child: Text(title, style: subTitleStyle));
-
   Widget explanation(String textTitle, String textMaterial) => Column(
         children: [
           Align(
@@ -43,23 +38,6 @@ class ReferenceTemplate extends StatelessWidget {
           ),
         ],
       );
-
-  Widget textColumn(String textTitle, String textMaterial, String previousPage,
-          String nextPage) =>
-      Container(
-          alignment: Alignment.centerLeft,
-          padding: const EdgeInsets.fromLTRB(250, 20, 250, 20),
-          child: Column(
-            children: <Widget>[
-              explanation(textTitle, textMaterial),
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    PrevButton(prevPage: previousPage),
-                    NextButton(nextPage: nextPage)
-                  ])
-            ],
-          ));
 
   @override
   Widget build(BuildContext context) {
