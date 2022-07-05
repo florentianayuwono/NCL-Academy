@@ -9,6 +9,7 @@ class ReferenceTemplate extends StatelessWidget {
   String previousPage;
   String nextPage;
 
+  // Constructor
   ReferenceTemplate(this.title, this.level, this.subTitle, this.textTitle,
       this.textMaterial, this.previousPage, this.nextPage);
 

@@ -10,6 +10,7 @@ class SpringIntroductionPage extends StatelessWidget {
         "Beginner Level",
         "An Introduction to Spring4Shell",
         "What is Spring4Shell?",
+        "default",
         "This is explanation about spring4shell",
         "/spring_setting_up");
   }

@@ -25,7 +25,11 @@ void main() {
           transition: Transition.noTransition),
       GetPage(
           name: '/log_setting_up',
-          page: () => const LogSettingUpPage(),
+          page: () => const LogSettingUpPage1(),
+          transition: Transition.noTransition),
+      GetPage(
+          name: '/log_setting_up_3',
+          page: () => const LogSettingUpPage3(),
           transition: Transition.noTransition),
       GetPage(
           name: '/log_reference',
@@ -86,7 +90,8 @@ class MyApp extends StatelessWidget {
         '/help': (context) => const HelpPage(),
         '/advanced': (context) => const AdvancedPage(),
         '/log_introduction': (context) => const Log4ShellIntroPage(),
-        '/log_setting_up': (context) => const LogSettingUpPage(),
+        '/log_setting_up': (context) => const LogSettingUpPage1(),
+        '/log_setting_up_3': (context) => const LogSettingUpPage3(),
         '/log_reference': (context) => const LogReferencePage(),
         '/spring_introduction': (context) => const SpringIntroductionPage(),
         '/spring_setting_up': (context) => const SpringSettingUpPage(),

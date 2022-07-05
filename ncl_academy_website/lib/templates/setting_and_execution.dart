@@ -6,17 +6,21 @@ class SettingExecutionTemplate extends StatelessWidget {
   String subTitle;
   String textTitle;
   String textMaterial;
+  String videoUrl;
   String code;
   String summary;
   String previousPage;
   String nextPage;
 
+  // Constructor
+  // Use string 'default' for videoUrl if video is not yet ready
   SettingExecutionTemplate(
       this.title,
       this.level,
       this.subTitle,
       this.textTitle,
       this.textMaterial,
+      this.videoUrl,
       this.code,
       this.summary,
       this.previousPage,
@@ -131,11 +135,26 @@ class SettingExecutionTemplate extends StatelessWidget {
         child: FittedBox(
             fit: BoxFit.cover, child: Text(title, style: subTitleStyle)));
 
-    final video = Image.asset(
-      'img/cyberthreat.jpg',
-      width: MediaQuery.of(context).size.width,
-      fit: BoxFit.cover,
+    var convertedUrl = YoutubePlayerController.convertUrlToId(videoUrl) ?? '0';
+    YoutubePlayerController _videoController = YoutubePlayerController(
+      initialVideoId: convertedUrl,
+      params: const YoutubePlayerParams(
+        startAt: Duration(seconds: 0),
+        showControls: true,
+        showFullscreenButton: true,
+      ),
     );
+
+    final video = (convertedUrl == '0')
+        ? Image.asset(
+            'img/cyberthreat.jpg',
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
+          )
+        : YoutubePlayerIFrame(
+            controller: _videoController,
+            aspectRatio: 16 / 9,
+          );
 
     textColumn(String textTitle, String textMaterial, String code,
             String summary, String previousPage, String nextPage) =>

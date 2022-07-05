@@ -626,13 +626,19 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "youtube_player_iframe",
+      "rootUri": "file:///C:/flutter_windows_3.0.0-stable/flutter/.pub-cache/hosted/pub.dartlang.org/youtube_player_iframe-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "ncl_academy_website",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-06-28T03:23:49.385427Z",
+  "generated": "2022-07-05T07:01:37.150986Z",
   "generator": "pub",
   "generatorVersion": "2.17.5"
 }

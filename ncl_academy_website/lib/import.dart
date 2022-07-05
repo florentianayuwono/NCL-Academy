@@ -10,6 +10,7 @@ export 'package:flutter/foundation.dart';
 export 'package:flutter/material.dart';
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:flutter_web_plugins/flutter_web_plugins.dart';
+export 'package:youtube_player_iframe/youtube_player_iframe.dart';
 export 'package:functional_widget_annotation/functional_widget_annotation.dart';
 export 'package:get/get.dart';
 export 'package:get/get_navigation/src/routes/default_transitions.dart';
@@ -17,7 +18,6 @@ export 'package:google_fonts/google_fonts.dart';
 export 'package:textfield_search/textfield_search.dart';
 export 'package:url_launcher/url_launcher.dart';
 export 'package:url_strategy/url_strategy.dart';
-export 'package:youtube_player_flutter/youtube_player_flutter.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 
 /* --- */
@@ -49,6 +49,7 @@ export 'screens/cybersecurity/cyber_introduction.dart';
 // Log4Shell
 export 'screens/log4shell/beginner/log_introduction.dart';
 export 'screens/log4shell/beginner/log_setting_up.dart';
+export 'screens/log4shell/beginner/log_setting_up_3.dart';
 export 'screens/log4shell/beginner/log_reference.dart';
 
 // Spring4Shell
