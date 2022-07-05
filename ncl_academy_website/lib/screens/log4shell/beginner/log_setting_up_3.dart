@@ -1,7 +1,7 @@
 import '../../../import.dart';
 
-class LogSettingUpPage1 extends StatelessWidget {
-  const LogSettingUpPage1();
+class LogSettingUpPage3 extends StatelessWidget {
+  const LogSettingUpPage3();
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +10,11 @@ class LogSettingUpPage1 extends StatelessWidget {
         "Beginner Level",
         "An Introduction to Log4Shell",
         "How to set up the environment?",
-        "This is explanation on how to set up log4shell environment",
-        "https://youtu.be/UrbsHI7_QLA",
+        "This is explanation on how to set up log4shell environment part 3",
+        "https://youtu.be/VxJ8EAhqIfc ",
         "code here",
         "summary here",
-        "/log_introduction",
-        "/log_setting_up_3");
+        "/log_setting_up",
+        "/log_reference");
   }
 }

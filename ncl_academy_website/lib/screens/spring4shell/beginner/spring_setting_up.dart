@@ -11,6 +11,7 @@ class SpringSettingUpPage extends StatelessWidget {
         "Setting Up Spring4Shell Environment",
         "How to set up the environment?",
         "This is explanation on how to set up spring4shell environment",
+        "url",
         "code here",
         "summary here",
         "/spring_introduction",

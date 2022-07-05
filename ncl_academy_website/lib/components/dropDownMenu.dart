@@ -18,46 +18,45 @@ class _DropDownMenuState extends State<DropDownMenu> {
       children: [
         Center(
           child: Container(
-            width: 1029,
-            height: 52,
-            child: Container(
-                width: 1029,
-                height: 52,
-                color: Color.fromRGBO(138, 227, 255, 1),
-                child: Row(children: [
-                  DropdownButtonHideUnderline(
-                    child: DropdownButton2(
-                      buttonPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                      dropdownDecoration: BoxDecoration(
-                        color: Color.fromRGBO(210, 233, 227, 1),
-                      ),
-                      value: DDvalue,
-                      buttonWidth: 1029,
-                      buttonHeight: 52,
-                      icon: const Icon(Icons.arrow_drop_down,
-                          color: Colors.black, size: 60),
-                      onChanged: (newValue) {
-                        setState(() {
-                          DDvalue = newValue as String;
-                          //print(DDvalue);
-                        });
-                        for (int i = 0; i < items.length; i++) {
-                          if (DDvalue == items[i]) {
-                            Get.toNamed(pages[i]);
-                          }
-                        }
-                      },
-                      items: items.map((var item) {
-                        return DropdownMenuItem(child: Text(item), value: item);
-                      }).toList(),
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: MediaQuery.of(context).size.height * 0.05,
+              color: Color.fromRGBO(138, 227, 255, 1),
+              child: Row(children: [
+                DropdownButtonHideUnderline(
+                    child: FittedBox(
+                  alignment: Alignment.centerLeft,
+                  fit: BoxFit.scaleDown,
+                  child: DropdownButton2(
+                    buttonPadding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.longestSide / 55,
+                        fontWeight: FontWeight.bold),
+                    dropdownDecoration: BoxDecoration(
+                      color: Color.fromRGBO(210, 233, 227, 1),
                     ),
-                  )
-                ])),
-          ),
+                    value: DDvalue,
+                    buttonWidth: MediaQuery.of(context).size.width * 0.7,
+                    buttonHeight: MediaQuery.of(context).size.height * 0.05,
+                    icon: const Icon(Icons.arrow_drop_down,
+                        color: Colors.black, size: 40),
+                    onChanged: (newValue) {
+                      setState(() {
+                        DDvalue = newValue as String;
+                        //print(DDvalue);
+                      });
+                      for (int i = 0; i < items.length; i++) {
+                        if (DDvalue == items[i]) {
+                          Get.toNamed(pages[i]);
+                        }
+                      }
+                    },
+                    items: items.map((var item) {
+                      return DropdownMenuItem(child: Text(item), value: item);
+                    }).toList(),
+                  ),
+                ))
+              ])),
         ),
-        SizedBox(height: 10)
       ],
     );
   }

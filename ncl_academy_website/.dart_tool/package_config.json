@@ -80,6 +80,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "carousel_slider",
+      "rootUri": "file:///C:/flutter_windows_3.0.0-stable/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "characters",
       "rootUri": "file:///C:/flutter_windows_3.0.0-stable/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.0",
       "packageUri": "lib/",
@@ -620,13 +626,19 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "youtube_player_iframe",
+      "rootUri": "file:///C:/flutter_windows_3.0.0-stable/flutter/.pub-cache/hosted/pub.dartlang.org/youtube_player_iframe-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "ncl_academy_website",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-06-15T03:15:15.207837Z",
+  "generated": "2022-07-05T07:01:37.150986Z",
   "generator": "pub",
-  "generatorVersion": "2.17.1"
+  "generatorVersion": "2.17.5"
 }
