@@ -1,5 +1,39 @@
 import '../import.dart';
 
+// class SideMenu extends StatefulWidget {
+//   const SideMenu({Key? key}) : super(key: key);
+
+//   @override
+//   State<SideMenu> createState() => _SideMenuState();
+// }
+
+// class _SideMenuState extends State<SideMenu> {
+//   List<String> filesList = <String>[];
+//   List<String> filesL = <String>[];
+//   @override    
+//   void initState() {
+//     super.initState();
+//     filesList = [];
+//   }    
+//   Future<List<String>> _getFilesFromDir() async{
+//     filesL = await FilesInDirectory().getFilesFromDir();
+//     setState(() {
+//       filesList = filesL;
+//     });
+//     return filesList;
+//   }    
+//   _getFilesCount(){
+//     _getFilesFromDir();
+//     int count = filesList.length;
+//     return count;
+//   }    
+//   @override
+//   Widget build(BuildContext context) {
+    
+//   }
+// }
+
+
 class ReferenceTemplate extends StatelessWidget {
   String title;
   String level;

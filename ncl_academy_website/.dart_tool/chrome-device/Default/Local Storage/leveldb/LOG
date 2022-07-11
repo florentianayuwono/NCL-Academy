@@ -1,16 +1,25 @@
-2022/07/05-15:02:18.026 5da0 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.b57d97e8\flutter_tools_chrome_device.40102ec2\Default\Local Storage\leveldb/MANIFEST-000001
-2022/07/05-15:02:18.027 5da0 Recovering log #13
-2022/07/05-15:02:18.028 5da0 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.b57d97e8\flutter_tools_chrome_device.40102ec2\Default\Local Storage\leveldb/000013.log 
-2022/07/05-15:02:18.029 5da0 Delete type=2 #3
-2022/07/05-15:02:18.029 5da0 Delete type=0 #3
-2022/07/05-15:02:18.029 5da0 Delete type=2 #4
-2022/07/05-15:02:18.029 5da0 Delete type=0 #4
-2022/07/05-15:02:18.029 5da0 Delete type=2 #5
-2022/07/05-15:02:18.029 5da0 Delete type=0 #5
-2022/07/05-15:02:18.029 5da0 Delete type=2 #6
-2022/07/05-15:02:18.029 5da0 Delete type=2 #7
-2022/07/05-15:02:18.029 5da0 Delete type=2 #8
-2022/07/05-15:02:18.029 5da0 Delete type=0 #8
-2022/07/05-15:02:18.029 5da0 Delete type=2 #9
-2022/07/05-15:02:18.029 5da0 Delete type=0 #11
-2022/07/05-15:02:18.029 5da0 Delete type=2 #12
+2022/07/11-16:10:07.662 6764 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.e2b047cd\flutter_tools_chrome_device.7368c35\Default\Local Storage\leveldb/MANIFEST-000001
+2022/07/11-16:10:07.663 6764 Recovering log #13
+2022/07/11-16:10:07.664 6764 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.e2b047cd\flutter_tools_chrome_device.7368c35\Default\Local Storage\leveldb/000013.log 
+2022/07/11-16:10:07.665 6764 Delete type=2 #3
+2022/07/11-16:10:07.665 6764 Delete type=0 #3
+2022/07/11-16:10:07.665 6764 Delete type=2 #4
+2022/07/11-16:10:07.665 6764 Delete type=0 #4
+2022/07/11-16:10:07.665 6764 Delete type=2 #5
+2022/07/11-16:10:07.665 6764 Delete type=0 #5
+2022/07/11-16:10:07.665 6764 Delete type=2 #6
+2022/07/11-16:10:07.665 6764 Delete type=2 #7
+2022/07/11-16:10:07.665 6764 Delete type=2 #8
+2022/07/11-16:10:07.665 6764 Delete type=0 #8
+2022/07/11-16:10:07.665 6764 Delete type=2 #9
+2022/07/11-16:10:07.665 6764 Delete type=0 #11
+2022/07/11-16:10:07.665 6764 Delete type=2 #12
+2022/07/11-17:39:05.672 7050 Level-0 table #18: started
+2022/07/11-17:39:05.675 7050 Level-0 table #18: 43850 bytes OK
+2022/07/11-17:39:05.676 7050 Delete type=0 #13
+2022/07/11-18:00:54.380 6480 Level-0 table #20: started
+2022/07/11-18:00:54.383 6480 Level-0 table #20: 80093 bytes OK
+2022/07/11-18:00:54.384 6480 Delete type=0 #17
+2022/07/11-20:00:45.820 6b1c Level-0 table #22: started
+2022/07/11-20:00:45.827 6b1c Level-0 table #22: 26022 bytes OK
+2022/07/11-20:00:45.829 6b1c Delete type=0 #19
