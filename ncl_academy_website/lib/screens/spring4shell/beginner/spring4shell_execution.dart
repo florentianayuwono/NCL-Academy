@@ -1,16 +1,15 @@
 import '../../../import.dart';
 
-class SpringSettingUpPage extends StatelessWidget {
+class SpringExecutionPage extends StatelessWidget {
   String title = "Spring4Shell";
   String level = "Beginner Level";
-  String subTitle =
-      "SETTING UP THE NCL TESTBED TO SIMULATE SPRING4SHELL VULNERABILITY";
-  String textTitle = "Setting up the NCL testbed.";
+  String subTitle = "EXECUTION OF THE Spring4SHELL VULNERABILITY";
+  String textTitle = "Let's execute and simulate the vulnerability!";
   String textMaterial =
-      "Now that we have introduced you to what Spring4shell vulnerability is, we will go ahead and try to set up a simulation of the vulnerability in the NCL testbed. In this video, we will cover the second part of the series, that is, we will show you how to set up the testbed. \n\nPlease enter the following commands into your terminal. The explanation for entering these steps is below. To learn how to clone the NCL Client GitHub repository, check out the first video in our Spring4shell playlist.";
-  String videoUrl = "https://youtu.be/84sHUSs1GLg ​";
-  String previousPage = "/spring_introduction";
-  String nextPage = "/spring4shell_execution";
+      "This is an explanation on how to simulate the Spring4shell environment in the NCL testbed.\n";
+  String videoUrl = "https://youtu.be/-wgYZTQihRw";
+  String previousPage = "/spring_setting_up";
+  String nextPage = "/spring_reference";
 
   Widget chapterTitle(String title, String level) => Column(children: [
         Align(
@@ -191,19 +190,19 @@ class SpringSettingUpPage extends StatelessWidget {
                 explanation(textTitle, textMaterial, ""),
                 explanation(
                     "",
-                    "\nIf you haven't already, clone the NCL Client GitHub repository into your local machine and create the virtual environment. If you do not know how to do this, check out the first video in the Spring4shell playlist where we have given instructions on how to do this. \n\nOnce you have created the virtual environment, type in the following command.",
-                    "source venv/bin/activate"),
+                    "\nWelcome to the third video on Spring4shell. So far, we have completed the introduction to Spring4shell and how to set up the NCL testbed. In this video, we will be simulating the vulnerability in the NCL testbed. Let’s get to the exciting part. So, the first step is to navigate to the Spring4shell POC directory. It is located at \n\n Home/log4shell \n\n Open the Spring4Shell-POC folder.\n\n The next step is to run the docker container to bind to port 8080. Open your terminal and navigate to the Spring4shell-POC folder. Alternatively, right click somewhere in the folder and select “Open Terminal Here” from the context menu. In the terminal, run the following command.",
+                    "docker run –p 8080:8080 spring4shell "),
                 explanation(
                     "",
-                    "Next, install the required dependencies by typing the following command:",
-                    "pip install –r requirements..txt"),
+                    "So, what exactly is going on right now? Docker is binding to port 8080 and hosting a web application at\n\n localhost:8080/helloworld/greeting \n\n Let's check out this web application. Open Firefox or any web browser and go to  \n\n http://localhost:8080/helloworld/greeting \n\n So now that we have our web application set up, we can run the exploit. Open a new terminal in the same Spring4shell-POC directory. Before we proceed, type the",
+                    "python –V"),
                 explanation(
                     "",
-                    "Phew! All the installations are done. Now we are moving on to using our installed client. To run the client, type in the following command: ",
-                    "python client.py"),
+                    "command and check if your python version is high enough to support the exploit. Then, type the following command. ",
+                    "python exploit.py --url http://localhost:8080/helloworld/greeting"),
                 explanation(
                     "",
-                    "\nYou will see the NCL client dialogue box open. Enter your username, then click on choose XML file. Navigate to Client/cyberraptor and open the file named client_spring4shell.xml The NCL Client dialogue box will open.\n For local platform, select MacOS.\nFor connection method, select Console. Then select confirm. The Spring4Shell instance will appear. Expand it and select the default option. The SSH tunnel will be set up with the Virtual Machine. To proceed, enter the screensharing password. \n\n The spring4shell VirtualBox dialogue box will open. That concludes the set-up process for the NCL test bed.\n\n Go back to the NCL Client dialogue box and click on “Tutorial” to get an introduction to Spring4shell as well as proof of concept to understand how to simulate the vulnerability.  You can read through the steps and follow them to execute the next steps after this point. Alternatively, we will also be explaining it in the next video so you can continue with watching it.",
+                    "If the exploit runs successfully, your terminal will give you a link. Open your browser and go to the link given in your terminal after the exploit runs successfully. When you open your browser at this link, you will see a root shell. \n\n So, what exactly is happening here? A shell is a user interface that you can use to access the services of an operating system. A root shell will give you access to administrative privileges. With this root shell, you now have access to the entire system and the underlying operations. A hacker can inject any sort of vulnerability, bug, malware, or virus into the system which has been exposed and cause the system to crash or lose vital information. \n\n So, this was an example simulation of Spring4shell vulnerability. You can go and checkout other videos by NCL on other vulnerabilities.",
                     ""),
                 ResponsiveWidget.isSmallScreen(context)
                     ? Column(
@@ -255,3 +254,15 @@ class SpringSettingUpPage extends StatelessWidget {
     );
   }
 }
+
+// return SettingExecutionTemplate(
+// "Spring4Shell",
+// "Beginner Level",
+// "EXECUTION OF THE Spring4SHELL VULNERABILITY",
+// "Let's execute and simulate the vulnerability!",
+// "This is an explanation on how to simulate the log4shell environment in the NCL testbed.\n",
+// "https://youtu.be/-wgYZTQihRw",
+// "",
+// "\nWelcome to the third video on Spring4shell. So far, we have completed the introduction to Spring4shell and how to set up the NCL testbed. In this video, we will be simulating the vulnerability in the NCL testbed. Let’s get to the exciting part. So, the first step is to navigate to the Spring4shell POC directory. It is located at \n\n Home/log4shell \n\n Open the Spring4Shell-POC folder.\n\n The next step is to run the docker container to bind to port 8080. Open your terminal and navigate to the Spring4shell-POC folder. Alternatively, right click somewhere in the folder and select “Open Terminal Here” from the context menu. In the terminal, run the following command. \n\n Docker run –p 8080:8080 spring4shell \n\n So, what exactly is going on right now? Docker is binding to port 8080 and hosting a web application at\n\n localhost:8080/helloworld/greeting \n\n Let's check out this web application. Open Firefox or any web browser and go to  \n\n http://localhost:8080/helloworld/greeting \n\n So now that we have our web application set up, we can run the exploit. Open a new terminal in the same Spring4shell-POC directory. Before we proceed, type the python –V command and check if your python version is high enough to support the exploit. Then, type the following command. \n\n Python exploit.py --url http://localhost:8080/helloworld/greeting \n\n If the exploit runs successfully, your terminal will give you a link. Open your browser and go to the link given in your terminal after the exploit runs successfully. When you open your browser at this link, you will see a root shell. \n\n So, what exactly is happening here? A shell is a user interface that you can use to access the services of an operating system. A root shell will give you access to administrative privileges. With this root shell, you now have access to the entire system and the underlying operations. A hacker can inject any sort of vulnerability, bug, malware, or virus into the system which has been exposed and cause the system to crash or lose vital information. \n\n So, this was an example simulation of Spring4shell vulnerability. You can go and checkout other videos by NCL on other vulnerabilities.",
+// "/spring_setting_up",
+// "/spring_reference");

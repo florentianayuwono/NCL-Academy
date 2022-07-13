@@ -429,6 +429,7 @@ const codeDisplayStyle = TextStyle(
     fontFamily: "FiraCode",
     height: 1.5,
     letterSpacing: 1.5,
+    fontWeight: FontWeight.bold,
     color: Colors.black,
     backgroundColor: Color(0xffFFCFA3));
 

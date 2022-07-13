@@ -1,18 +1,2 @@
-2022/07/13-14:00:55.002 3670 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.af6fca26\flutter_tools_chrome_device.73358c7d\Default\Local Storage\leveldb/MANIFEST-000001
-2022/07/13-14:00:55.003 3670 Recovering log #21
-2022/07/13-14:00:55.004 3670 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.af6fca26\flutter_tools_chrome_device.73358c7d\Default\Local Storage\leveldb/000021.log 
-2022/07/13-14:00:55.005 3670 Delete type=2 #3
-2022/07/13-14:00:55.005 3670 Delete type=0 #3
-2022/07/13-14:00:55.005 3670 Delete type=2 #4
-2022/07/13-14:00:55.005 3670 Delete type=0 #4
-2022/07/13-14:00:55.005 3670 Delete type=2 #5
-2022/07/13-14:00:55.005 3670 Delete type=0 #5
-2022/07/13-14:00:55.005 3670 Delete type=2 #6
-2022/07/13-14:00:55.005 3670 Delete type=2 #7
-2022/07/13-14:00:55.005 3670 Delete type=2 #8
-2022/07/13-14:00:55.005 3670 Delete type=0 #8
-2022/07/13-14:00:55.005 3670 Delete type=2 #9
-2022/07/13-14:00:55.005 3670 Delete type=0 #11
-2022/07/13-14:00:55.005 3670 Delete type=2 #12
-2022/07/13-14:00:55.005 3670 Delete type=0 #13
-2022/07/13-14:00:55.005 3670 Delete type=2 #17
+2022/07/13-14:36:29.751 3690 Creating DB C:\Users\thngy\AppData\Local\Temp\flutter_tools.cee7415d\flutter_tools_chrome_device.a775753c\Default\Local Storage\leveldb since it was missing.
+2022/07/13-14:36:29.756 3690 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.cee7415d\flutter_tools_chrome_device.a775753c\Default\Local Storage\leveldb/MANIFEST-000001

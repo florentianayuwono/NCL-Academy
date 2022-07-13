@@ -1,20 +1,2 @@
-2022/07/13-14:00:54.950 4788 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.af6fca26\flutter_tools_chrome_device.73358c7d\Default\Site Characteristics Database/MANIFEST-000001
-2022/07/13-14:00:54.951 4788 Recovering log #44
-2022/07/13-14:00:54.951 4788 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.af6fca26\flutter_tools_chrome_device.73358c7d\Default\Site Characteristics Database/000044.log 
-2022/07/13-14:00:54.951 4788 Delete type=0 #3
-2022/07/13-14:00:54.951 4788 Delete type=2 #4
-2022/07/13-14:00:54.951 4788 Delete type=2 #6
-2022/07/13-14:00:54.951 4788 Delete type=0 #6
-2022/07/13-14:00:54.951 4788 Delete type=0 #10
-2022/07/13-14:00:54.951 4788 Delete type=2 #11
-2022/07/13-14:00:54.951 4788 Delete type=2 #13
-2022/07/13-14:00:54.952 4788 Delete type=2 #14
-2022/07/13-14:00:54.952 4788 Delete type=0 #19
-2022/07/13-14:00:54.952 4788 Delete type=2 #20
-2022/07/13-14:00:54.952 4788 Delete type=2 #22
-2022/07/13-14:00:54.952 4788 Delete type=2 #23
-2022/07/13-14:00:54.952 4788 Delete type=2 #24
-2022/07/13-14:00:54.952 4788 Delete type=0 #30
-2022/07/13-14:00:54.952 4788 Delete type=2 #31
-2022/07/13-14:00:54.952 4788 Delete type=2 #37
-2022/07/13-14:00:54.952 4788 Delete type=2 #52
+2022/07/13-14:36:29.692 2fc4 Creating DB C:\Users\thngy\AppData\Local\Temp\flutter_tools.cee7415d\flutter_tools_chrome_device.a775753c\Default\Site Characteristics Database since it was missing.
+2022/07/13-14:36:29.697 2fc4 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.cee7415d\flutter_tools_chrome_device.a775753c\Default\Site Characteristics Database/MANIFEST-000001
