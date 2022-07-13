@@ -1,5 +1,3 @@
-import 'package:ncl_academy_website/templates/quiz.dart';
-
 import 'import.dart';
 
 void main() {
@@ -34,8 +32,8 @@ void main() {
           page: () => const LogSettingUpPage3(),
           transition: Transition.noTransition),
       GetPage(
-          name: '/quiz',
-          page: () => const QuizTemplate(),
+          name: '/log_quiz',
+          page: () => const Log4ShellQuiz(),
           transition: Transition.noTransition),
       GetPage(
           name: '/log_reference',
@@ -103,7 +101,7 @@ class MyApp extends StatelessWidget {
         '/log_setting_up': (context) => const LogSettingUpPage1(),
         '/log_setting_up_3': (context) => const LogSettingUpPage3(),
         '/log_reference': (context) => const LogReferencePage(),
-        '/quiz': (context) => const QuizTemplate(),
+        '/log_quiz': (context) => const Log4ShellQuiz(),
         '/spring_introduction': (context) => const SpringIntroductionPage(),
         '/spring_setting_up': (context) => const SpringSettingUpPage(),
         '/spring_execution': (context) => const SpringExecutionPage(),

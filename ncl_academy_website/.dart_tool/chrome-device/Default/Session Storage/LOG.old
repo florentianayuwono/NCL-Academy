@@ -1,15 +1,2 @@
-<<<<<<< Updated upstream
-2022/07/05-16:06:57.678 4390 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.aa7a813a\flutter_tools_chrome_device.229620c0\Default\Session Storage/MANIFEST-000001
-2022/07/05-16:06:57.678 4390 Recovering log #6
-2022/07/05-16:06:57.679 4390 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.aa7a813a\flutter_tools_chrome_device.229620c0\Default\Session Storage/000006.log 
-2022/07/05-16:06:57.680 4390 Delete type=0 #3
-2022/07/05-16:06:57.680 4390 Delete type=0 #4
-2022/07/05-16:06:57.680 4390 Delete type=2 #5
-=======
-2022/07/05-15:02:18.060 5da0 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.b57d97e8\flutter_tools_chrome_device.40102ec2\Default\Session Storage/MANIFEST-000001
-2022/07/05-15:02:18.061 5da0 Recovering log #6
-2022/07/05-15:02:18.063 5da0 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.b57d97e8\flutter_tools_chrome_device.40102ec2\Default\Session Storage/000006.log 
-2022/07/05-15:02:18.064 5da0 Delete type=0 #3
-2022/07/05-15:02:18.064 5da0 Delete type=0 #4
-2022/07/05-15:02:18.064 5da0 Delete type=2 #5
->>>>>>> Stashed changes
+2022/07/13-11:44:55.383 7774 Creating DB C:\Users\thngy\AppData\Local\Temp\flutter_tools.995e959f\flutter_tools_chrome_device.a5d7690e\Default\Session Storage since it was missing.
+2022/07/13-11:44:55.389 7774 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.995e959f\flutter_tools_chrome_device.a5d7690e\Default\Session Storage/MANIFEST-000001

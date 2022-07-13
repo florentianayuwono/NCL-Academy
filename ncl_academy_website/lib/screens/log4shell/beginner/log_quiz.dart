@@ -1,12 +1,4 @@
-import '../import.dart';
-
-/*
-This is the template for a quiz page in this web app.
-Use Question widgets in this dart file to create quiz questions.
-Question is in String format, answers are in Map<String, bool> format
-E.g. {answer1:false,answer2:false,answer3:true}, where answer3 is the correct
-answer.
-*/
+import '../../../import.dart';
 
 Widget chapterTitle(String title, String level) => Column(children: [
       Align(
@@ -22,8 +14,8 @@ Widget chapterTitle(String title, String level) => Column(children: [
           child: Text(level, style: explanationBodyStyle))
     ]);
 
-class QuizTemplate extends StatelessWidget {
-  const QuizTemplate({Key? key}) : super(key: key);
+class Log4ShellQuiz extends StatelessWidget {
+  const Log4ShellQuiz({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +100,6 @@ class QuizTemplate extends StatelessWidget {
                   'A login function in Java called Log': false,
                   'Audit log in Java programs': false
                 }),
-            /* Add more quiz question widgets here */
             Container(
                 padding: EdgeInsets.fromLTRB(
                     MediaQuery.of(context).size.width * 0.2,

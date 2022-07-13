@@ -51,6 +51,7 @@ export 'screens/log4shell/beginner/log_introduction.dart';
 export 'screens/log4shell/beginner/log_setting_up.dart';
 export 'screens/log4shell/beginner/log_setting_up_3.dart';
 export 'screens/log4shell/beginner/log_reference.dart';
+export 'screens/log4shell/beginner/log_quiz.dart';
 
 // Spring4Shell
 export 'screens/spring4shell/beginner/spring_introduction.dart';

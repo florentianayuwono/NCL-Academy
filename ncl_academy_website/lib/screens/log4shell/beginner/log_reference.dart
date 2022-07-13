@@ -11,7 +11,7 @@ class LogReferencePage extends StatelessWidget {
         "References/Credits",
         "Below are our sources",
         "This is the references",
-        "/log_setting_up",
+        "/log_quiz",
         "/beginner");
   }
 }
