@@ -1,6 +1,24 @@
-2022/07/05-14:39:26.267 7110 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.77f1143a\flutter_tools_chrome_device.6a6c4ea8\Default\Session Storage/MANIFEST-000001
-2022/07/05-14:39:26.268 7110 Recovering log #6
-2022/07/05-14:39:26.269 7110 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.77f1143a\flutter_tools_chrome_device.6a6c4ea8\Default\Session Storage/000006.log 
-2022/07/05-14:39:26.270 7110 Delete type=0 #3
-2022/07/05-14:39:26.270 7110 Delete type=0 #4
-2022/07/05-14:39:26.270 7110 Delete type=2 #5
+2022/07/13-11:37:34.397 4088 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.9f8f5191\flutter_tools_chrome_device.885d0ad5\Default\Session Storage/MANIFEST-000001
+2022/07/13-11:37:34.398 4088 Recovering log #6
+2022/07/13-11:37:34.398 4088 Level-0 table #9: started
+2022/07/13-11:37:34.400 4088 Level-0 table #9: 10163 bytes OK
+2022/07/13-11:37:34.400 4088 Recovering log #9
+2022/07/13-11:37:34.401 4088 Level-0 table #10: started
+2022/07/13-11:37:34.403 4088 Level-0 table #10: 13479 bytes OK
+2022/07/13-11:37:34.403 4088 Recovering log #12
+2022/07/13-11:37:34.404 4088 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.9f8f5191\flutter_tools_chrome_device.885d0ad5\Default\Session Storage/000012.log 
+2022/07/13-11:37:34.406 4088 Delete type=0 #3
+2022/07/13-11:37:34.406 4088 Delete type=0 #4
+2022/07/13-11:37:34.406 4088 Delete type=2 #5
+2022/07/13-11:37:34.406 4088 Delete type=0 #6
+2022/07/13-11:37:34.406 4088 Delete type=0 #9
+2022/07/13-11:37:34.406 4088 Delete type=2 #13
+2022/07/13-11:37:34.406 4088 Delete type=2 #14
+2022/07/13-11:37:34.408 790 Compacting 4@0 + 0@1 files
+2022/07/13-11:37:34.411 790 Generated table #13@0: 166 keys, 9621 bytes
+2022/07/13-11:37:34.411 790 Compacted 4@0 + 0@1 files => 9621 bytes
+2022/07/13-11:37:34.413 790 compacted to: files[ 0 1 0 0 0 0 0 ]
+2022/07/13-11:37:34.413 790 Delete type=2 #3
+2022/07/13-11:37:34.413 790 Delete type=2 #7
+2022/07/13-11:37:34.413 790 Delete type=2 #9
+2022/07/13-11:37:34.414 790 Delete type=2 #10
