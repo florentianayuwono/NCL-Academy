@@ -191,7 +191,7 @@ class SpringExecutionPage extends StatelessWidget {
                 explanation(
                     "",
                     "\nWelcome to the third video on Spring4shell. So far, we have completed the introduction to Spring4shell and how to set up the NCL testbed. In this video, we will be simulating the vulnerability in the NCL testbed. Let’s get to the exciting part. So, the first step is to navigate to the Spring4shell POC directory. It is located at \n\n Home/log4shell \n\n Open the Spring4Shell-POC folder.\n\n The next step is to run the docker container to bind to port 8080. Open your terminal and navigate to the Spring4shell-POC folder. Alternatively, right click somewhere in the folder and select “Open Terminal Here” from the context menu. In the terminal, run the following command.",
-                    "Docker run –p 8080:8080 spring4shell "),
+                    "docker run –p 8080:8080 spring4shell "),
                 explanation(
                     "",
                     "So, what exactly is going on right now? Docker is binding to port 8080 and hosting a web application at\n\n localhost:8080/helloworld/greeting \n\n Let's check out this web application. Open Firefox or any web browser and go to  \n\n http://localhost:8080/helloworld/greeting \n\n So now that we have our web application set up, we can run the exploit. Open a new terminal in the same Spring4shell-POC directory. Before we proceed, type the",
@@ -199,7 +199,7 @@ class SpringExecutionPage extends StatelessWidget {
                 explanation(
                     "",
                     "command and check if your python version is high enough to support the exploit. Then, type the following command. ",
-                    "Python exploit.py --url http://localhost:8080/helloworld/greeting"),
+                    "python exploit.py --url http://localhost:8080/helloworld/greeting"),
                 explanation(
                     "",
                     "If the exploit runs successfully, your terminal will give you a link. Open your browser and go to the link given in your terminal after the exploit runs successfully. When you open your browser at this link, you will see a root shell. \n\n So, what exactly is happening here? A shell is a user interface that you can use to access the services of an operating system. A root shell will give you access to administrative privileges. With this root shell, you now have access to the entire system and the underlying operations. A hacker can inject any sort of vulnerability, bug, malware, or virus into the system which has been exposed and cause the system to crash or lose vital information. \n\n So, this was an example simulation of Spring4shell vulnerability. You can go and checkout other videos by NCL on other vulnerabilities.",

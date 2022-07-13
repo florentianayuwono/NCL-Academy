@@ -192,19 +192,19 @@ class LogSettingUpPage1 extends StatelessWidget {
                 explanation(
                     "",
                     "\n\n In this video, we will explain how to set up the NCL testbed to simulate the Log4shell vulnerability. Please enter the commands based on your own operating system. We have separately added all the commands below the explanation as well. \n\n To start things off, we will clone the NCL Client Source Code into our local machines. Click on Code and copy the HTTPS link. Then open your terminal and type git clone followed by the link you copied. Once you have cloned the source code, navigate to the Client directory and type “ls” to see all the files in the directory. It should look somewhat like this. If you notice, there is currently no image to execute the code. The next step is to create and activate a virtual environment in your computer. This helps us create a layer of safety so none of the exploits can affect your computer. \n\n So in the same Client directory, type the following command:",
-                    "Python3.9 -m venv venv "),
+                    "python3.9 -m venv venv "),
                 explanation(
                     "",
                     "Now, if you type “ls” again, it will show venv as an image. To activate the virtual environment, type in the following command: ",
-                    "Source venv/bin/activate "),
+                    "source venv/bin/activate "),
                 explanation(
                     "",
                     "Next, install the required dependencies by typing the following command: ",
-                    "Pip install –r requirements..txt"),
+                    "pip install –r requirements..txt"),
                 explanation(
                     "",
                     "Phew! All the installations are done. Now we are moving on to using our installed client. To run the client, type in the following command: ",
-                    "Python client.py"),
+                    "python client.py"),
                 explanation(
                     "",
                     "You will see the NCL client dialogue box open. Enter your username, then click on choose XML file. Navigate to Client and select the file named \n\n Client-log4shell-POC-openstack.xml \n\n For local platform, select your machine platform. In this case, it is  MacOS. For connection method, select Console. \n\n Then select confirm. The ARPDemo instance will be visible. Expand it and select log4shell. A dialogue box will open asking you to enter your password. Enter “log4shell” as your password. [Note:If you do not want to use console, you can also use SSH to login. However, it will show you the “bad host key” message.] \n\n Now let’s go back to the NCL client dialogue box. You can click on “Tutorial” to get an introduction to log4shell as well as proof of concept to understand the vulnerabilities of log4j. The tutorial also gives you instructions on setting up and running the virtual machine. Read through the instructions at your own pace before we move on to the next phase.",

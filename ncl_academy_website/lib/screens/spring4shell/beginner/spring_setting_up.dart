@@ -192,15 +192,15 @@ class SpringSettingUpPage extends StatelessWidget {
                 explanation(
                     "",
                     "\nIf you haven't already, clone the NCL Client GitHub repository into your local machine and create the virtual environment. If you do not know how to do this, check out the first video in the Spring4shell playlist where we have given instructions on how to do this. \n\nOnce you have created the virtual environment, type in the following command.",
-                    "Source venv/bin/activate"),
+                    "source venv/bin/activate"),
                 explanation(
                     "",
                     "Next, install the required dependencies by typing the following command:",
-                    "Pip install –r requirements..txt"),
+                    "pip install –r requirements..txt"),
                 explanation(
                     "",
                     "Phew! All the installations are done. Now we are moving on to using our installed client. To run the client, type in the following command: ",
-                    "Python client.py"),
+                    "python client.py"),
                 explanation(
                     "",
                     "\nYou will see the NCL client dialogue box open. Enter your username, then click on choose XML file. Navigate to Client/cyberraptor and open the file named client_spring4shell.xml The NCL Client dialogue box will open.\n For local platform, select MacOS.\nFor connection method, select Console. Then select confirm. The Spring4Shell instance will appear. Expand it and select the default option. The SSH tunnel will be set up with the Virtual Machine. To proceed, enter the screensharing password. \n\n The spring4shell VirtualBox dialogue box will open. That concludes the set-up process for the NCL test bed.\n\n Go back to the NCL Client dialogue box and click on “Tutorial” to get an introduction to Spring4shell as well as proof of concept to understand how to simulate the vulnerability.  You can read through the steps and follow them to execute the next steps after this point. Alternatively, we will also be explaining it in the next video so you can continue with watching it.",
