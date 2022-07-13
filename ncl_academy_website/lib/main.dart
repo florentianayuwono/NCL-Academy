@@ -32,6 +32,10 @@ void main() {
           page: () => const LogSettingUpPage3(),
           transition: Transition.noTransition),
       GetPage(
+          name: '/log_quiz',
+          page: () => const Log4ShellQuiz(),
+          transition: Transition.noTransition),
+      GetPage(
           name: '/log_reference',
           page: () => const LogReferencePage(),
           transition: Transition.noTransition),
@@ -42,6 +46,10 @@ void main() {
       GetPage(
           name: '/spring_setting_up',
           page: () => SpringSettingUpPage(),
+          transition: Transition.noTransition),
+      GetPage(
+          name: '/spring_execution',
+          page: () => SpringExecutionPage(),
           transition: Transition.noTransition),
       GetPage(
           name: '/spring_reference',
@@ -97,6 +105,7 @@ class MyApp extends StatelessWidget {
         '/log_setting_up': (context) => LogSettingUpPage1(),
         '/log_setting_up_3': (context) => const LogSettingUpPage3(),
         '/log_reference': (context) => const LogReferencePage(),
+        '/log_quiz': (context) => const Log4ShellQuiz(),
         '/spring_introduction': (context) => const SpringIntroductionPage(),
         '/spring_setting_up': (context) => SpringSettingUpPage(),
         '/spring_reference': (context) => const SpringReferencePage(),

@@ -1,5 +1,6 @@
 import '../../../import.dart';
 
+// Constructor:
 // IntroductionTemplate(this.title, this.level, this.subTitle, this.textTitle,
 //    this.videoUrl, this.textMaterial, this.nextPage);
 class Log4ShellIntroPage extends StatelessWidget {

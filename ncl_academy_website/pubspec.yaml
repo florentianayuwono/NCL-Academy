@@ -33,13 +33,13 @@ dependencies:
 
   carousel_slider: ^4.1.1
   cupertino_icons: ^1.0.2
-  google_fonts: ^3.0.1
-  flutter_svg: ^1.1.0
-  url_strategy: ^0.2.0
-  url_launcher: ^6.1.2
-  textfield_search: ^0.10.0
   dropdown_button2: ^1.5.2
+  flutter_svg: ^1.1.0
   functional_widget_annotation: ^0.10.0
+  google_fonts: ^3.0.1
+  textfield_search: ^0.10.0
+  url_launcher: ^6.1.2
+  url_strategy: ^0.2.0
   youtube_player_flutter: ^8.1.0
   youtube_player_iframe: ^2.3.0
 
