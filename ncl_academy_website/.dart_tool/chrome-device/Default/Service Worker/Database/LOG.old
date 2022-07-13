@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
 2022/07/05-16:06:57.683 3d94 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.aa7a813a\flutter_tools_chrome_device.229620c0\Default\Service Worker\Database/MANIFEST-000001
 2022/07/05-16:06:57.683 3d94 Recovering log #3
 2022/07/05-16:06:57.684 3d94 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.aa7a813a\flutter_tools_chrome_device.229620c0\Default\Service Worker\Database/000003.log 
+=======
+2022/07/05-15:02:18.065 75e0 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.b57d97e8\flutter_tools_chrome_device.40102ec2\Default\Service Worker\Database/MANIFEST-000001
+2022/07/05-15:02:18.065 75e0 Recovering log #3
+2022/07/05-15:02:18.066 75e0 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.b57d97e8\flutter_tools_chrome_device.40102ec2\Default\Service Worker\Database/000003.log 
+>>>>>>> Stashed changes

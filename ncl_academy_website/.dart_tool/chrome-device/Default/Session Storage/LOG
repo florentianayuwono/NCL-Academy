@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 2022/07/11-16:10:07.663 71d4 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.e2b047cd\flutter_tools_chrome_device.7368c35\Default\Session Storage/MANIFEST-000001
 2022/07/11-16:10:07.664 71d4 Recovering log #6
 2022/07/11-16:10:07.665 71d4 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.e2b047cd\flutter_tools_chrome_device.7368c35\Default\Session Storage/000006.log 
@@ -7,3 +8,24 @@
 2022/07/11-17:39:29.615 373c Level-0 table #10: started
 2022/07/11-17:39:29.617 373c Level-0 table #10: 17867 bytes OK
 2022/07/11-17:39:29.619 373c Delete type=0 #6
+=======
+2022/07/13-11:20:36.736 4a68 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.2277740e\flutter_tools_chrome_device.ed3451be\Default\Session Storage/MANIFEST-000001
+2022/07/13-11:20:36.736 4a68 Recovering log #6
+2022/07/13-11:20:36.737 4a68 Level-0 table #9: started
+2022/07/13-11:20:36.739 4a68 Level-0 table #9: 10163 bytes OK
+2022/07/13-11:20:36.739 4a68 Recovering log #9
+2022/07/13-11:20:36.739 4a68 Level-0 table #10: started
+2022/07/13-11:20:36.741 4a68 Level-0 table #10: 13479 bytes OK
+2022/07/13-11:20:36.742 4a68 Recovering log #12
+2022/07/13-11:20:36.742 4a68 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.2277740e\flutter_tools_chrome_device.ed3451be\Default\Session Storage/000012.log 
+2022/07/13-11:20:36.744 4a68 Delete type=0 #3
+2022/07/13-11:20:36.744 4a68 Delete type=0 #4
+2022/07/13-11:20:36.745 4a68 Delete type=2 #5
+2022/07/13-11:20:36.745 4a68 Delete type=0 #6
+2022/07/13-11:20:36.745 4a68 Delete type=0 #9
+2022/07/13-11:20:36.745 4a68 Delete type=2 #14
+2022/07/13-11:20:36.747 3194 Compacting 4@0 + 0@1 files
+2022/07/13-11:20:36.750 3194 Generated table #13@0: 166 keys, 9621 bytes
+2022/07/13-11:20:36.750 3194 Compacted 4@0 + 0@1 files => 9621 bytes
+2022/07/13-11:20:36.751 3194 compacted to: files[ 0 1 0 0 0 0 0 ]
+>>>>>>> Stashed changes
