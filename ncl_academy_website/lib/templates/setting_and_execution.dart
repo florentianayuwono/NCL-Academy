@@ -47,8 +47,9 @@ class SettingExecutionTemplate extends StatelessWidget {
                 child: Text(code, style: codeDisplayStyle)))
       ]);
 
-  Widget explanation(String textTitle, String textMaterial, String code) =>
-      Column(
+  Widget explanation(String textTitle, String textMaterial, String code) {
+    if (code.isNotEmpty) {
+      return Column(
         children: [
           Align(
             alignment: Alignment.centerLeft,
@@ -61,19 +62,29 @@ class SettingExecutionTemplate extends StatelessWidget {
           Align(
               alignment: Alignment.centerLeft,
               child: Column(children: <Widget>[
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 codeSnippet(code),
-                SizedBox(height: 20),
-                codeSnippet(code),
-                SizedBox(height: 20),
-                codeSnippet(code),
-                SizedBox(height: 40)
+                const SizedBox(height: 40),
               ]))
         ],
       );
+    }
+    return Column(
+      children: [
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(textTitle, style: explanationTitleStyle),
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(textMaterial, style: explanationBodyStyle),
+        ),
+      ],
+    );
+  }
 
   Widget topicSummary(String summary) => Column(children: [
-        Align(
+        const Align(
           alignment: Alignment.centerLeft,
           child: Text("Topic Summary", style: cardTitleStyle),
         ),

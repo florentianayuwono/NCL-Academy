@@ -1,16 +1,23 @@
-2022/07/05-14:39:26.241 7110 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.77f1143a\flutter_tools_chrome_device.6a6c4ea8\Default\Local Storage\leveldb/MANIFEST-000001
-2022/07/05-14:39:26.242 7110 Recovering log #13
-2022/07/05-14:39:26.242 7110 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.77f1143a\flutter_tools_chrome_device.6a6c4ea8\Default\Local Storage\leveldb/000013.log 
-2022/07/05-14:39:26.243 7110 Delete type=2 #3
-2022/07/05-14:39:26.243 7110 Delete type=0 #3
-2022/07/05-14:39:26.243 7110 Delete type=2 #4
-2022/07/05-14:39:26.243 7110 Delete type=0 #4
-2022/07/05-14:39:26.243 7110 Delete type=2 #5
-2022/07/05-14:39:26.243 7110 Delete type=0 #5
-2022/07/05-14:39:26.243 7110 Delete type=2 #6
-2022/07/05-14:39:26.243 7110 Delete type=2 #7
-2022/07/05-14:39:26.244 7110 Delete type=2 #8
-2022/07/05-14:39:26.244 7110 Delete type=0 #8
-2022/07/05-14:39:26.244 7110 Delete type=2 #9
-2022/07/05-14:39:26.244 7110 Delete type=0 #11
-2022/07/05-14:39:26.244 7110 Delete type=2 #12
+2022/07/13-11:37:34.376 4088 Reusing MANIFEST C:\Users\thngy\AppData\Local\Temp\flutter_tools.9f8f5191\flutter_tools_chrome_device.885d0ad5\Default\Local Storage\leveldb/MANIFEST-000001
+2022/07/13-11:37:34.378 4088 Recovering log #13
+2022/07/13-11:37:34.378 4088 Level-0 table #17: started
+2022/07/13-11:37:34.380 4088 Level-0 table #17: 5954 bytes OK
+2022/07/13-11:37:34.381 4088 Recovering log #21
+2022/07/13-11:37:34.381 4088 Reusing old log C:\Users\thngy\AppData\Local\Temp\flutter_tools.9f8f5191\flutter_tools_chrome_device.885d0ad5\Default\Local Storage\leveldb/000021.log 
+2022/07/13-11:37:34.383 4088 Delete type=2 #3
+2022/07/13-11:37:34.383 4088 Delete type=0 #3
+2022/07/13-11:37:34.383 4088 Delete type=2 #4
+2022/07/13-11:37:34.383 4088 Delete type=0 #4
+2022/07/13-11:37:34.384 4088 Delete type=2 #5
+2022/07/13-11:37:34.384 4088 Delete type=0 #5
+2022/07/13-11:37:34.384 4088 Delete type=2 #6
+2022/07/13-11:37:34.384 4088 Delete type=2 #7
+2022/07/13-11:37:34.384 4088 Delete type=2 #8
+2022/07/13-11:37:34.384 4088 Delete type=0 #8
+2022/07/13-11:37:34.384 4088 Delete type=2 #9
+2022/07/13-11:37:34.384 4088 Delete type=0 #11
+2022/07/13-11:37:34.384 4088 Delete type=2 #12
+2022/07/13-11:37:34.384 4088 Delete type=0 #13
+2022/07/13-11:37:34.384 4088 Delete type=2 #18
+2022/07/13-11:37:34.384 4088 Delete type=2 #20
+2022/07/13-11:37:34.384 4088 Delete type=2 #22
