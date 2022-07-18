@@ -100,6 +100,70 @@ class Log4ShellQuiz extends StatelessWidget {
                   'A login function in Java called Log': false,
                   'Audit log in Java programs': false
                 }),
+            const Question(
+                questionText: 'What is Log4j used for?',
+                answerList: {
+                  'Monitoring network functionality': true,
+                  'Conducting cyber-attacks on target hosts': false,
+                  'Shutting down a system': false,
+                  'Create network connections between the attacker and the target host':
+                      false
+                }),
+            const Question(
+                questionText:
+                    'What is the protocol used to handle JNDI queries?',
+                answerList: {
+                  'TLS protocol': false,
+                  'Keycloak protocol': false,
+                  'LDAP protocol': true,
+                  'Spring Security protocol': false
+                }),
+            const Question(
+                questionText:
+                    'Why do we need to create a virtual environment to simulate the log4shell vulnerability?',
+                answerList: {
+                  'Because the vulnerability does not run on our normal operating systems':
+                      false,
+                  'To ensure that the vulnerability being simulated does not affect our computer':
+                      true,
+                  'To save the physical space and cost of running the vulnerability':
+                      false,
+                  'To change the effects of the vulnerability': false
+                }),
+            const Question(
+                questionText:
+                    'What is the next step after creating the virtual environment?',
+                answerList: {
+                  'Installing the requirements': false,
+                  'Running the python client': false,
+                  'Activating the environment': true,
+                  'Logging into the Virtual Machine': false
+                }),
+            const Question(
+                questionText:
+                    'What happens if you use SSH to login to the virtual machine instead of the console?',
+                answerList: {
+                  'The vulnerability will not be simulated correctly': false,
+                  'The network speed will be reduced': false,
+                  'You will not be able to login to the virtual machine': false,
+                  'It shows the “bad host key” message': true
+                }),
+            const Question(
+                questionText: 'What does RCE stand for?',
+                answerList: {
+                  'Remote Control Execution': false,
+                  'Remote Code Execution': true,
+                  'Reboot Chrome Execution': false,
+                  'Random Code Error': false
+                }),
+            const Question(
+                questionText: 'What is the full form of LDAP?',
+                answerList: {
+                  'Lightweight Directory Access Protocol': true,
+                  'Line Directory Access Protocol': false,
+                  'Lightweight Data Append Protocol': false,
+                  'Local Data Access Protocol': false
+                }),
             Container(
                 padding: EdgeInsets.fromLTRB(
                     MediaQuery.of(context).size.width * 0.2,

@@ -108,6 +108,24 @@ class QuizTemplate extends StatelessWidget {
                   'A login function in Java called Log': false,
                   'Audit log in Java programs': false
                 }),
+            const Question(
+                questionText: 'What is Log4j used for?',
+                answerList: {
+                  'Monitoring network functionality': true,
+                  'Conducting cyber-attacks on target hosts': false,
+                  'Shutting down a system': false,
+                  'Create network connections between the attacker and the target host':
+                      false
+                }),
+            const Question(
+                questionText:
+                    'What is the protocol used to handle JNDI queries?',
+                answerList: {
+                  'TLS protocol': false,
+                  'Keycloak protocol': false,
+                  'LDAP protocol': true,
+                  'Spring Security protocol': false
+                }),
             /* Add more quiz question widgets here */
             Container(
                 padding: EdgeInsets.fromLTRB(

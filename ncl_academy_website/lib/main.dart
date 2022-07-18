@@ -514,7 +514,7 @@ class HomePage extends StatelessWidget {
           );
 
     final provideFirstCard = Container(
-        constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
+        constraints: const BoxConstraints(maxWidth: 133, minHeight: 150),
         padding: const EdgeInsets.all(15),
         width: screenSize.width * 0.3,
         child: Column(
@@ -555,7 +555,7 @@ class HomePage extends StatelessWidget {
           ],
         ));
     final provideSecondCard = Container(
-        constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
+        constraints: const BoxConstraints(maxWidth: 133, minHeight: 150),
         padding: const EdgeInsets.all(15),
         width: screenSize.width * 0.3,
         child: Column(
@@ -596,7 +596,7 @@ class HomePage extends StatelessWidget {
           ],
         ));
     final provideThirdCard = Container(
-        constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
+        constraints: const BoxConstraints(maxWidth: 133, minHeight: 150),
         padding: const EdgeInsets.all(15),
         width: screenSize.width * 0.3,
         child: Column(
@@ -846,7 +846,7 @@ class HomePage extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: Container(
-                  width: screenSize.width * 0.5,
+                  width: screenSize.width * 0.9,
                   padding: const EdgeInsets.fromLTRB(80, 80, 80, 200),
                   child: const Center(
                     child: Text(
