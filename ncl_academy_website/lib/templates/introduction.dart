@@ -12,7 +12,9 @@ class IntroductionTemplate extends StatelessWidget {
   // Constructor
   // use string 'default' for this.videoUrl if no video url is available yet
   IntroductionTemplate(this.title, this.level, this.subTitle, this.textTitle,
-      this.videoUrl, this.textMaterial, this.nextPage);
+      this.videoUrl, this.textMaterial, this.nextPage,
+      {Key? key})
+      : super(key: key);
 
   Widget chapterTitle(String title, String level) => Column(children: [
         Align(
@@ -70,7 +72,7 @@ class IntroductionTemplate extends StatelessWidget {
             fit: BoxFit.cover, child: Text(title, style: subTitleStyle)));
 
     var convertedUrl = YoutubePlayerController.convertUrlToId(videoUrl) ?? '0';
-    YoutubePlayerController _videoController = YoutubePlayerController(
+    YoutubePlayerController videoController = YoutubePlayerController(
       initialVideoId: convertedUrl,
       params: const YoutubePlayerParams(
         startAt: Duration(seconds: 0),
@@ -86,7 +88,7 @@ class IntroductionTemplate extends StatelessWidget {
             fit: BoxFit.cover,
           )
         : YoutubePlayerIFrame(
-            controller: _videoController,
+            controller: videoController,
             aspectRatio: 16 / 9,
           );
     textColumn(String textTitle, String textMaterial, String nextPage) =>
@@ -144,9 +146,9 @@ class IntroductionTemplate extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              titleColumn(this.title, this.level),
-              subHeader(this.subTitle),
-              textColumn(this.textTitle, this.textMaterial, this.nextPage),
+              titleColumn(title, level),
+              subHeader(subTitle),
+              textColumn(textTitle, textMaterial, nextPage),
               footer
             ],
           ),

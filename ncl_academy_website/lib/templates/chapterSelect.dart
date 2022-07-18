@@ -7,7 +7,9 @@ class ChapSelectTemplate extends StatelessWidget {
   List<List> pages;
 
   ChapSelectTemplate(
-      this.level, this.recommended, this.dropDownMenus, this.pages);
+      this.level, this.recommended, this.dropDownMenus, this.pages,
+      {Key? key})
+      : super(key: key);
 
   //back button
   Widget BackButton() => Positioned(
@@ -31,7 +33,7 @@ class ChapSelectTemplate extends StatelessWidget {
       alignment: Alignment.center,
       padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
       child: Text(level,
-          style: TextStyle(
+          style: const TextStyle(
               color: Color.fromRGBO(245, 200, 82, 1),
               fontSize: 40,
               fontFamily: "Azonix")));
@@ -43,13 +45,13 @@ class ChapSelectTemplate extends StatelessWidget {
           child: Container(
               width: MediaQuery.of(context).size.width * 0.7,
               height: 7,
-              color: Color.fromRGBO(245, 200, 82, 1))),
+              color: const Color.fromRGBO(245, 200, 82, 1))),
       Center(
         child: Container(
             width: MediaQuery.of(context).size.width * 0.7,
             height: MediaQuery.of(context).size.height * 0.05,
-            color: Color.fromRGBO(210, 233, 227, 1),
-            padding: EdgeInsets.fromLTRB(19, 14, 0, 0),
+            color: const Color.fromRGBO(210, 233, 227, 1),
+            padding: const EdgeInsets.fromLTRB(19, 14, 0, 0),
             child: const FittedBox(
               alignment: Alignment.centerLeft,
               fit: BoxFit.scaleDown,
@@ -69,8 +71,8 @@ class ChapSelectTemplate extends StatelessWidget {
             child: Container(
           width: MediaQuery.of(context).size.width * 0.7,
           height: MediaQuery.of(context).size.height * 0.05,
-          color: Color.fromRGBO(210, 233, 227, 1),
-          padding: EdgeInsets.fromLTRB(40, 5, 15, 0),
+          color: const Color.fromRGBO(210, 233, 227, 1),
+          padding: const EdgeInsets.fromLTRB(40, 5, 15, 0),
           child: FittedBox(
             alignment: Alignment.centerLeft,
             fit: BoxFit.scaleDown,
@@ -83,7 +85,7 @@ class ChapSelectTemplate extends StatelessWidget {
           ),
         ));
     return Scaffold(
-        backgroundColor: Color.fromRGBO(2, 81, 83, 1),
+        backgroundColor: const Color.fromRGBO(2, 81, 83, 1),
         appBar: ResponsiveWidget.isSmallScreen(context)
             ? AppBar(
                 backgroundColor: appBarColour,

@@ -28,7 +28,7 @@ class SpringExecutionPage extends StatelessWidget {
   Widget codeSnippet(String code) => Row(children: <Widget>[
         Expanded(
             child: Container(
-                color: Color(0xffFFCFA3),
+                color: const Color(0xffFFCFA3),
                 child: Text(code, style: codeDisplayStyle)))
       ]);
 
@@ -115,33 +115,15 @@ class SpringExecutionPage extends StatelessWidget {
                       Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
               )
-            : Stack(children: [
-                Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Column(
-                        children: <Widget>[chapterTitle(bigTitle, level)]),
-                  ),
+            : Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                  child:
+                      Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
-                // Positioned(
-                //     left: 40,
-                //     bottom: 40,
-                //     child: FloatingActionButton.extended(
-                //       shape: const RoundedRectangleBorder(
-                //           borderRadius: BorderRadius.all(Radius.circular(10))),
-                //       label: const Text("Chapter Select",
-                //           style: TextStyle(
-                //               fontFamily: "Montserrat", color: Colors.black)),
-                //       hoverElevation: 10,
-                //       backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-                //       hoverColor: const Color.fromARGB(255, 244, 255, 252),
-                //       onPressed: () {
-                //         Get.toNamed('/beginner');
-                //       },
-                //     ))
-              ]);
+              );
 
     smallTitle(String title) => Container(
         padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.1,
@@ -151,7 +133,7 @@ class SpringExecutionPage extends StatelessWidget {
             fit: BoxFit.cover, child: Text(title, style: subTitleStyle)));
 
     var convertedUrl = YoutubePlayerController.convertUrlToId(videoUrl) ?? '0';
-    YoutubePlayerController _videoController = YoutubePlayerController(
+    YoutubePlayerController videoController = YoutubePlayerController(
       initialVideoId: convertedUrl,
       params: const YoutubePlayerParams(
         startAt: Duration(seconds: 0),
@@ -167,7 +149,7 @@ class SpringExecutionPage extends StatelessWidget {
             fit: BoxFit.cover,
           )
         : YoutubePlayerIFrame(
-            controller: _videoController,
+            controller: videoController,
             aspectRatio: 16 / 9,
           );
 
