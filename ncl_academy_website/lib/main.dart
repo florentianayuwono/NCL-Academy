@@ -52,6 +52,10 @@ void main() {
           page: () => SpringExecutionPage(),
           transition: Transition.noTransition),
       GetPage(
+          name: '/spring_quiz',
+          page: () => const Spring4ShellQuiz(),
+          transition: Transition.noTransition),
+      GetPage(
           name: '/spring_reference',
           page: () => const SpringReferencePage(),
           transition: Transition.noTransition),
@@ -109,6 +113,7 @@ class MyApp extends StatelessWidget {
         '/spring_introduction': (context) => const SpringIntroductionPage(),
         '/spring_setting_up': (context) => SpringSettingUpPage(),
         '/spring_reference': (context) => const SpringReferencePage(),
+        '/spring_quiz': (context) => const Spring4ShellQuiz(),
         '/cybersecurity': (context) => const CybersecurityPage(),
       },
     );

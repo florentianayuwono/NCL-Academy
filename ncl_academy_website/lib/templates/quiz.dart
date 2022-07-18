@@ -6,6 +6,9 @@ Use Question widgets in this dart file to create quiz questions.
 Question is in String format, answers are in Map<String, bool> format
 E.g. {answer1:false,answer2:false,answer3:true}, where answer3 is the correct
 answer.
+The widget tree below is an example of how the quiz page would be implemented.
+Refer to to existing log/spring4shell quiz pages in their respective chapter 
+folders for examples of implementation.
 */
 
 Widget chapterTitle(String title, String level) => Column(children: [
@@ -42,34 +45,32 @@ class QuizTemplate extends StatelessWidget {
                       Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
               )
-            : Stack(children: [
-                Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Column(
-                        children: <Widget>[chapterTitle(bigTitle, level)]),
-                  ),
+            : Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                  child:
+                      Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
-                Positioned(
-                    left: 40,
-                    bottom: 40,
-                    child: FloatingActionButton.extended(
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      label: const Text("Chapter Select",
-                          style: TextStyle(
-                              fontFamily: "Montserrat", color: Colors.black)),
-                      hoverElevation: 10,
-                      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-                      hoverColor: const Color.fromARGB(255, 244, 255, 252),
-                      onPressed: () {
-                        Get.toNamed('/beginner');
-                      },
-                    ))
-              ]);
+              );
     return Scaffold(
+        floatingActionButton: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
+            child: FloatingActionButton.extended(
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              label: const Text("Chapter Select",
+                  style:
+                      TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+              hoverElevation: 10,
+              backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+              hoverColor: const Color.fromARGB(255, 244, 255, 252),
+              onPressed: () {
+                Get.toNamed('/beginner');
+              },
+            )),
+        floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
         backgroundColor: const Color.fromARGB(255, 2, 81, 83),
         appBar: ResponsiveWidget.isSmallScreen(context)
             ? AppBar(
@@ -100,23 +101,6 @@ class QuizTemplate extends StatelessWidget {
               'A type of wood': false,
               'A computer virus': false
             }),
-            const Question(
-                questionText: 'What does \'log\' refer to in log4shell?',
-                answerList: {
-                  'A logger function in Java called Log4j': true,
-                  'An equipment used for logging wood': false,
-                  'A login function in Java called Log': false,
-                  'Audit log in Java programs': false
-                }),
-            const Question(
-                questionText: 'What is Log4j used for?',
-                answerList: {
-                  'Monitoring network functionality': true,
-                  'Conducting cyber-attacks on target hosts': false,
-                  'Shutting down a system': false,
-                  'Create network connections between the attacker and the target host':
-                      false
-                }),
             const Question(
                 questionText:
                     'What is the protocol used to handle JNDI queries?',

@@ -54,31 +54,14 @@ class IntroductionTemplate extends StatelessWidget {
                           children: <Widget>[chapterTitle(bigTitle, level)]),
                     )),
               )
-            : Stack(children: [
-                Center(
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
-                    child: Column(
-                        children: <Widget>[chapterTitle(bigTitle, level)]),
-                  ),
+            : Center(
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
+                  child:
+                      Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
-                Positioned(
-                    left: 40,
-                    bottom: 40,
-                    child: FloatingActionButton.extended(
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      label: const Text("Chapter Select",
-                          style: TextStyle(
-                              fontFamily: "Montserrat", color: Colors.black)),
-                      hoverElevation: 10,
-                      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-                      hoverColor: const Color.fromARGB(255, 244, 255, 252),
-                      onPressed: () {
-                        Get.toNamed('/beginner');
-                      },
-                    ))
-              ]);
+              );
+
     subHeader(String title) => Container(
         padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.1,
             50, MediaQuery.of(context).size.width * 0.1, 50),
@@ -122,6 +105,22 @@ class IntroductionTemplate extends StatelessWidget {
               ],
             ));
     return Scaffold(
+      floatingActionButton: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
+          child: FloatingActionButton.extended(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+            label: const Text("Chapter Select",
+                style:
+                    TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+            hoverElevation: 10,
+            backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+            hoverColor: const Color.fromARGB(255, 244, 255, 252),
+            onPressed: () {
+              Get.toNamed('/beginner');
+            },
+          )),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
