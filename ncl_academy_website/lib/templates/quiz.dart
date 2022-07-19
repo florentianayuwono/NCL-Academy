@@ -153,6 +153,7 @@ class _QuestionState extends State<Question> {
         Text(
           widget.questionText,
           style: questionTitleStyle,
+          textAlign: TextAlign.center,
         ),
         Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -166,7 +167,7 @@ class _QuestionState extends State<Question> {
                     });
                   },
                   child: Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
+                    width: MediaQuery.of(context).size.width * 0.5,
                     margin: const EdgeInsets.all(8.0),
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
