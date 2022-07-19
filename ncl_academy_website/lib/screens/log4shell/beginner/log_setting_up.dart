@@ -10,7 +10,7 @@ class LogSettingUpPage1 extends StatelessWidget {
       "Please follow these steps to set up the vulnerability in the NCL testbed.";
   String videoUrl = "https://youtu.be/UrbsHI7_QLA";
   String previousPage = "/log_introduction";
-  String nextPage = "/log_setting_up_3";
+  String nextPage = "/log_setting_up_2";
 
   Widget chapterTitle(String title, String level) => Column(children: [
         Align(

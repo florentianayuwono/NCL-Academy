@@ -28,7 +28,7 @@ void main() {
           page: () => LogSettingUpPage1(),
           transition: Transition.noTransition),
       GetPage(
-          name: '/log_setting_up_3',
+          name: '/log_setting_up_2',
           page: () => const LogSettingUpPage2(),
           transition: Transition.noTransition),
       GetPage(
@@ -92,7 +92,6 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
-  // Add new routes under routes:
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -101,21 +100,6 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromARGB(255, 229, 229, 229),
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        '/': (context) => const HomePage(),
-        '/help': (context) => const HelpPage(),
-        '/advanced': (context) => const AdvancedPage(),
-        '/log_introduction': (context) => const Log4ShellIntroPage(),
-        '/log_setting_up': (context) => LogSettingUpPage1(),
-        '/log_setting_up_3': (context) => const LogSettingUpPage2(),
-        '/log_reference': (context) => const LogReferencePage(),
-        '/log_quiz': (context) => const Log4ShellQuiz(),
-        '/spring_introduction': (context) => const SpringIntroductionPage(),
-        '/spring_setting_up': (context) => SpringSettingUpPage(),
-        '/spring_reference': (context) => const SpringReferencePage(),
-        '/spring_quiz': (context) => const Spring4ShellQuiz(),
-        '/cybersecurity': (context) => const CybersecurityPage(),
-      },
     );
   }
 }

@@ -4,9 +4,9 @@ import '../import.dart';
 This is the template for a quiz page in this web app.
 Use Question widgets in this dart file to create quiz questions.
 Question is in String format, answers are in Map<String, bool> format
-E.g. {answer1:false,answer2:false,answer3:true}, where answer3 is the correct
+E.g. {answer1:false, answer2:false, answer3:true}, where answer3 is the correct
 answer.
-The widget tree below is an example of how the quiz page would be implemented.
+
 Refer to to existing log/spring4shell quiz pages in their respective chapter 
 folders for examples of implementation.
 */
@@ -26,7 +26,11 @@ Widget chapterTitle(String title, String level) => Column(children: [
     ]);
 
 class QuizTemplate extends StatelessWidget {
-  const QuizTemplate({Key? key}) : super(key: key);
+  String topic; // Topic for this quiz
+  List<Widget> questions; // List of Question widgets aka the quiz questions
+  String previous; // Previous page
+  String next; // Next page
+  QuizTemplate(this.topic, this.questions, this.previous, this.next);
 
   @override
   Widget build(BuildContext context) {
@@ -94,23 +98,8 @@ class QuizTemplate extends StatelessWidget {
                 child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            titleColumn("Quiz", "Log4shell"),
-            const Question(questionText: 'What is log4shell?', answerList: {
-              'A seashell': false,
-              'A vulnerability': true,
-              'A type of wood': false,
-              'A computer virus': false
-            }),
-            const Question(
-                questionText:
-                    'What is the protocol used to handle JNDI queries?',
-                answerList: {
-                  'TLS protocol': false,
-                  'Keycloak protocol': false,
-                  'LDAP protocol': true,
-                  'Spring Security protocol': false
-                }),
-            /* Add more quiz question widgets here */
+            titleColumn("Quiz", topic),
+            for (var i = 0; i < questions.length; i++) questions[i],
             Container(
                 padding: EdgeInsets.fromLTRB(
                     MediaQuery.of(context).size.width * 0.2,
@@ -127,8 +116,8 @@ class QuizTemplate extends StatelessWidget {
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                            PrevButton(prevPage: 'log_setting_up_3'),
-                            NextButton(nextPage: 'log_reference')
+                            PrevButton(prevPage: previous),
+                            NextButton(nextPage: next)
                           ]))
           ],
         ))));
