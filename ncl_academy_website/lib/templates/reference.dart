@@ -1,39 +1,5 @@
 import '../import.dart';
 
-// class SideMenu extends StatefulWidget {
-//   const SideMenu({Key? key}) : super(key: key);
-
-//   @override
-//   State<SideMenu> createState() => _SideMenuState();
-// }
-
-// class _SideMenuState extends State<SideMenu> {
-//   List<String> filesList = <String>[];
-//   List<String> filesL = <String>[];
-//   @override    
-//   void initState() {
-//     super.initState();
-//     filesList = [];
-//   }    
-//   Future<List<String>> _getFilesFromDir() async{
-//     filesL = await FilesInDirectory().getFilesFromDir();
-//     setState(() {
-//       filesList = filesL;
-//     });
-//     return filesList;
-//   }    
-//   _getFilesCount(){
-//     _getFilesFromDir();
-//     int count = filesList.length;
-//     return count;
-//   }    
-//   @override
-//   Widget build(BuildContext context) {
-    
-//   }
-// }
-
-
 class ReferenceTemplate extends StatelessWidget {
   String title;
   String level;
@@ -45,7 +11,9 @@ class ReferenceTemplate extends StatelessWidget {
 
   // Constructor
   ReferenceTemplate(this.title, this.level, this.subTitle, this.textTitle,
-      this.textMaterial, this.previousPage, this.nextPage);
+      this.textMaterial, this.previousPage, this.nextPage,
+      {Key? key})
+      : super(key: key);
 
   Widget chapterTitle(String title, String level) => Column(children: [
         Align(
@@ -91,33 +59,16 @@ class ReferenceTemplate extends StatelessWidget {
                       Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
               )
-            : Stack(children: [
-                Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Column(
-                        children: <Widget>[chapterTitle(bigTitle, level)]),
-                  ),
+            : Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                  child:
+                      Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
-                Positioned(
-                    left: 40,
-                    bottom: 40,
-                    child: FloatingActionButton.extended(
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      label: const Text("Chapter Select",
-                          style: TextStyle(
-                              fontFamily: "Montserrat", color: Colors.black)),
-                      hoverElevation: 10,
-                      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-                      hoverColor: const Color.fromARGB(255, 244, 255, 252),
-                      onPressed: () {
-                        Get.toNamed('/beginner');
-                      },
-                    ))
-              ]);
+              );
+
     smallTitle(String title) => Container(
         padding: EdgeInsets.fromLTRB(
             MediaQuery.of(context).size.width * 0.1, 50, 50, 0),
@@ -153,6 +104,22 @@ class ReferenceTemplate extends StatelessWidget {
               ],
             ));
     return Scaffold(
+      floatingActionButton: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
+          child: FloatingActionButton.extended(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+            label: const Text("Chapter Select",
+                style:
+                    TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+            hoverElevation: 10,
+            backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+            hoverColor: const Color.fromARGB(255, 244, 255, 252),
+            onPressed: () {
+              Get.toNamed('/beginner');
+            },
+          )),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
@@ -176,10 +143,9 @@ class ReferenceTemplate extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              titleColumn(this.title, this.level),
-              smallTitle(this.subTitle),
-              textColumn(this.textTitle, this.textMaterial, this.previousPage,
-                  this.nextPage),
+              titleColumn(title, level),
+              smallTitle(subTitle),
+              textColumn(textTitle, textMaterial, previousPage, nextPage),
               footer
             ],
           ),

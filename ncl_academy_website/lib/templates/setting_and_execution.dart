@@ -24,7 +24,9 @@ class SettingExecutionTemplate extends StatelessWidget {
       this.code,
       this.summary,
       this.previousPage,
-      this.nextPage);
+      this.nextPage,
+      {Key? key})
+      : super(key: key);
 
   Widget chapterTitle(String title, String level) => Column(children: [
         Align(
@@ -43,7 +45,7 @@ class SettingExecutionTemplate extends StatelessWidget {
   Widget codeSnippet(String code) => Row(children: <Widget>[
         Expanded(
             child: Container(
-                color: Color(0xffFFCFA3),
+                color: const Color(0xffFFCFA3),
                 child: Text(code, style: codeDisplayStyle)))
       ]);
 
@@ -91,7 +93,7 @@ class SettingExecutionTemplate extends StatelessWidget {
         Align(
             alignment: Alignment.centerLeft,
             child: Text(summary, style: explanationBodyStyle)),
-        SizedBox(height: 40)
+        const SizedBox(height: 40)
       ]);
 
   @override
@@ -111,33 +113,15 @@ class SettingExecutionTemplate extends StatelessWidget {
                       Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
               )
-            : Stack(children: [
-                Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Column(
-                        children: <Widget>[chapterTitle(bigTitle, level)]),
-                  ),
+            : Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                  child:
+                      Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
-                Positioned(
-                    left: 40,
-                    bottom: 40,
-                    child: FloatingActionButton.extended(
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      label: const Text("Chapter Select",
-                          style: TextStyle(
-                              fontFamily: "Montserrat", color: Colors.black)),
-                      hoverElevation: 10,
-                      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-                      hoverColor: const Color.fromARGB(255, 244, 255, 252),
-                      onPressed: () {
-                        Get.toNamed('/beginner');
-                      },
-                    ))
-              ]);
+              );
 
     smallTitle(String title) => Container(
         padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.1,
@@ -147,7 +131,7 @@ class SettingExecutionTemplate extends StatelessWidget {
             fit: BoxFit.cover, child: Text(title, style: subTitleStyle)));
 
     var convertedUrl = YoutubePlayerController.convertUrlToId(videoUrl) ?? '0';
-    YoutubePlayerController _videoController = YoutubePlayerController(
+    YoutubePlayerController videoController = YoutubePlayerController(
       initialVideoId: convertedUrl,
       params: const YoutubePlayerParams(
         startAt: Duration(seconds: 0),
@@ -163,7 +147,7 @@ class SettingExecutionTemplate extends StatelessWidget {
             fit: BoxFit.cover,
           )
         : YoutubePlayerIFrame(
-            controller: _videoController,
+            controller: videoController,
             aspectRatio: 16 / 9,
           );
 
@@ -197,6 +181,22 @@ class SettingExecutionTemplate extends StatelessWidget {
               ],
             ));
     return Scaffold(
+      floatingActionButton: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
+          child: FloatingActionButton.extended(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+            label: const Text("Chapter Select",
+                style:
+                    TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+            hoverElevation: 10,
+            backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+            hoverColor: const Color.fromARGB(255, 244, 255, 252),
+            onPressed: () {
+              Get.toNamed('/beginner');
+            },
+          )),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
@@ -220,10 +220,10 @@ class SettingExecutionTemplate extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              titleColumn(this.title, this.level),
-              smallTitle(this.subTitle),
-              textColumn(this.textTitle, this.textMaterial, this.code,
-                  this.summary, this.previousPage, this.nextPage),
+              titleColumn(title, level),
+              smallTitle(subTitle),
+              textColumn(textTitle, textMaterial, code, summary, previousPage,
+                  nextPage),
               footer
             ],
           ),

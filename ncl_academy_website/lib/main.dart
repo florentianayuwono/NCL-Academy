@@ -28,8 +28,8 @@ void main() {
           page: () => LogSettingUpPage1(),
           transition: Transition.noTransition),
       GetPage(
-          name: '/log_setting_up_3',
-          page: () => const LogSettingUpPage3(),
+          name: '/log_setting_up_2',
+          page: () => const LogSettingUpPage2(),
           transition: Transition.noTransition),
       GetPage(
           name: '/log_quiz',
@@ -50,6 +50,10 @@ void main() {
       GetPage(
           name: '/spring_execution',
           page: () => SpringExecutionPage(),
+          transition: Transition.noTransition),
+      GetPage(
+          name: '/spring_quiz',
+          page: () => const Spring4ShellQuiz(),
           transition: Transition.noTransition),
       GetPage(
           name: '/spring_reference',
@@ -88,7 +92,6 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
-  // Add new routes under routes:
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -97,20 +100,6 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color.fromARGB(255, 229, 229, 229),
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        '/': (context) => const HomePage(),
-        '/help': (context) => const HelpPage(),
-        '/advanced': (context) => const AdvancedPage(),
-        '/log_introduction': (context) => const Log4ShellIntroPage(),
-        '/log_setting_up': (context) => LogSettingUpPage1(),
-        '/log_setting_up_3': (context) => const LogSettingUpPage3(),
-        '/log_reference': (context) => const LogReferencePage(),
-        '/log_quiz': (context) => const Log4ShellQuiz(),
-        '/spring_introduction': (context) => const SpringIntroductionPage(),
-        '/spring_setting_up': (context) => SpringSettingUpPage(),
-        '/spring_reference': (context) => const SpringReferencePage(),
-        '/cybersecurity': (context) => const CybersecurityPage(),
-      },
     );
   }
 }
@@ -514,7 +503,7 @@ class HomePage extends StatelessWidget {
           );
 
     final provideFirstCard = Container(
-        constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
+        constraints: const BoxConstraints(maxWidth: 133, minHeight: 150),
         padding: const EdgeInsets.all(15),
         width: screenSize.width * 0.3,
         child: Column(
@@ -555,7 +544,7 @@ class HomePage extends StatelessWidget {
           ],
         ));
     final provideSecondCard = Container(
-        constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
+        constraints: const BoxConstraints(maxWidth: 133, minHeight: 150),
         padding: const EdgeInsets.all(15),
         width: screenSize.width * 0.3,
         child: Column(
@@ -596,7 +585,7 @@ class HomePage extends StatelessWidget {
           ],
         ));
     final provideThirdCard = Container(
-        constraints: const BoxConstraints(maxWidth: 140, minHeight: 150),
+        constraints: const BoxConstraints(maxWidth: 133, minHeight: 150),
         padding: const EdgeInsets.all(15),
         width: screenSize.width * 0.3,
         child: Column(
@@ -846,7 +835,7 @@ class HomePage extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: Container(
-                  width: screenSize.width * 0.5,
+                  width: screenSize.width * 0.9,
                   padding: const EdgeInsets.fromLTRB(80, 80, 80, 200),
                   child: const Center(
                     child: Text(

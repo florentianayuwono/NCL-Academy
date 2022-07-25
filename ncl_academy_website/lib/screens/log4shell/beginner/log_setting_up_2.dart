@@ -1,7 +1,7 @@
 import '../../../import.dart';
 
-class LogSettingUpPage3 extends StatelessWidget {
-  const LogSettingUpPage3();
+class LogSettingUpPage2 extends StatelessWidget {
+  const LogSettingUpPage2();
 
   @override
   Widget build(BuildContext context) {

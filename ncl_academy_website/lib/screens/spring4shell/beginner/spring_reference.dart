@@ -11,7 +11,7 @@ class SpringReferencePage extends StatelessWidget {
         "References/Credits",
         "Below are our sources",
         "This is the references",
-        "/spring_setting_up",
+        "/spring_quiz",
         "/beginner");
   }
 }

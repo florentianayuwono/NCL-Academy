@@ -116,33 +116,16 @@ class SpringSettingUpPage extends StatelessWidget {
                       Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
               )
-            : Stack(children: [
-                Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Column(
-                        children: <Widget>[chapterTitle(bigTitle, level)]),
-                  ),
+            : Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.fromLTRB(150, 50, 150, 0),
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                  child:
+                      Column(children: <Widget>[chapterTitle(bigTitle, level)]),
                 ),
-                Positioned(
-                    left: 40,
-                    bottom: 40,
-                    child: FloatingActionButton.extended(
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      label: const Text("Chapter Select",
-                          style: TextStyle(
-                              fontFamily: "Montserrat", color: Colors.black)),
-                      hoverElevation: 10,
-                      backgroundColor: const Color.fromARGB(255, 210, 233, 227),
-                      hoverColor: const Color.fromARGB(255, 244, 255, 252),
-                      onPressed: () {
-                        Get.toNamed('/beginner');
-                      },
-                    ))
-              ]);
+              );
+    ;
 
     smallTitle(String title) => Container(
         padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.1,
@@ -221,6 +204,22 @@ class SpringSettingUpPage extends StatelessWidget {
               ],
             ));
     return Scaffold(
+      floatingActionButton: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 100, 0, 0),
+          child: FloatingActionButton.extended(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+            label: const Text("Chapter Select",
+                style:
+                    TextStyle(fontFamily: "Montserrat", color: Colors.black)),
+            hoverElevation: 10,
+            backgroundColor: const Color.fromARGB(255, 210, 233, 227),
+            hoverColor: const Color.fromARGB(255, 244, 255, 252),
+            onPressed: () {
+              Get.toNamed('/beginner');
+            },
+          )),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
       backgroundColor: const Color.fromARGB(255, 2, 81, 83),
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
